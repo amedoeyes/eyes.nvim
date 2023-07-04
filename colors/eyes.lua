@@ -214,10 +214,6 @@ hi.NoiceFormatLevelInfo = { guifg = M.colors.base04, guibg = nil, gui = nil, gui
 hi.NoiceFormatLevelWarn = { guifg = M.colors.base04, guibg = nil, gui = nil, guisp = nil }
 hi.NoiceVirtualText = { guifg = M.colors.base04, guibg = nil, gui = nil, guisp = nil }
 
-hi.IlluminatedWordText = { guifg = M.colors.base0A, guibg = M.colors.base04, gui = nil, guisp = nil }
-hi.IlluminatedWordRead = { guifg = M.colors.base0A, guibg = M.colors.base04, gui = nil, guisp = nil }
-hi.IlluminatedWordWrite = { guifg = M.colors.base0A, guibg = M.colors.base04, gui = nil, guisp = nil }
-
 hi.IndentBlanklineChar = { guifg = M.colors.base02, gui = "nocombine" }
 hi.IndentBlanklineContextChar = { guifg = M.colors.base04, gui = "nocombine" }
 
