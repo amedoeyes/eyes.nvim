@@ -1,6 +1,6 @@
 <h1 align="center">
- <p>&lt;O&gt;</p>
  <p align="center">eyes.nvim</p>
+ <p>&lt;O&gt;</p>
 </h1>
 
 <p align="center">A monochrome colorscheme for Neovim.</p>
@@ -11,7 +11,7 @@
 
 ## Installation
 
-[lazy.nvim]("https://github.com/folke/lazy.nvim")
+[lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ```lua
 {
@@ -20,7 +20,7 @@
 
 ```
 
-lualine
+[lualine](https://github.com/nvim-lualine/lualine.nvim)
 
 ```lua
 require('lualine').setup {
