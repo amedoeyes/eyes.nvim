@@ -34,6 +34,7 @@ require('lualine').setup {
 
 ```lua
 require("eyes").setup({
+ terminal = true, -- enables monochrome for terminal
  diagnostics = true, -- enables monochrome for diagnostics
  spell = true, -- enables monochrome for spell checking
 })

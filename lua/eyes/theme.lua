@@ -104,6 +104,34 @@ M.setup = function()
 		hi.DiagnosticUnderlineHint = { guifg = nil, guibg = nil, gui = "undercurl", guisp = colors.hexC0 }
 	end
 
+	-- Terminal
+
+	if options.terminal then
+		vim.g.terminal_color_0 = colors.hex00
+		vim.g.terminal_color_8 = colors.hex30
+
+		vim.g.terminal_color_1 = colors.hex60
+		vim.g.terminal_color_9 = colors.hex60
+
+		vim.g.terminal_color_2 = colors.hexB0
+		vim.g.terminal_color_10 = colors.hexB0
+
+		vim.g.terminal_color_3 = colors.hex90
+		vim.g.terminal_color_11 = colors.hex90
+
+		vim.g.terminal_color_4 = colors.hex40
+		vim.g.terminal_color_12 = colors.hex40
+
+		vim.g.terminal_color_5 = colors.hex70
+		vim.g.terminal_color_13 = colors.hex70
+
+		vim.g.terminal_color_6 = colors.hex80
+		vim.g.terminal_color_14 = colors.hex80
+
+		vim.g.terminal_color_7 = colors.hexC0
+		vim.g.terminal_color_15 = colors.hexF0
+	end
+
 	-- Syntax
 
 	hi.SpecialKey = { guifg = colors.hex40, guibg = nil, gui = nil, guisp = nil }

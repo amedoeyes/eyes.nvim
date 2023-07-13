@@ -1,6 +1,7 @@
 local M = {}
 
 M.options = {
+	terminal = true,
 	diagnostics = true,
 	spell = true,
 }
