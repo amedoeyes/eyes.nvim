@@ -166,7 +166,6 @@ M.setup = function()
 	hi["@type.builtin"] = { guifg = colors.hex80, guibg = nil, gui = "italic", guisp = nil }
 	hi["@type.qualifier"] = "@keyword"
 
-	hi["@spell"] = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
 	hi["@text.title"] = { guifg = nil, guibg = nil, gui = "bold", guisp = nil }
 	hi["@text.strong"] = { guifg = nil, guibg = nil, gui = "bold", guisp = nil }
 	hi["@text.reference"] = { guifg = colors.hex80, guibg = nil, gui = nil, guisp = nil }
