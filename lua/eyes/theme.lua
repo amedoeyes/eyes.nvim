@@ -53,6 +53,13 @@ M.setup = function()
 
 	hi.Title = { guifg = colors.hexA0, guibg = nil, gui = "none", guisp = nil }
 
+	hi.TabLine = { guifg = colors.hex70, guibg = colors.hex00, gui = "none", guisp = nil }
+	hi.TabLineFill = { guifg = colors.hexA0, guibg = colors.hex00, gui = "none", guisp = nil }
+	hi.TabLineSel = { guifg = colors.hexA0, guibg = colors.hex00, gui = nil, guisp = nil }
+
+	hi.StatusLine = { guifg = colors.hexA0, guibg = colors.hex00, gui = "none", guisp = nil }
+	hi.StatusLineNC = { guifg = colors.hexA0, guibg = colors.hex00, gui = "none", guisp = nil }
+
 	hi.Cursor = { guifg = colors.hex00, guibg = colors.hexA0, gui = nil, guisp = nil }
 	hi.TermCursor = { guifg = colors.hex00, guibg = colors.hexA0, gui = "none", guisp = nil }
 
@@ -172,7 +179,7 @@ M.setup = function()
 	hi["@text.uri"] = { guifg = colors.hex90, guibg = nil, gui = "underline", guisp = nil }
 
 	hi["@lsp.type.class"] = "@function"
-	hi["@lsp.type.comment"] = "Type"
+	hi["@lsp.typemod.keyword"] = "Statement"
 
 	-- Plugins
 
@@ -182,6 +189,7 @@ M.setup = function()
 	hi.CmpItemAbbrMatchFuzzy = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
 	hi.CmpItemKind = { guifg = colors.hex90, guibg = nil, gui = nil, guisp = nil }
 	hi.CmpItemMenu = { guifg = colors.hex20, guibg = nil, gui = nil, guisp = nil }
+	hi.CmpGhostText = "Comment"
 
 	hi.NeoTreeTitleBar = { guifg = colors.hexA0, guibg = colors.hex40, gui = nil, guisp = nil }
 	hi.NeoTreeGitAdded = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
