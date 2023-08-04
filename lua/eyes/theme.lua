@@ -1,273 +1,465 @@
-local colors = require("eyes.colors")
-local config = require("eyes.config")
-
 local M = {}
 
--- from https://github.com/RRethy/nvim-base16/blob/master/lua/base16-colorscheme.lua#L65-L80
-M.highlight = setmetatable({}, {
-	__newindex = function(_, hlgroup, args)
-		if "string" == type(args) then
-			vim.cmd(("hi! link %s %s"):format(hlgroup, args))
-			return
-		end
+---@class Highlight
+---@field fg? string
+---@field bg? string
+---@field sp? string
+---@field blend? number
+---@field bold? boolean
+---@field standout? boolean
+---@field underline? boolean
+---@field undercurl? boolean
+---@field underdouble? boolean
+---@field underdotted? boolean
+---@field underdashed? boolean
+---@field strikethrough? boolean
+---@field italic? boolean
+---@field reverse? boolean
+---@field nocombine? boolean
+---@field link? string
+---@field default? boolean
+---@field ctermfg? number
+---@field ctermbg? number
+---@field cterm? string
 
-		local guifg = args.guifg or nil
-		local guibg = args.guibg or nil
-		local gui = args.gui or nil
-		local guisp = args.guisp or nil
-		local cmd = { "hi", hlgroup }
-
-		if guifg then
-			table.insert(cmd, "guifg=" .. guifg)
-		end
-		if guibg then
-			table.insert(cmd, "guibg=" .. guibg)
-		end
-		if gui then
-			table.insert(cmd, "gui=" .. gui)
-		end
-		if guisp then
-			table.insert(cmd, "guisp=" .. guisp)
-		end
-
-		vim.cmd(table.concat(cmd, " "))
-	end,
-})
+---@param name string
+---@param values Highlight
+local function hi(name, values)
+	vim.api.nvim_set_hl(0, name, values)
+end
 
 M.setup = function()
-	local hi = M.highlight
-	local options = config.options
+	local options = require("eyes.config").options
+	local toggle = options.toggle
+	local extend = options.extend
+	local palette = require("eyes.palettes").setup()
 
-	-- Editor
+	--Linking
 
-	hi.Normal = { guifg = colors.hexA0, guibg = colors.hex00, gui = nil, guisp = nil }
-	hi.VertSplit = { guifg = colors.hex40, guibg = colors.hex00, gui = "none", guisp = nil }
+	hi("Icon", { fg = palette.hex10 })
+	hi("Border", { fg = palette.hex04 })
+	hi("Button", { fg = palette.hex06, bg = palette.hex01 })
+	hi("ButtonActive", { fg = palette.hex10, bg = palette.hex02 })
 
-	hi.NormalFloat = { guifg = colors.hexA0, guibg = colors.hex00, gui = nil, guisp = nil }
-	hi.FloatBorder = { guifg = colors.hex40, guibg = colors.hex00, gui = nil, guisp = nil }
+	--Editor
 
-	hi.PMenu = { guifg = colors.hexA0, guibg = colors.hex00, gui = "none", guisp = nil }
-	hi.PMenuSel = { guifg = colors.hexA0, guibg = colors.hex10, gui = nil, guisp = nil }
-	hi.PmenuSbar = { guifg = nil, guibg = colors.hex10, gui = nil, guisp = nil }
-	hi.PmenuThumb = { guifg = nil, guibg = colors.hex80, gui = nil, guisp = nil }
+	hi("Normal", { fg = palette.hex10, bg = palette.hex00 })
+	hi("VertSplit", { link = "Border" })
+	hi("Title", { fg = palette.hex10 })
 
-	hi.Title = { guifg = colors.hexA0, guibg = nil, gui = "none", guisp = nil }
+	hi("NormalFloat", { link = "Normal" })
+	hi("FloatBorder", { link = "Border" })
+	hi("FloatTitle", { link = "Title" })
 
-	hi.TabLine = { guifg = colors.hex70, guibg = colors.hex00, gui = "none", guisp = nil }
-	hi.TabLineFill = { guifg = colors.hexA0, guibg = colors.hex00, gui = "none", guisp = nil }
-	hi.TabLineSel = { guifg = colors.hexA0, guibg = colors.hex00, gui = nil, guisp = nil }
+	hi("Cursor", { fg = palette.hex00, bg = palette.hex10 })
+	hi("lCursor", { link = "Cursor" })
+	hi("TermCursor", { link = "Cursor" })
+	hi("CursorLine", { bg = palette.hex01 })
+	hi("CursorColumn", { link = "CursorLine" })
+	hi("QuickFixLine", { link = "CursorLine" })
 
-	hi.StatusLine = { guifg = colors.hexA0, guibg = colors.hex00, gui = "none", guisp = nil }
-	hi.StatusLineNC = { guifg = colors.hexA0, guibg = colors.hex00, gui = "none", guisp = nil }
+	hi("Visual", { bg = palette.hex02 })
+	hi("MatchParen", { fg = palette.hex10, bg = palette.hex02 })
 
-	hi.Cursor = { guifg = colors.hex00, guibg = colors.hexA0, gui = nil, guisp = nil }
-	hi.TermCursor = { guifg = colors.hex00, guibg = colors.hexA0, gui = "none", guisp = nil }
+	hi("LineNr", { fg = palette.hex04 })
+	hi("CursorLineNr", { fg = palette.hex10 })
+	hi("SignColumn", { link = "Icon" })
 
-	hi.CursorColumn = { guifg = nil, guibg = colors.hex10, gui = "none", guisp = nil }
-	hi.CursorLine = { guifg = nil, guibg = colors.hex10, gui = "none", guisp = nil }
-	hi.QuickFixLine = { guifg = nil, guibg = colors.hex10, gui = "none", guisp = nil }
+	hi("PMenu", { link = "Normal" })
+	hi("PMenuSel", { link = "CursorLine" })
+	hi("PmenuSbar", { bg = palette.hex01 })
+	hi("PmenuThumb", { bg = palette.hex08 })
 
-	hi.Visual = { guifg = nil, guibg = colors.hex20, gui = nil, guisp = nil }
+	hi("TabLine", { fg = palette.hex06, bg = palette.hex00 })
+	hi("TabLineFill", { fg = palette.hex10, bg = palette.hex00 })
+	hi("TabLineSel", { fg = palette.hex10, bg = palette.hex00, bold = true, italic = true })
 
-	hi.LineNr = { guifg = colors.hex40, guibg = nil, gui = nil, guisp = nil }
-	hi.CursorLineNr = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.SignColumn = { guifg = colors.hexA0, guibg = colors.hex00, gui = nil, guisp = nil }
+	hi("StatusLine", { fg = palette.hex10, bg = palette.hex00, bold = true })
+	hi("StatusLineNC", { fg = palette.hex10, bg = palette.hex00 })
 
-	hi.Directory = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.MatchParen = { guifg = colors.hexA0, guibg = colors.hex40, gui = nil, guisp = nil }
+	hi("Search", { fg = palette.hex10, bg = palette.hex04 })
+	hi("IncSearch", { link = "Search" })
+	hi("Substitute", { link = "Search" })
 
-	hi.Folded = { guifg = colors.hexA0, guibg = colors.hex10, gui = nil, guisp = nil }
-	hi.FoldColumn = { guifg = colors.hexA0, guibg = colors.hex00, gui = nil, guisp = nil }
+	hi("Directory", { fg = palette.hex10 })
 
-	hi.Search = { guifg = colors.hexA0, guibg = colors.hex40, gui = nil, guisp = nil }
-	hi.IncSearch = { guifg = colors.hexA0, guibg = colors.hex40, gui = "none", guisp = nil }
-	hi.Substitute = { guifg = colors.hexA0, guibg = colors.hex40, gui = "none", guisp = nil }
+	hi("Folded", { fg = palette.hex10 })
+	hi("FoldColumn", { fg = palette.hex10 })
 
-	hi.ModeMsg = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.MoreMsg = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.ErrorMsg = { guifg = colors.hexA0, guibg = colors.hex00, gui = nil, guisp = nil }
-	hi.WarningMsg = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
+	hi("ModeMsg", { fg = palette.hex10 })
+	hi("MoreMsg", { fg = palette.hex10 })
 
-	hi.DiffAdd = { guifg = colors.hex70, guibg = colors.hex00, gui = nil, guisp = nil }
-	hi.DiffChange = { guifg = colors.hex30, guibg = colors.hex00, gui = nil, guisp = nil }
-	hi.DiffDelete = { guifg = colors.hex70, guibg = colors.hex00, gui = nil, guisp = nil }
-	hi.DiffText = { guifg = colors.hex30, guibg = colors.hex00, gui = nil, guisp = nil }
+	hi("DiffAdd", { fg = palette.hex07 })
+	hi("DiffChange", { fg = palette.hex03 })
+	hi("DiffDelete", { fg = palette.hex07 })
+	hi("DiffText", { fg = palette.hex07 })
 
-	if options.spell then
-		hi.SpellBad = { guifg = nil, guibg = nil, gui = "undercurl", guisp = colors.hexA0 }
-		hi.SpellLocal = { guifg = nil, guibg = nil, gui = "undercurl", guisp = colors.hexA0 }
-		hi.SpellCap = { guifg = nil, guibg = nil, gui = "undercurl", guisp = colors.hexA0 }
-		hi.SpellRare = { guifg = nil, guibg = nil, gui = "undercurl", guisp = colors.hexA0 }
+	hi("LspInfoBorder", { link = "FloatBorder" })
+
+	if toggle.spell then
+		hi("SpellBad", { sp = palette.hex10, undercurl = true })
+		hi("SpellLocal", { sp = palette.hex10, undercurl = true })
+		hi("SpellCap", { sp = palette.hex10, undercurl = true })
+		hi("SpellRare", { sp = palette.hex10, undercurl = true })
 	end
 
-	if options.diagnostics then
-		hi.DiagnosticError = { guifg = colors.hexF0, guibg = nil, gui = "none", guisp = nil }
-		hi.DiagnosticWarn = { guifg = colors.hexE0, guibg = nil, gui = "none", guisp = nil }
-		hi.DiagnosticInfo = { guifg = colors.hexD0, guibg = nil, gui = "none", guisp = nil }
-		hi.DiagnosticHint = { guifg = colors.hexC0, guibg = nil, gui = "none", guisp = nil }
-		hi.DiagnosticUnderlineError = { guifg = nil, guibg = nil, gui = "undercurl", guisp = colors.hexF0 }
-		hi.DiagnosticUnderlineWarn = { guifg = nil, guibg = nil, gui = "undercurl", guisp = colors.hexE0 }
-		hi.DiagnosticUnderlineInfo = { guifg = nil, guibg = nil, gui = "undercurl", guisp = colors.hexD0 }
-		hi.DiagnosticUnderlineHint = { guifg = nil, guibg = nil, gui = "undercurl", guisp = colors.hexC0 }
+	if toggle.diagnostics then
+		hi("DiagnosticError", { fg = palette.hex15 })
+		hi("DiagnosticWarn", { fg = palette.hex14 })
+		hi("DiagnosticInfo", { fg = palette.hex13 })
+		hi("DiagnosticHint", { fg = palette.hex12 })
+		hi("DiagnosticOk", { fg = palette.hex11 })
+
+		hi("DiagnosticUnderlineError", { sp = palette.hex15, undercurl = true })
+		hi("DiagnosticUnderlineWarn", { sp = palette.hex14, undercurl = true })
+		hi("DiagnosticUnderlineInfo", { sp = palette.hex13, undercurl = true })
+		hi("DiagnosticUnderlineHint", { sp = palette.hex12, undercurl = true })
+		hi("DiagnosticUnderlineOk", { sp = palette.hex11, undercurl = true })
+
+		hi("ErrorMsg", { fg = palette.hex10 })
+		hi("WarningMsg", { fg = palette.hex10 })
 	end
 
-	-- Terminal
+	--Terminal
 
-	if options.terminal then
-		vim.g.terminal_color_0 = colors.hex00
-		vim.g.terminal_color_8 = colors.hex30
+	if toggle.terminal then
+		vim.g.terminal_color_0 = palette.hex00
+		vim.g.terminal_color_8 = palette.hex03
 
-		vim.g.terminal_color_1 = colors.hex60
-		vim.g.terminal_color_9 = colors.hex60
+		vim.g.terminal_color_1 = palette.hex06
+		vim.g.terminal_color_9 = palette.hex06
 
-		vim.g.terminal_color_2 = colors.hexB0
-		vim.g.terminal_color_10 = colors.hexB0
+		vim.g.terminal_color_2 = palette.hex11
+		vim.g.terminal_color_10 = palette.hex11
 
-		vim.g.terminal_color_3 = colors.hex90
-		vim.g.terminal_color_11 = colors.hex90
+		vim.g.terminal_color_3 = palette.hex09
+		vim.g.terminal_color_11 = palette.hex09
 
-		vim.g.terminal_color_4 = colors.hex40
-		vim.g.terminal_color_12 = colors.hex40
+		vim.g.terminal_color_4 = palette.hex04
+		vim.g.terminal_color_12 = palette.hex04
 
-		vim.g.terminal_color_5 = colors.hex70
-		vim.g.terminal_color_13 = colors.hex70
+		vim.g.terminal_color_5 = palette.hex07
+		vim.g.terminal_color_13 = palette.hex07
 
-		vim.g.terminal_color_6 = colors.hex80
-		vim.g.terminal_color_14 = colors.hex80
+		vim.g.terminal_color_6 = palette.hex08
+		vim.g.terminal_color_14 = palette.hex08
 
-		vim.g.terminal_color_7 = colors.hexC0
-		vim.g.terminal_color_15 = colors.hexF0
+		vim.g.terminal_color_7 = palette.hex12
+		vim.g.terminal_color_15 = palette.hex15
 	end
 
-	-- Syntax
+	--Syntax
 
-	hi.SpecialKey = { guifg = colors.hex40, guibg = nil, gui = nil, guisp = nil }
-	hi.NonText = { guifg = colors.hex40, guibg = nil, gui = nil, guisp = nil }
-	hi.Comment = { guifg = colors.hex40, guibg = nil, gui = "italic", guisp = nil }
-	hi.Conceal = { guifg = colors.hexD0, guibg = colors.hex00, gui = nil, guisp = nil }
+	hi("SpecialKey", { fg = palette.hex04 })
+	hi("NonText", { fg = palette.hex04 })
+	hi("Comment", { fg = palette.hex04, italic = true })
+	hi("Conceal", { fg = palette.hex13 })
 
-	hi.Constant = { guifg = colors.hex80, guibg = nil, gui = nil, guisp = nil }
+	hi("Constant", { fg = palette.hex08 })
 
-	hi.Identifier = { guifg = colors.hexA0, guibg = nil, gui = "none", guisp = nil }
-	hi.Function = { guifg = colors.hex90, guibg = nil, gui = nil, guisp = nil }
+	hi("Identifier", { fg = palette.hex10 })
+	hi("Function", { fg = palette.hex09 })
 
-	hi.Statement = { guifg = colors.hex70, guibg = nil, gui = "none", guisp = nil }
+	hi("Statement", { fg = palette.hex07 })
 
-	hi.PreProc = { guifg = colors.hex70, guibg = nil, gui = nil, guisp = nil }
+	hi("PreProc", { fg = palette.hex07 })
 
-	hi.Type = { guifg = colors.hex80, guibg = nil, gui = "none", guisp = nil }
+	hi("Type", { fg = palette.hex08 })
 
-	hi.Special = { guifg = colors.hex60, guibg = nil, gui = nil, guisp = nil }
-	hi.Tag = { guifg = colors.hex90, guibg = nil, gui = nil, guisp = nil }
+	hi("Special", { fg = palette.hex06 })
+	hi("Tag", { fg = palette.hex08 })
 
-	hi.Underlined = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.Ignore = { guifg = colors.hex40, guibg = nil, gui = nil, guisp = nil }
-	hi.Error = { guifg = colors.hexF0, guibg = colors.hex00, gui = nil, guisp = nil }
-	hi.Todo = { guifg = colors.hexA0, guibg = colors.hex30, gui = nil, guisp = nil }
+	hi("Underlined", { fg = palette.hex10 })
+	hi("Ignore", { fg = palette.hex04 })
+	hi("Error", { fg = palette.hex15 })
+	hi("Todo", { fg = palette.hex07 })
 
-	hi["@constant.builtin"] = "Constant"
-	hi["@variable.builtin"] = { guifg = colors.hex70, guibg = nil, gui = "italic", guisp = nil }
-	hi["@tag.attribute"] = "@attribute"
-	hi["@tag.delimiter"] = "Delimiter"
-	hi["@constructor"] = "Function"
-	hi["@type.builtin"] = { guifg = colors.hex80, guibg = nil, gui = "italic", guisp = nil }
-	hi["@type.qualifier"] = "@keyword"
+	hi("@constant.builtin", { link = "Constant" })
+	hi("@variable.builtin", { fg = palette.hex07, italic = true })
+	hi("@constructor", { link = "Function" })
 
-	hi["@text.title"] = { guifg = nil, guibg = nil, gui = "bold", guisp = nil }
-	hi["@text.strong"] = { guifg = nil, guibg = nil, gui = "bold", guisp = nil }
-	hi["@text.reference"] = { guifg = colors.hex80, guibg = nil, gui = nil, guisp = nil }
-	hi["@text.uri"] = { guifg = colors.hex90, guibg = nil, gui = "underline", guisp = nil }
+	hi("@tag.attribute", { link = "@attribute" })
+	hi("@tag.delimiter", { link = "Delimiter" })
 
-	hi["@lsp.type.class"] = "@function"
-	hi["@lsp.typemod.keyword"] = "Statement"
+	hi("@type.builtin", { fg = palette.hex08, italic = true })
+	hi("@type.qualifier", { link = "@keyword" })
 
-	-- Plugins
+	hi("@text.title", { bold = true })
+	hi("@text.strong", { bold = true })
+	hi("@text.reference", { fg = palette.hex08 })
+	hi("@text.uri", { fg = palette.hex09, underline = true })
 
-	hi.CmpItemAbbr = { guifg = colors.hex90, guibg = nil, gui = nil, guisp = nil }
-	hi.CmpItemAbbrDeprecated = { guifg = colors.hex40, guibg = nil, gui = "strikethrough", guisp = nil }
-	hi.CmpItemAbbrMatch = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.CmpItemAbbrMatchFuzzy = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.CmpItemKind = { guifg = colors.hex90, guibg = nil, gui = nil, guisp = nil }
-	hi.CmpItemMenu = { guifg = colors.hex20, guibg = nil, gui = nil, guisp = nil }
-	hi.CmpGhostText = "Comment"
+	hi("@lsp.type.class", { link = "Function" })
+	hi("@lsp.typemod.keyword", { link = "Statement" })
 
-	hi.NeoTreeTitleBar = { guifg = colors.hexA0, guibg = colors.hex40, gui = nil, guisp = nil }
-	hi.NeoTreeGitAdded = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.NeoTreeGitConflict = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.NeoTreeGitDeleted = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.NeoTreeGitIgnored = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.NeoTreeGitModified = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.NeoTreeGitUnstaged = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.NeoTreeGitUntracked = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.NeoTreeGitStaged = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
+	--Plugins
 
-	hi.NeoTreeModified = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
+	--Lazy
 
-	hi.MasonHeader = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.MasonHeaderSecondary = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.MasonMuted = { guifg = colors.hex40, guibg = nil, gui = nil, guisp = nil }
-	hi.MasonMutedBlock = { guifg = colors.hex90, guibg = colors.hex20, gui = nil, guisp = nil }
-	hi.MasonMutedBlockBold = { guifg = colors.hex90, guibg = colors.hex20, gui = nil, guisp = nil }
-	hi.MasonHighlight = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.MasonHighlightBlock = { guifg = colors.hex00, guibg = colors.hexA0, gui = nil, guisp = nil }
-	hi.MasonHighlightBlockBold = { guifg = colors.hex00, guibg = colors.hexA0, gui = nil, guisp = nil }
-	hi.MasonHighlightSecondary = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.MasonHighlightBlockSecondary = { guifg = colors.hex00, guibg = colors.hexA0, gui = nil, guisp = nil }
-	hi.MasonHighlightBlockBoldSecondary = { guifg = colors.hex00, guibg = colors.hexA0, gui = nil, guisp = nil }
-	hi.MasonError = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.MasonWarning = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.MasonHeading = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
+	if toggle.plugins.lazy then
+		hi("LazyButton", { link = "Button" })
+		hi("LazyButtonActive", { link = "ButtonActive" })
+		hi("LazyH1", { link = "ButtonActive" })
+		hi("LazyProp", { link = "Special" })
+		hi("LazyDimmed", { link = "Comment" })
+	end
 
-	hi.TelescopeBorder = "FloatBorder"
-	hi.TelescopePromptBorder = "FloatBorder"
-	hi.TelescopePreviewTitle = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.TelescopePromptTitle = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.TelescopeResultsTitle = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.TelescopeSelection = { guifg = nil, guibg = colors.hex10, gui = nil, guisp = nil }
+	--Mason
 
-	hi.NotifyERRORBorder = "FloatBorder"
-	hi.NotifyWARNBorder = "FloatBorder"
-	hi.NotifyINFOBorder = "FloatBorder"
-	hi.NotifyDEBUGBorder = "FloatBorder"
-	hi.NotifyTRACEBorder = "FloatBorder"
-	hi.NotifyERRORIcon = { guifg = colors.hexA0, guibg = nil, gui = "none", guisp = nil }
-	hi.NotifyWARNIcon = { guifg = colors.hexA0, guibg = nil, gui = "none", guisp = nil }
-	hi.NotifyINFOIcon = { guifg = colors.hexA0, guibg = nil, gui = "none", guisp = nil }
-	hi.NotifyDEBUGIcon = { guifg = colors.hexA0, guibg = nil, gui = "none", guisp = nil }
-	hi.NotifyTRACEIcon = { guifg = colors.hexA0, guibg = nil, gui = "none", guisp = nil }
-	hi.NotifyERRORTitle = { guifg = colors.hexA0, guibg = nil, gui = "none", guisp = nil }
-	hi.NotifyWARNTitle = { guifg = colors.hexA0, guibg = nil, gui = "none", guisp = nil }
-	hi.NotifyINFOTitle = { guifg = colors.hexA0, guibg = nil, gui = "none", guisp = nil }
-	hi.NotifyDEBUGTitle = { guifg = colors.hexA0, guibg = nil, gui = "none", guisp = nil }
-	hi.NotifyTRACETitle = { guifg = colors.hexA0, guibg = nil, gui = "none", guisp = nil }
-	hi.NotifyERRORBody = "Normal"
-	hi.NotifyWARNBody = "Normal"
-	hi.NotifyINFOBody = "Normal"
-	hi.NotifyDEBUGBody = "Normal"
-	hi.NotifyTRACEBody = "Normal"
+	if toggle.plugins.mason then
+		hi("MasonHeader", { link = "Title" })
+		hi("MasonHeaderSecondary", { link = "Title" })
+		hi("MasonHeading", { link = "Title" })
 
-	hi.LeapMatch = { guifg = colors.hex00, guibg = colors.hexA0, gui = nil, guisp = nil }
-	hi.LeapLabelPrimary = { guifg = colors.hex00, guibg = colors.hexA0, gui = nil, guisp = nil }
-	hi.LeapLabelSecondary = { guifg = colors.hex00, guibg = colors.hex70, gui = nil, guisp = nil }
-	hi.LeapBackdrop = { guifg = colors.hex40, guibg = nil, gui = nil, guisp = nil }
+		hi("MasonMuted", { link = "Comment" })
+		hi("MasonMutedBlock", { link = "Button" })
+		hi("MasonMutedBlockBold", { link = "Button" })
 
-	hi.NoiceCmdlineIcon = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.NoiceCmdlineIconSearch = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.NoiceCmdlinePopupBorder = "FloatBorder"
-	hi.NoiceCmdlinePopupBorderSearch = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.NoiceCmdlinePopupTitle = { guifg = colors.hexA0, guibg = nil, gui = nil, guisp = nil }
-	hi.NoiceConfirmBorder = "FloataBorder"
-	hi.NoiceFormatLevelError = { guifg = colors.hex40, guibg = nil, gui = nil, guisp = nil }
-	hi.NoiceFormatLevelInfo = { guifg = colors.hex40, guibg = nil, gui = nil, guisp = nil }
-	hi.NoiceFormatLevelWarn = { guifg = colors.hex40, guibg = nil, gui = nil, guisp = nil }
-	hi.NoiceVirtualText = { guifg = colors.hex40, guibg = nil, gui = nil, guisp = nil }
+		hi("MasonHighlight", { link = "Title" })
+		hi("MasonHighlightBlock", { link = "ButtonActive" })
+		hi("MasonHighlightBlockBold", { link = "ButtonActive" })
 
-	hi.IlluminatedWordText = { guifg = nil, guibg = nil, gui = "underline", guisp = colors.hexA0 }
-	hi.IlluminatedWordRead = { guifg = nil, guibg = nil, gui = "underline", guisp = colors.hexA0 }
-	hi.IlluminatedWordWrite = { guifg = nil, guibg = nil, gui = "underline", guisp = colors.hexA0 }
+		hi("MasonHighlightSecondary", { link = "Title" })
+		hi("MasonHighlightBlockSecondary", { link = "ButtonActive" })
+		hi("MasonHighlightBlockBoldSecondary", { link = "ButtonActive" })
+	end
 
-	hi.IndentBlanklineChar = { guifg = colors.hex20, gui = "nocombine" }
-	hi.IndentBlanklineContextChar = { guifg = colors.hex40, gui = "nocombine" }
+	--Null-ls
+
+	if toggle.plugins.null_ls then
+		hi("NullLsInfoBorder", { link = "FloatBorder" })
+	end
+
+	--CMP
+
+	if toggle.plugins.cmp then
+		hi("CmpItemAbbr", { fg = palette.hex10 })
+		hi("CmpItemAbbrDeprecated", { fg = palette.hex04, strikethrough = true })
+		hi("CmpItemAbbrMatch", { fg = palette.hex10 })
+		hi("CmpItemAbbrMatchFuzzy", { fg = palette.hex10 })
+		hi("CmpItemKind", { fg = palette.hex10 })
+		hi("CmpItemMenu", { fg = palette.hex10 })
+	end
+
+	--Telescope
+
+	if toggle.plugins.telescope then
+		hi("TelescopeTile", { link = "Title" })
+		hi("TelescopeBorder", { link = "FloatBorder" })
+		hi("TelescopeSelection", { link = "CursorColumn" })
+		hi("TelescopePromptTitle", { link = "Title" })
+		hi("TelpescopePromptBorder", { link = "FloatBorder" })
+		hi("TelescopePreviewTitle", { link = "Title" })
+		hi("TelescopeResultsTitle", { link = "Title" })
+	end
+
+	--NeoTree
+
+	if toggle.plugins.neo_tree then
+		hi("NeoTreeDimText", { fg = palette.hex05 })
+		hi("NeoTreeDotfile", { fg = palette.hex05 })
+
+		hi("NeoTreeFilterTerm", { fg = palette.hex10 })
+		NeoTreeFloatTitle = "FloatTitle"
+		hi("NeoTreeTitleBar", { fg = palette.hex10, bg = palette.hex04 })
+
+		hi("NeoTreeGitAdded", { link = "Icon" })
+		hi("NeoTreeGitConflict", { link = "Icon" })
+		hi("NeoTreeGitDeleted", { link = "Icon" })
+		hi("NeoTreeGitIgnored", { link = "Icon" })
+		hi("NeoTreeGitModified", { link = "Icon" })
+		hi("NeoTreeGitUnstaged", { link = "Icon" })
+		hi("NeoTreeGitUntracked", { link = "Icon" })
+		hi("NeoTreeGitStaged", { link = "Icon" })
+
+		hi("NeoTreeModified", { link = "Icon" })
+	end
+
+	--Noice
+
+	if toggle.plugins.noice then
+		hi("NoiceCmdlineIcon", { link = "Comment" })
+		hi("NoiceCmdlineIconSearch", { link = "Icon" })
+		hi("NoiceCmdlinePopupBorder", { link = "FloatBorder" })
+		hi("NoiceCmdlinePopupBorderSearch", { fg = palette.hex10 })
+		hi("NoiceCmdlinePopupTitle", { link = "Title" })
+
+		hi("NoiceCompletionItemKindDefault", { link = "Icon" })
+		hi("NoicePopupmenuMatch", { fg = palette.hex10 })
+		hi("NoiceCompletionItemWord", { fg = palette.hex10 })
+
+		hi("NoiceVirtualText", { link = "Comment" })
+
+		hi("NoiceConfirmBorder", { link = "FloatBorder" })
+		hi("NoiceFormatConfirm", { link = "Button" })
+		hi("NoiceFormatConfirmDefault", { link = "ButtonActive" })
+
+		hi("NoiceLspProgressClient", { link = "Title" })
+		hi("NoiceLspProgressSpinner", { link = "Title" })
+		hi("NoiceLspProgressTitle", { link = "Title" })
+
+		hi("NoiceFormatProgressTodo", { bg = palette.hex02 })
+		hi("NoiceFormatProgressDone", { bg = palette.hex06 })
+	end
+
+	--Notify
+
+	if toggle.plugins.notify then
+		hi("NotifyERRORBorder", { link = "FloatBorder" })
+		hi("NotifyWARNBorder", { link = "FloatBorder" })
+		hi("NotifyINFOBorder", { link = "FloatBorder" })
+		hi("NotifyDEBUGBorder", { link = "FloatBorder" })
+		hi("NotifyTRACEBorder", { link = "FloatBorder" })
+
+		hi("NotifyERRORIcon", { link = "Icon" })
+		hi("NotifyWARNIcon", { link = "Icon" })
+		hi("NotifyINFOIcon", { link = "Icon" })
+		hi("NotifyDEBUGIcon", { link = "Icon" })
+		hi("NotifyTRACEIcon", { link = "Icon" })
+
+		hi("NotifyERRORTitle", { link = "Title" })
+		hi("NotifyWARNTitle", { link = "Title" })
+		hi("NotifyINFOTitle", { link = "Title" })
+		hi("NotifyDEBUGTitle", { link = "Title" })
+		hi("NotifyTRACETitle", { link = "Title" })
+
+		hi("NotifyERRORBody", { link = "NormalFloat" })
+		hi("NotifyWARNBody", { link = "NormalFloat" })
+		hi("NotifyINFOBody", { link = "NormalFloat" })
+		hi("NotifyDEBUGBody", { link = "NormalFloat" })
+		hi("NotifyTRACEBody", { link = "NormalFloat" })
+	end
+
+	--DevIcons
+
+	if toggle.plugins.devicons then
+		local ok, devicons = pcall(require, "nvim-web-devicons")
+
+		if ok then
+			local icons = devicons.get_icons()
+
+			for _, icon in pairs(icons) do
+				icon.color = palette.hex10
+			end
+		end
+	end
+
+	--Leap
+
+	if toggle.plugins.leap then
+		hi("LeapMatch", { fg = palette.hex00, bg = palette.hex10 })
+		hi("LeapLabelPrimary", { fg = palette.hex00, bg = palette.hex10 })
+		hi("LeapLabelSecondary", { fg = palette.hex00, bg = palette.hex07 })
+		hi("LeapBackdrop", { link = "Comment" })
+	end
+
+	--Illuminate
+
+	if toggle.plugins.illuminate then
+		hi("IlluminatedWordText", { fg = palette.hex10, bg = palette.hex02 })
+		hi("IlluminatedWordRead", { fg = palette.hex10, bg = palette.hex02 })
+		hi("IlluminatedWordWrite", { fg = palette.hex10, bg = palette.hex02 })
+	end
+
+	--IndentBlankline
+
+	if toggle.plugins.indent_blankline then
+		hi("IndentBlanklineChar", { fg = palette.hex03 })
+		hi("IndentBlanklineContextChar", { fg = palette.hex06 })
+	end
+
+	--MiniIndentscope
+
+	if toggle.plugins.mini_indentscope then
+		hi("MiniIndentscopeSymbol", { fg = palette.hex06 })
+	end
+
+	--Extend/overwrite Highlights
+
+	if not vim.tbl_isempty(extend.highlights) then
+		for k, v in pairs(extend.highlights) do
+			v = vim.tbl_extend("force", vim.api.nvim_get_hl(0, { name = k }), v)
+			hi(k, v)
+		end
+	end
 end
+
+--BufferLine
+
+M.bufferline = {
+	fill = { link = "TabLineFill" },
+	background = { link = "TabLine" },
+
+	tab = { link = "TabLine" },
+	tab_selected = { link = "TabLineSel" },
+	tab_separator = { link = "Border" },
+	tab_separator_selected = { link = "Border" },
+	tab_close = { link = "TabLine" },
+
+	close_button = { link = "TabLine" },
+	close_button_visible = { link = "TabLine" },
+	close_button_selected = { link = "TabLineSel" },
+
+	buffer_visible = { link = "TabLine" },
+	buffer_selected = { link = "TabLineSel" },
+
+	numbers = { link = "TabLine" },
+	numbers_visible = { link = "TabLine" },
+	numbers_selected = { link = "TabLineSel" },
+
+	diagnostic = { link = "TabLine" },
+	diagnostic_visible = { link = "TabLine" },
+	-- diagnostic_selected = { link = "TabLineSel" },
+
+	hint = { link = "TabLine" },
+	hint_visible = { link = "TabLine" },
+	-- hint_selected = { link = "TabLineSel" },
+	hint_diagnostic = { link = "TabLine" },
+	hint_diagnostic_visible = { link = "TabLine" },
+	-- hint_diagnostic_selected = { link = "TabLineSel" },
+
+	info = { link = "TabLine" },
+	info_visible = { link = "TabLine" },
+	-- info_selected = { link = "TabLineSel" },
+	info_diagnostic = { link = "TabLine" },
+	info_diagnostic_visible = { link = "TabLine" },
+	-- info_diagnostic_selected = { link = "TabLineSel" },
+
+	warning = { link = "TabLine" },
+	warning_visible = { link = "TabLine" },
+	-- warning_selected = { link = "TabLineSel" },
+	warning_diagnostic = { link = "TabLine" },
+	warning_diagnostic_visible = { link = "TabLine" },
+	-- warning_diagnostic_selected = { link = "TabLineSel" },
+
+	error = { link = "TabLine" },
+	error_visible = { link = "TabLine" },
+	-- error_selected = { link = "TabLineSel" },
+	error_diagnostic = { link = "TabLine" },
+	error_diagnostic_visible = { link = "TabLine" },
+	-- error_diagnostic_selected = { link = "TabLineSel" },
+
+	modified = { link = "TabLine" },
+	modified_visible = { link = "TabLine" },
+	modified_selected = { link = "TabLineSel" },
+
+	duplicate = { link = "TabLine" },
+	duplicate_visible = { link = "TabLine" },
+	duplicate_selected = { link = "TabLineSel" },
+
+	separator = { link = "Border" },
+	separator_visible = { link = "Border" },
+	separator_selected = { link = "Border" },
+	offset_separator = { link = "Border" },
+
+	indicator_visible = { link = "TabLine" },
+	indicator_selected = { link = "TabLineSel" },
+
+	pick = { link = "TabLine" },
+	pick_visible = { link = "TabLine" },
+	pick_selected = { link = "TabLineSel" },
+
+	trunc_marker = { link = "TabLine" },
+}
 
 return M

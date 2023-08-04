@@ -1,34 +1,34 @@
-local colors = require("eyes.colors")
+local palette = require("eyes.palettes").setup()
 
 return {
 	normal = {
-		a = { bg = colors.hex00, fg = colors.hexA0, gui = "bold" },
-		b = { bg = colors.hex00, fg = colors.hexA0 },
-		c = { bg = colors.hex00, fg = colors.hexA0 },
+		a = { bg = palette.hex00, fg = palette.hex10, gui = "bold" },
+		b = { bg = palette.hex00, fg = palette.hex10 },
+		c = { bg = palette.hex00, fg = palette.hex10 },
 	},
 	insert = {
-		a = { bg = colors.hex00, fg = colors.hexA0, gui = "bold" },
-		b = { bg = colors.hex00, fg = colors.hexA0 },
-		c = { bg = colors.hex00, fg = colors.hexA0 },
+		a = { bg = palette.hex00, fg = palette.hex10, gui = "bold" },
+		b = { bg = palette.hex00, fg = palette.hex10 },
+		c = { bg = palette.hex00, fg = palette.hex10 },
 	},
 	visual = {
-		a = { bg = colors.hex00, fg = colors.hexA0, gui = "bold" },
-		b = { bg = colors.hex00, fg = colors.hexA0 },
-		c = { bg = colors.hex00, fg = colors.hexA0 },
+		a = { bg = palette.hex00, fg = palette.hex10, gui = "bold" },
+		b = { bg = palette.hex00, fg = palette.hex10 },
+		c = { bg = palette.hex00, fg = palette.hex10 },
 	},
 	replace = {
-		a = { bg = colors.hex00, fg = colors.hexA0, gui = "bold" },
-		b = { bg = colors.hex00, fg = colors.hexA0 },
-		c = { bg = colors.hex00, fg = colors.hexA0 },
+		a = { bg = palette.hex00, fg = palette.hex10, gui = "bold" },
+		b = { bg = palette.hex00, fg = palette.hex10 },
+		c = { bg = palette.hex00, fg = palette.hex10 },
 	},
 	command = {
-		a = { bg = colors.hex00, fg = colors.hexA0, gui = "bold" },
-		b = { bg = colors.hex00, fg = colors.hexA0 },
-		c = { bg = colors.hex00, fg = colors.hexA0 },
+		a = { bg = palette.hex00, fg = palette.hex10, gui = "bold" },
+		b = { bg = palette.hex00, fg = palette.hex10 },
+		c = { bg = palette.hex00, fg = palette.hex10 },
 	},
 	inactive = {
-		a = { bg = colors.hex00, fg = colors.hexA0, gui = "bold" },
-		b = { bg = colors.hex00, fg = colors.hexA0 },
-		c = { bg = colors.hex00, fg = colors.hexA0 },
+		a = { bg = palette.hex00, fg = palette.hex10, gui = "bold" },
+		b = { bg = palette.hex00, fg = palette.hex10 },
+		c = { bg = palette.hex00, fg = palette.hex10 },
 	},
 }
