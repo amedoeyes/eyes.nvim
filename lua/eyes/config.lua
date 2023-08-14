@@ -20,6 +20,7 @@ M.options = {
 			lazy = true,
 			mason = true,
 			null_ls = true,
+			dap = true,
 			cmp = true,
 			telescope = true,
 			neo_tree = true,

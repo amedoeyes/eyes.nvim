@@ -230,6 +230,35 @@ M.setup = function()
 		hi("NullLsInfoBorder", { link = "FloatBorder" })
 	end
 
+	--DAP
+
+	if toggle.plugins.dap then
+		hi("DapUIStop", { fg = palette.hex10 })
+		hi("DapUIType", { fg = palette.hex10 })
+		hi("DapUIScope", { fg = palette.hex10 })
+		hi("DapUISource", { fg = palette.hex10 })
+		hi("DapUIRestart", { fg = palette.hex10 })
+		hi("DapUIPlayPause", { fg = palette.hex10 })
+		hi("DapUIThread", { fg = palette.hex10 })
+		hi("DapUIStoppedThread", { fg = palette.hex10 })
+		hi("DapUIStepOut", { fg = palette.hex10 })
+		hi("DapUIStepBack", { fg = palette.hex10 })
+		hi("DapUIStepInto", { fg = palette.hex10 })
+		hi("DapUIStepOver", { fg = palette.hex10 })
+		hi("DapUIWinSelect", { fg = palette.hex10, bold = true })
+		hi("DapUIDecoration", { fg = palette.hex10 })
+		hi("DapUILineNumber", { fg = palette.hex10 })
+		hi("DapUIFloatBorder", { link = "FloatBorder" })
+		hi("DapUIWatchesEmpty", { fg = palette.hex10 })
+		hi("DapUIWatchesError", { fg = palette.hex10 })
+		hi("DapUIWatchesValue", { fg = palette.hex10 })
+		hi("DapUIModifiedValue", { fg = palette.hex10, bold = true })
+		hi("DapUIBreakpointsInfo", { fg = palette.hex10 })
+		hi("DapUIBreakpointsPath", { fg = palette.hex10 })
+		hi("DapUIBreakpointsCurrentLine", { fg = palette.hex10, bold = true })
+		hi("DapUICurrentFrameName", { fg = palette.hex10, bold = true })
+	end
+
 	--CMP
 
 	if toggle.plugins.cmp then
@@ -339,6 +368,9 @@ M.setup = function()
 			local icons = devicons.get_icons()
 
 			for _, icon in pairs(icons) do
+				if icon.name == "default" then
+					vim.print(icon)
+				end
 				icon.color = palette.hex10
 			end
 		end
@@ -373,6 +405,10 @@ M.setup = function()
 	if toggle.plugins.mini_indentscope then
 		hi("MiniIndentscopeSymbol", { fg = palette.hex06 })
 	end
+
+	--Codeium
+
+	hi("CodeiumSuggestion", { link = "Comment" })
 
 	--Extend/overwrite Highlights
 

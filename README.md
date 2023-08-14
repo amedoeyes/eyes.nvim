@@ -76,7 +76,7 @@ require("eyes").setup({
         },
     },
 
-    --extends/overwrites highlights and colors
+    --extends/overwrites highlights and palette
     extend = {
         highlights = {},
         palette = {},
