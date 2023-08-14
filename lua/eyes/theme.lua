@@ -412,6 +412,12 @@ M.setup = function()
 		hi("TelescopeResultsTitle", { link = "Title" })
 	end
 
+	--UndoTree
+
+	if toggle.plugins.undotree then
+		hi("UndotreeNode", { fg = palette.hex10 })
+	end
+
 	--Extend/overwrite Highlights
 
 	if not vim.tbl_isempty(extend.highlights) then
