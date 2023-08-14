@@ -5,32 +5,33 @@ local M = {}
 ---@field toggle Toggle
 ---@field extend Extend
 M.options = {
-	palette = "dark",
 	autoload = true,
+	palette = "dark",
 
 	---@class Toggle
 	---@field plugins TogglePlugins
 	toggle = {
-		terminal = true,
 		diagnostics = true,
 		spell = true,
+		terminal = true,
 
 		---@class TogglePlugins
 		plugins = {
-			lazy = true,
-			mason = true,
-			null_ls = true,
-			dap = true,
+			codeium = true,
 			cmp = true,
-			telescope = true,
+			dap = true,
+			devicons = true,
+			illuminate = true,
+			indent_blankline = true,
+			lazy = true,
+			leap = true,
+			mason = true,
+			mini_indentscope = true,
 			neo_tree = true,
 			noice = true,
 			notify = true,
-			devicons = true,
-			leap = true,
-			illuminate = true,
-			indent_blankline = true,
-			mini_indentscope = true,
+			null_ls = true,
+			telescope = true,
 		},
 	},
 

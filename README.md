@@ -1,13 +1,13 @@
 <h1 align="center">
- <p align="center">eyes.nvim</p>
- <p>&lt;O&gt;</p>
+    <p align="center">eyes.nvim</p>
+    <p>&lt;O&gt;</p>
 </h1>
 
 <p align="center">A monochrome colorscheme for Neovim.</p>
 
 <p align="center">
- <img alt="Preview Dark" src="https://files.catbox.moe/sjf8sf.png" width=1000>
- <img alt="Preview Light" src="https://files.catbox.moe/93mr9d.png" width=1000>
+    <img alt="Preview Dark" src="https://files.catbox.moe/sjf8sf.png" width=1000>
+    <img alt="Preview Light" src="https://files.catbox.moe/93mr9d.png" width=1000>
 </p>
 
 ## Installation
@@ -47,32 +47,34 @@ Defaults
 
 ```lua
 require("eyes").setup({
+    --autoloads the colorscheme
+    autoload = true,
     --changes the palette of the colorscheme
     --"dark" or "light"
     pallete = "dark",
-    --autoloads the colorscheme
-    autoload = true,
 
     --toggles monochrome for these elements
     toggle = {
-        terminal = true,
         diagnostics = true,
         spell = true,
+        terminal = true,
 
         plugins = {
-            lazy = true,
-            mason = true,
-            null_ls = true,
+            codeium = true,
             cmp = true,
-            telescope = true,
+            dap = true,
+            devicons = true,
+            illuminate = true,
+            indent_blankline = true,
+            lazy = true,
+            leap = true,
+            mason = true,
+            mini_indentscope = true,
             neo_tree = true,
             noice = true,
             notify = true,
-            devicons = true,
-            leap = true,
-            illuminate = true,
-            indent_blankline = true,
-            mini_indentscope = true,
+            null_ls = true,
+            telescope = true,
         },
     },
 

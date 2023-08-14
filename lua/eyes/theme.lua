@@ -194,40 +194,21 @@ M.setup = function()
 
 	--Plugins
 
-	--Lazy
+	--Codeium
 
-	if toggle.plugins.lazy then
-		hi("LazyButton", { link = "Button" })
-		hi("LazyButtonActive", { link = "ButtonActive" })
-		hi("LazyH1", { link = "ButtonActive" })
-		hi("LazyProp", { link = "Special" })
-		hi("LazyDimmed", { link = "Comment" })
+	if toggle.plugins.codeium then
+		hi("CodeiumSuggestion", { link = "Comment" })
 	end
 
-	--Mason
+	--CMP
 
-	if toggle.plugins.mason then
-		hi("MasonHeader", { link = "Title" })
-		hi("MasonHeaderSecondary", { link = "Title" })
-		hi("MasonHeading", { link = "Title" })
-
-		hi("MasonMuted", { link = "Comment" })
-		hi("MasonMutedBlock", { link = "Button" })
-		hi("MasonMutedBlockBold", { link = "Button" })
-
-		hi("MasonHighlight", { link = "Title" })
-		hi("MasonHighlightBlock", { link = "ButtonActive" })
-		hi("MasonHighlightBlockBold", { link = "ButtonActive" })
-
-		hi("MasonHighlightSecondary", { link = "Title" })
-		hi("MasonHighlightBlockSecondary", { link = "ButtonActive" })
-		hi("MasonHighlightBlockBoldSecondary", { link = "ButtonActive" })
-	end
-
-	--Null-ls
-
-	if toggle.plugins.null_ls then
-		hi("NullLsInfoBorder", { link = "FloatBorder" })
+	if toggle.plugins.cmp then
+		hi("CmpItemAbbr", { fg = palette.hex10 })
+		hi("CmpItemAbbrDeprecated", { fg = palette.hex04, strikethrough = true })
+		hi("CmpItemAbbrMatch", { fg = palette.hex10 })
+		hi("CmpItemAbbrMatchFuzzy", { fg = palette.hex10 })
+		hi("CmpItemKind", { fg = palette.hex10 })
+		hi("CmpItemMenu", { fg = palette.hex10 })
 	end
 
 	--DAP
@@ -259,27 +240,81 @@ M.setup = function()
 		hi("DapUICurrentFrameName", { fg = palette.hex10, bold = true })
 	end
 
-	--CMP
+	--DevIcons
 
-	if toggle.plugins.cmp then
-		hi("CmpItemAbbr", { fg = palette.hex10 })
-		hi("CmpItemAbbrDeprecated", { fg = palette.hex04, strikethrough = true })
-		hi("CmpItemAbbrMatch", { fg = palette.hex10 })
-		hi("CmpItemAbbrMatchFuzzy", { fg = palette.hex10 })
-		hi("CmpItemKind", { fg = palette.hex10 })
-		hi("CmpItemMenu", { fg = palette.hex10 })
+	if toggle.plugins.devicons then
+		local ok, devicons = pcall(require, "nvim-web-devicons")
+
+		if ok then
+			local icons = devicons.get_icons()
+
+			for _, icon in pairs(icons) do
+				if icon.name == "default" then
+					vim.print(icon)
+				end
+				icon.color = palette.hex10
+			end
+		end
 	end
 
-	--Telescope
+	--Illuminate
 
-	if toggle.plugins.telescope then
-		hi("TelescopeTile", { link = "Title" })
-		hi("TelescopeBorder", { link = "FloatBorder" })
-		hi("TelescopeSelection", { link = "CursorColumn" })
-		hi("TelescopePromptTitle", { link = "Title" })
-		hi("TelpescopePromptBorder", { link = "FloatBorder" })
-		hi("TelescopePreviewTitle", { link = "Title" })
-		hi("TelescopeResultsTitle", { link = "Title" })
+	if toggle.plugins.illuminate then
+		hi("IlluminatedWordText", { fg = palette.hex10, bg = palette.hex02 })
+		hi("IlluminatedWordRead", { fg = palette.hex10, bg = palette.hex02 })
+		hi("IlluminatedWordWrite", { fg = palette.hex10, bg = palette.hex02 })
+	end
+
+	--IndentBlankline
+
+	if toggle.plugins.indent_blankline then
+		hi("IndentBlanklineChar", { fg = palette.hex03 })
+		hi("IndentBlanklineContextChar", { fg = palette.hex06 })
+	end
+
+	--Lazy
+
+	if toggle.plugins.lazy then
+		hi("LazyButton", { link = "Button" })
+		hi("LazyButtonActive", { link = "ButtonActive" })
+		hi("LazyH1", { link = "ButtonActive" })
+		hi("LazyProp", { link = "Special" })
+		hi("LazyDimmed", { link = "Comment" })
+	end
+
+	--Leap
+
+	if toggle.plugins.leap then
+		hi("LeapMatch", { fg = palette.hex00, bg = palette.hex10 })
+		hi("LeapLabelPrimary", { fg = palette.hex00, bg = palette.hex10 })
+		hi("LeapLabelSecondary", { fg = palette.hex00, bg = palette.hex07 })
+		hi("LeapBackdrop", { link = "Comment" })
+	end
+
+	--Mason
+
+	if toggle.plugins.mason then
+		hi("MasonHeader", { link = "Title" })
+		hi("MasonHeaderSecondary", { link = "Title" })
+		hi("MasonHeading", { link = "Title" })
+
+		hi("MasonMuted", { link = "Comment" })
+		hi("MasonMutedBlock", { link = "Button" })
+		hi("MasonMutedBlockBold", { link = "Button" })
+
+		hi("MasonHighlight", { link = "Title" })
+		hi("MasonHighlightBlock", { link = "ButtonActive" })
+		hi("MasonHighlightBlockBold", { link = "ButtonActive" })
+
+		hi("MasonHighlightSecondary", { link = "Title" })
+		hi("MasonHighlightBlockSecondary", { link = "ButtonActive" })
+		hi("MasonHighlightBlockBoldSecondary", { link = "ButtonActive" })
+	end
+
+	--MiniIndentscope
+
+	if toggle.plugins.mini_indentscope then
+		hi("MiniIndentscopeSymbol", { fg = palette.hex06 })
 	end
 
 	--NeoTree
@@ -359,56 +394,23 @@ M.setup = function()
 		hi("NotifyTRACEBody", { link = "NormalFloat" })
 	end
 
-	--DevIcons
+	--Null LS
 
-	if toggle.plugins.devicons then
-		local ok, devicons = pcall(require, "nvim-web-devicons")
-
-		if ok then
-			local icons = devicons.get_icons()
-
-			for _, icon in pairs(icons) do
-				if icon.name == "default" then
-					vim.print(icon)
-				end
-				icon.color = palette.hex10
-			end
-		end
+	if toggle.plugins.null_ls then
+		hi("NullLsInfoBorder", { link = "FloatBorder" })
 	end
 
-	--Leap
+	--Telescope
 
-	if toggle.plugins.leap then
-		hi("LeapMatch", { fg = palette.hex00, bg = palette.hex10 })
-		hi("LeapLabelPrimary", { fg = palette.hex00, bg = palette.hex10 })
-		hi("LeapLabelSecondary", { fg = palette.hex00, bg = palette.hex07 })
-		hi("LeapBackdrop", { link = "Comment" })
+	if toggle.plugins.telescope then
+		hi("TelescopeTile", { link = "Title" })
+		hi("TelescopeBorder", { link = "FloatBorder" })
+		hi("TelescopeSelection", { link = "CursorColumn" })
+		hi("TelescopePromptTitle", { link = "Title" })
+		hi("TelpescopePromptBorder", { link = "FloatBorder" })
+		hi("TelescopePreviewTitle", { link = "Title" })
+		hi("TelescopeResultsTitle", { link = "Title" })
 	end
-
-	--Illuminate
-
-	if toggle.plugins.illuminate then
-		hi("IlluminatedWordText", { fg = palette.hex10, bg = palette.hex02 })
-		hi("IlluminatedWordRead", { fg = palette.hex10, bg = palette.hex02 })
-		hi("IlluminatedWordWrite", { fg = palette.hex10, bg = palette.hex02 })
-	end
-
-	--IndentBlankline
-
-	if toggle.plugins.indent_blankline then
-		hi("IndentBlanklineChar", { fg = palette.hex03 })
-		hi("IndentBlanklineContextChar", { fg = palette.hex06 })
-	end
-
-	--MiniIndentscope
-
-	if toggle.plugins.mini_indentscope then
-		hi("MiniIndentscopeSymbol", { fg = palette.hex06 })
-	end
-
-	--Codeium
-
-	hi("CodeiumSuggestion", { link = "Comment" })
 
 	--Extend/overwrite Highlights
 
