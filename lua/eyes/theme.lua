@@ -268,8 +268,8 @@ M.setup = function()
 	--IndentBlankline
 
 	if toggle.plugins.indent_blankline then
-		hi("IndentBlanklineChar", { fg = palette.hex03 })
-		hi("IndentBlanklineContextChar", { fg = palette.hex06 })
+		hi("iblIndent", { fg = palette.hex03 })
+		hi("iblScope", { fg = palette.hex06 })
 	end
 
 	--Lazy
