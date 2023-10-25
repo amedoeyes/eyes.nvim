@@ -17,8 +17,8 @@ M.options = {
 
 		---@class TogglePlugins
 		plugins = {
-			codeium = true,
 			cmp = true,
+			codeium = true,
 			dap = true,
 			devicons = true,
 			illuminate = true,
