@@ -77,7 +77,7 @@ M.setup = function()
 	hi("StatusLine", { fg = palette.hex10, bg = palette.hex00, bold = true })
 	hi("StatusLineNC", { fg = palette.hex10, bg = palette.hex00 })
 
-	hi("Search", { fg = palette.hex10, bg = palette.hex04 })
+	hi("Search", { fg = palette.hex10, bg = palette.hex03 })
 	hi("IncSearch", { link = "Search" })
 	hi("Substitute", { link = "Search" })
 
@@ -292,9 +292,9 @@ M.setup = function()
 	--Leap
 
 	if toggle.plugins.leap then
-		hi("LeapMatch", { fg = palette.hex00, bg = palette.hex10 })
-		hi("LeapLabelPrimary", { fg = palette.hex00, bg = palette.hex10 })
-		hi("LeapLabelSecondary", { fg = palette.hex00, bg = palette.hex07 })
+		hi("LeapMatch", { link = "Search" })
+		hi("LeapLabelPrimary", { fg = palette.hex13, bg = palette.hex05 })
+		hi("LeapLabelSecondary", { fg = palette.hex12, bg = palette.hex02 })
 		hi("LeapBackdrop", { link = "Comment" })
 	end
 
