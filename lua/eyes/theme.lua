@@ -257,6 +257,13 @@ M.setup = function()
 		end
 	end
 
+	--Flash
+
+	if toggle.plugins.flash then
+		hi("FlashLabel", { fg = palette.hex13, bg = palette.hex05 })
+		hi("FlashCurrent", { fg = palette.hex10, bg = palette.hex04 })
+	end
+
 	--Illuminate
 
 	if toggle.plugins.illuminate then

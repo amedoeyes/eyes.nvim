@@ -21,6 +21,7 @@ M.options = {
 			codeium = true,
 			dap = true,
 			devicons = true,
+			flash = true,
 			illuminate = true,
 			indent_blankline = true,
 			lazy = true,
