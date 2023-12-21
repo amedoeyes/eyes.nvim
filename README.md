@@ -83,6 +83,7 @@ require("eyes").setup({
             notify = true,
             null_ls = true,
             telescope = true,
+            treesitter = true,
             undotree = true,
         },
     },

@@ -34,67 +34,58 @@ M.setup = function()
 	local extend = options.extend
 	local palette = require("eyes.palettes").setup()
 
-	--Linking
+	--Linking--
 
 	hi("Icon", { fg = palette.hex10 })
 	hi("Border", { fg = palette.hex04 })
 	hi("Button", { fg = palette.hex06, bg = palette.hex01 })
 	hi("ButtonActive", { fg = palette.hex10, bg = palette.hex02 })
 
-	--Editor
+	--Editor--
 
-	hi("Normal", { fg = palette.hex10, bg = palette.hex00 })
-	hi("VertSplit", { link = "Border" })
-	hi("Title", { fg = palette.hex10 })
-
-	hi("NormalFloat", { link = "Normal" })
-	hi("FloatBorder", { link = "Border" })
-	hi("FloatTitle", { link = "Title" })
-
+	hi("CurSearch", { link = "Search" })
 	hi("Cursor", { fg = palette.hex00, bg = palette.hex10 })
 	hi("lCursor", { link = "Cursor" })
-	hi("TermCursor", { link = "Cursor" })
-	hi("CursorLine", { bg = palette.hex01 })
 	hi("CursorColumn", { link = "CursorLine" })
-	hi("QuickFixLine", { link = "CursorLine" })
-
-	hi("Visual", { bg = palette.hex02 })
-	hi("MatchParen", { fg = palette.hex10, bg = palette.hex02 })
-
-	hi("LineNr", { fg = palette.hex04 })
-	hi("CursorLineNr", { fg = palette.hex10 })
-	hi("SignColumn", { link = "Icon" })
-
-	hi("PMenu", { link = "Normal" })
-	hi("PMenuSel", { link = "CursorLine" })
-	hi("PmenuSbar", { bg = palette.hex01 })
-	hi("PmenuThumb", { bg = palette.hex08 })
-
-	hi("TabLine", { fg = palette.hex06, bg = palette.hex00 })
-	hi("TabLineFill", { fg = palette.hex10, bg = palette.hex00 })
-	hi("TabLineSel", { fg = palette.hex10, bg = palette.hex00, bold = true, italic = true })
-
-	hi("StatusLine", { fg = palette.hex10, bg = palette.hex00, bold = true })
-	hi("StatusLineNC", { fg = palette.hex10, bg = palette.hex00 })
-
-	hi("Search", { fg = palette.hex10, bg = palette.hex03 })
-	hi("IncSearch", { link = "Search" })
-	hi("Substitute", { link = "Search" })
-
+	hi("CursorLine", { bg = palette.hex01 })
 	hi("Directory", { fg = palette.hex10 })
-
-	hi("Folded", { fg = palette.hex10 })
-	hi("FoldColumn", { fg = palette.hex10 })
-
-	hi("ModeMsg", { fg = palette.hex10 })
-	hi("MoreMsg", { fg = palette.hex10 })
-
 	hi("DiffAdd", { fg = palette.hex07 })
 	hi("DiffChange", { fg = palette.hex03 })
 	hi("DiffDelete", { fg = palette.hex07 })
 	hi("DiffText", { fg = palette.hex07 })
+	hi("TermCursor", { link = "Cursor" })
+	hi("WinSeparator", { link = "Border" })
+	hi("Folded", { fg = palette.hex10 })
+	hi("FoldColumn", { fg = palette.hex10 })
+	hi("SignColumn", { link = "Icon" })
+	hi("IncSearch", { link = "Search" })
+	hi("Substitute", { link = "Search" })
+	hi("LineNr", { fg = palette.hex04 })
+	hi("CursorLineNr", { fg = palette.hex10 })
+	hi("MatchParen", { fg = palette.hex10, bg = palette.hex02 })
+	hi("Normal", { fg = palette.hex10, bg = palette.hex00 })
+	hi("NormalFloat", { link = "Normal" })
+	hi("FloatBorder", { link = "Border" })
+	hi("FloatTitle", { link = "Title" })
+	hi("PMenu", { link = "Normal" })
+	hi("PMenuSel", { link = "CursorLine" })
+	hi("PmenuSbar", { bg = palette.hex01 })
+	hi("PmenuThumb", { bg = palette.hex08 })
+	hi("Question", { fg = palette.hex10 })
+	hi("QuickFixLine", { link = "CursorLine" })
+	hi("Search", { fg = palette.hex10, bg = palette.hex03 })
+	hi("StatusLine", { fg = palette.hex10, bg = palette.hex00, bold = true })
+	hi("StatusLineNC", { fg = palette.hex10, bg = palette.hex00 })
+	hi("TabLine", { fg = palette.hex06, bg = palette.hex00 })
+	hi("TabLineFill", { fg = palette.hex10, bg = palette.hex00 })
+	hi("TabLineSel", { fg = palette.hex10, bg = palette.hex00, bold = true, italic = true })
+	hi("Title", { fg = palette.hex10 })
+	hi("Visual", { bg = palette.hex02 })
+	hi("ModeMsg", { fg = palette.hex10 })
+	hi("MoreMsg", { fg = palette.hex10 })
+	hi("MsgSeparator", { link = "Border" })
 
-	hi("LspInfoBorder", { link = "FloatBorder" })
+	--Spell
 
 	if toggle.spell then
 		hi("SpellBad", { sp = palette.hex10, undercurl = true })
@@ -102,6 +93,8 @@ M.setup = function()
 		hi("SpellCap", { sp = palette.hex10, undercurl = true })
 		hi("SpellRare", { sp = palette.hex10, undercurl = true })
 	end
+
+	--Diagnostics
 
 	if toggle.diagnostics then
 		hi("DiagnosticError", { fg = palette.hex15 })
@@ -145,7 +138,7 @@ M.setup = function()
 		vim.g.terminal_color_14 = palette.hex08
 
 		vim.g.terminal_color_7 = palette.hex12
-		vim.g.terminal_color_15 = palette.hex15
+		vim.g.terminal_color_15 = palette.hex12
 	end
 
 	--Syntax
@@ -153,20 +146,22 @@ M.setup = function()
 	hi("SpecialKey", { fg = palette.hex04 })
 	hi("NonText", { fg = palette.hex04 })
 	hi("Comment", { fg = palette.hex04, italic = true })
-	hi("Conceal", { fg = palette.hex13 })
 
 	hi("Constant", { fg = palette.hex08 })
+	hi("String", { link = "Constant" })
 
 	hi("Identifier", { fg = palette.hex10 })
 	hi("Function", { fg = palette.hex09 })
 
 	hi("Statement", { fg = palette.hex07 })
+	hi("Operator", { link = "Statement" })
 
 	hi("PreProc", { fg = palette.hex07 })
 
 	hi("Type", { fg = palette.hex08 })
 
 	hi("Special", { fg = palette.hex06 })
+	hi("Delimiter", { link = "Special" })
 	hi("Tag", { fg = palette.hex08 })
 
 	hi("Underlined", { fg = palette.hex10 })
@@ -174,25 +169,7 @@ M.setup = function()
 	hi("Error", { fg = palette.hex15 })
 	hi("Todo", { fg = palette.hex07 })
 
-	hi("@constant.builtin", { link = "Constant" })
-	hi("@variable.builtin", { fg = palette.hex07, italic = true })
-	hi("@constructor", { link = "Function" })
-
-	hi("@tag.attribute", { link = "@attribute" })
-	hi("@tag.delimiter", { link = "Delimiter" })
-
-	hi("@type.builtin", { fg = palette.hex08, italic = true })
-	hi("@type.qualifier", { link = "@keyword" })
-
-	hi("@text.title", { bold = true })
-	hi("@text.strong", { bold = true })
-	hi("@text.reference", { fg = palette.hex08 })
-	hi("@text.uri", { fg = palette.hex09, underline = true })
-
-	hi("@lsp.type.class", { link = "Function" })
-	hi("@lsp.typemod.keyword", { link = "Statement" })
-
-	--Plugins
+	--Plugins--
 
 	--Codeium
 
@@ -298,6 +275,10 @@ M.setup = function()
 		hi("LeapBackdrop", { link = "Comment" })
 	end
 
+	--LSP Config
+
+	hi("LspInfoBorder", { link = "Border" })
+
 	--Mason
 
 	if toggle.plugins.mason then
@@ -349,9 +330,9 @@ M.setup = function()
 	--Noice
 
 	if toggle.plugins.noice then
-		hi("NoiceCmdlineIcon", { link = "Comment" })
+		hi("NoiceCmdlineIcon", { link = "Icon" })
 		hi("NoiceCmdlineIconSearch", { link = "Icon" })
-		hi("NoiceCmdlinePopupBorder", { link = "FloatBorder" })
+		hi("NoiceCmdlinePopupBorder", { link = "Border" })
 		hi("NoiceCmdlinePopupBorderSearch", { fg = palette.hex10 })
 		hi("NoiceCmdlinePopupTitle", { link = "Title" })
 
@@ -361,7 +342,7 @@ M.setup = function()
 
 		hi("NoiceVirtualText", { link = "Comment" })
 
-		hi("NoiceConfirmBorder", { link = "FloatBorder" })
+		hi("NoiceConfirmBorder", { link = "Border" })
 		hi("NoiceFormatConfirm", { link = "Button" })
 		hi("NoiceFormatConfirmDefault", { link = "ButtonActive" })
 
@@ -376,11 +357,11 @@ M.setup = function()
 	--Notify
 
 	if toggle.plugins.notify then
-		hi("NotifyERRORBorder", { link = "FloatBorder" })
-		hi("NotifyWARNBorder", { link = "FloatBorder" })
-		hi("NotifyINFOBorder", { link = "FloatBorder" })
-		hi("NotifyDEBUGBorder", { link = "FloatBorder" })
-		hi("NotifyTRACEBorder", { link = "FloatBorder" })
+		hi("NotifyERRORBorder", { link = "Border" })
+		hi("NotifyWARNBorder", { link = "Border" })
+		hi("NotifyINFOBorder", { link = "Border" })
+		hi("NotifyDEBUGBorder", { link = "Border" })
+		hi("NotifyTRACEBorder", { link = "Border" })
 
 		hi("NotifyERRORIcon", { link = "Icon" })
 		hi("NotifyWARNIcon", { link = "Icon" })
@@ -404,19 +385,34 @@ M.setup = function()
 	--Null LS
 
 	if toggle.plugins.null_ls then
-		hi("NullLsInfoBorder", { link = "FloatBorder" })
+		hi("NullLsInfoBorder", { link = "Border" })
 	end
 
 	--Telescope
 
 	if toggle.plugins.telescope then
 		hi("TelescopeTile", { link = "Title" })
-		hi("TelescopeBorder", { link = "FloatBorder" })
+		hi("TelescopeBorder", { link = "Border" })
 		hi("TelescopeSelection", { link = "CursorColumn" })
 		hi("TelescopePromptTitle", { link = "Title" })
-		hi("TelpescopePromptBorder", { link = "FloatBorder" })
+		hi("TelpescopePromptBorder", { link = "Border" })
 		hi("TelescopePreviewTitle", { link = "Title" })
 		hi("TelescopeResultsTitle", { link = "Title" })
+	end
+
+	-- Treesitter
+
+	if toggle.plugins.treesitter then
+		hi("@constant.builtin", { link = "Constant" })
+		hi("@constructor", { link = "Function" })
+
+		hi("@tag.attribute", { link = "@attribute" })
+		hi("@tag.delimiter", { link = "Delimiter" })
+
+		hi("@text.title", { bold = true })
+		hi("@text.strong", { bold = true })
+		hi("@text.reference", { fg = palette.hex08 })
+		hi("@text.uri", { fg = palette.hex09, underline = true })
 	end
 
 	--UndoTree
@@ -460,35 +456,26 @@ M.bufferline = {
 
 	diagnostic = { link = "TabLine" },
 	diagnostic_visible = { link = "TabLine" },
-	-- diagnostic_selected = { link = "TabLineSel" },
 
 	hint = { link = "TabLine" },
 	hint_visible = { link = "TabLine" },
-	-- hint_selected = { link = "TabLineSel" },
 	hint_diagnostic = { link = "TabLine" },
 	hint_diagnostic_visible = { link = "TabLine" },
-	-- hint_diagnostic_selected = { link = "TabLineSel" },
 
 	info = { link = "TabLine" },
 	info_visible = { link = "TabLine" },
-	-- info_selected = { link = "TabLineSel" },
 	info_diagnostic = { link = "TabLine" },
 	info_diagnostic_visible = { link = "TabLine" },
-	-- info_diagnostic_selected = { link = "TabLineSel" },
 
 	warning = { link = "TabLine" },
 	warning_visible = { link = "TabLine" },
-	-- warning_selected = { link = "TabLineSel" },
 	warning_diagnostic = { link = "TabLine" },
 	warning_diagnostic_visible = { link = "TabLine" },
-	-- warning_diagnostic_selected = { link = "TabLineSel" },
 
 	error = { link = "TabLine" },
 	error_visible = { link = "TabLine" },
-	-- error_selected = { link = "TabLineSel" },
 	error_diagnostic = { link = "TabLine" },
 	error_diagnostic_visible = { link = "TabLine" },
-	-- error_diagnostic_selected = { link = "TabLineSel" },
 
 	modified = { link = "TabLine" },
 	modified_visible = { link = "TabLine" },
