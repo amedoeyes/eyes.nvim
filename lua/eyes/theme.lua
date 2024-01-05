@@ -404,6 +404,7 @@ M.setup = function()
 
 	if toggle.plugins.treesitter then
 		hi("@constant.builtin", { link = "Constant" })
+		hi("@function.builtin", { link = "Function" })
 		hi("@constructor", { link = "Function" })
 
 		hi("@tag.attribute", { link = "@attribute" })
