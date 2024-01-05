@@ -33,7 +33,7 @@ M.options = {
 			notify = true,
 			null_ls = true,
 			telescope = true,
-			treesitter = false,
+			treesitter = true,
 			undotree = true,
 		},
 	},
