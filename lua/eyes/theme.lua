@@ -156,7 +156,7 @@ M.setup = function()
 	hi("Statement", { fg = palette.hex07 })
 	hi("Operator", { link = "Statement" })
 
-	hi("PreProc", { fg = palette.hex07 })
+	hi("PreProc", { fg = palette.hex08 })
 
 	hi("Type", { fg = palette.hex08 })
 
