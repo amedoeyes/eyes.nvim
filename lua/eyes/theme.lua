@@ -50,8 +50,8 @@ M.setup = function()
 	hi("CursorLine", { bg = palette.hex01 })
 	hi("Directory", { fg = palette.hex10 })
 	hi("DiffAdd", { fg = palette.hex07 })
-	hi("DiffChange", { fg = palette.hex03 })
-	hi("DiffDelete", { fg = palette.hex07 })
+	hi("DiffChange", { fg = palette.hex05 })
+	hi("DiffDelete", { fg = palette.hex03 })
 	hi("DiffText", { fg = palette.hex07 })
 	hi("TermCursor", { link = "Cursor" })
 	hi("WinSeparator", { link = "Border" })
@@ -81,6 +81,8 @@ M.setup = function()
 	hi("TabLineSel", { fg = palette.hex10, bg = palette.hex00, bold = true, italic = true })
 	hi("Title", { fg = palette.hex10 })
 	hi("Visual", { bg = palette.hex02 })
+	hi("WinBar", { fg = palette.hex10, bg = palette.hex00 })
+	hi("WinBarNC", { fg = palette.hex10, bg = palette.hex00 })
 	hi("ModeMsg", { fg = palette.hex10 })
 	hi("MoreMsg", { fg = palette.hex10 })
 	hi("MsgSeparator", { link = "Border" })
@@ -168,6 +170,10 @@ M.setup = function()
 	hi("Ignore", { fg = palette.hex04 })
 	hi("Error", { fg = palette.hex15 })
 	hi("Todo", { fg = palette.hex07 })
+
+	hi("Added", { fg = palette.hex07 })
+	hi("Changed", { fg = palette.hex05 })
+	hi("Removed", { fg = palette.hex03 })
 
 	--Plugins--
 
@@ -414,6 +420,8 @@ M.setup = function()
 		hi("@text.strong", { bold = true })
 		hi("@text.reference", { fg = palette.hex08 })
 		hi("@text.uri", { fg = palette.hex09, underline = true })
+
+		hi("@type.builtin", { link = "Type" })
 	end
 
 	--UndoTree
@@ -462,21 +470,25 @@ M.bufferline = {
 	hint_visible = { link = "TabLine" },
 	hint_diagnostic = { link = "TabLine" },
 	hint_diagnostic_visible = { link = "TabLine" },
+	hint_selected = { link = "TabLineSel" },
 
 	info = { link = "TabLine" },
 	info_visible = { link = "TabLine" },
 	info_diagnostic = { link = "TabLine" },
 	info_diagnostic_visible = { link = "TabLine" },
+	info_selected = { link = "TabLineSel" },
 
 	warning = { link = "TabLine" },
 	warning_visible = { link = "TabLine" },
 	warning_diagnostic = { link = "TabLine" },
 	warning_diagnostic_visible = { link = "TabLine" },
+	warning_selected = { link = "TabLineSel" },
 
 	error = { link = "TabLine" },
 	error_visible = { link = "TabLine" },
 	error_diagnostic = { link = "TabLine" },
 	error_diagnostic_visible = { link = "TabLine" },
+	error_selected = { link = "TabLineSel" },
 
 	modified = { link = "TabLine" },
 	modified_visible = { link = "TabLine" },
