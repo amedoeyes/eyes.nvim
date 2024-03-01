@@ -39,7 +39,7 @@ M.options = {
 	},
 
 	---@class Extend
-	---@field highlights table<string, Highlight>
+	---@field highlights table<string, vim.api.keyset.highlight>
 	---@field palette PaletteDark | PaletteLight
 	extend = {
 		highlights = {},

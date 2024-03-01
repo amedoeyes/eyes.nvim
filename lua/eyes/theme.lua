@@ -1,29 +1,7 @@
 local M = {}
 
----@class Highlight
----@field fg? string
----@field bg? string
----@field sp? string
----@field blend? number
----@field bold? boolean
----@field standout? boolean
----@field underline? boolean
----@field undercurl? boolean
----@field underdouble? boolean
----@field underdotted? boolean
----@field underdashed? boolean
----@field strikethrough? boolean
----@field italic? boolean
----@field reverse? boolean
----@field nocombine? boolean
----@field link? string
----@field default? boolean
----@field ctermfg? number
----@field ctermbg? number
----@field cterm? string
-
 ---@param name string
----@param values Highlight
+---@param values vim.api.keyset.highlight
 local function hi(name, values)
 	vim.api.nvim_set_hl(0, name, values)
 end
