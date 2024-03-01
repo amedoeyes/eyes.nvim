@@ -422,6 +422,9 @@ M.setup = function()
 		hi("@text.uri", { fg = palette.hex09, underline = true })
 
 		hi("@type.builtin", { link = "Type" })
+
+		hi("@variable", { link = "Identifier" })
+		hi("@variable.builtin", { link = "Identifier" })
 	end
 
 	--UndoTree
