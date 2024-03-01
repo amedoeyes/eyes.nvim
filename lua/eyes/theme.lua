@@ -155,12 +155,12 @@ M.setup = function()
 	hi("Identifier", { fg = palette.hex10 })
 	hi("Function", { fg = palette.hex09 })
 
-	hi("Statement", { fg = palette.hex07 })
+	hi("Statement", { fg = palette.hex06 })
 	hi("Operator", { link = "Statement" })
 
 	hi("PreProc", { fg = palette.hex08 })
 
-	hi("Type", { fg = palette.hex08 })
+	hi("Type", { fg = palette.hex07 })
 
 	hi("Special", { fg = palette.hex06 })
 	hi("Delimiter", { link = "Special" })
@@ -170,6 +170,8 @@ M.setup = function()
 	hi("Ignore", { fg = palette.hex04 })
 	hi("Error", { fg = palette.hex15 })
 	hi("Todo", { fg = palette.hex07 })
+
+	hi("Conceal", { fg = palette.hex04 })
 
 	hi("Added", { fg = palette.hex07 })
 	hi("Changed", { fg = palette.hex05 })
