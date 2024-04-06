@@ -405,6 +405,8 @@ M.setup = function()
 
 		hi("@variable", { link = "Identifier" })
 		hi("@variable.builtin", { link = "Identifier" })
+
+		hi("@tag.builtin", { link = "Tag" })
 	end
 
 	--UndoTree
