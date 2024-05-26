@@ -77,17 +77,17 @@ M.setup = function()
 	--Diagnostics
 
 	if toggle.diagnostics then
-		hi("DiagnosticError", { fg = palette.hex15 })
-		hi("DiagnosticWarn", { fg = palette.hex14 })
-		hi("DiagnosticInfo", { fg = palette.hex13 })
-		hi("DiagnosticHint", { fg = palette.hex12 })
-		hi("DiagnosticOk", { fg = palette.hex11 })
+		hi("DiagnosticError", { fg = palette.hex10 })
+		hi("DiagnosticWarn", { fg = palette.hex10 })
+		hi("DiagnosticInfo", { fg = palette.hex10 })
+		hi("DiagnosticHint", { fg = palette.hex10 })
+		hi("DiagnosticOk", { fg = palette.hex10 })
 
-		hi("DiagnosticUnderlineError", { sp = palette.hex15, undercurl = true })
-		hi("DiagnosticUnderlineWarn", { sp = palette.hex14, undercurl = true })
-		hi("DiagnosticUnderlineInfo", { sp = palette.hex13, undercurl = true })
-		hi("DiagnosticUnderlineHint", { sp = palette.hex12, undercurl = true })
-		hi("DiagnosticUnderlineOk", { sp = palette.hex11, undercurl = true })
+		hi("DiagnosticUnderlineError", { sp = palette.hex10, undercurl = true })
+		hi("DiagnosticUnderlineWarn", { sp = palette.hex10, undercurl = true })
+		hi("DiagnosticUnderlineInfo", { sp = palette.hex10, undercurl = true })
+		hi("DiagnosticUnderlineHint", { sp = palette.hex10, undercurl = true })
+		hi("DiagnosticUnderlineOk", { sp = palette.hex10, undercurl = true })
 
 		hi("ErrorMsg", { fg = palette.hex10 })
 		hi("WarningMsg", { fg = palette.hex10 })
@@ -298,7 +298,6 @@ M.setup = function()
 		hi("NeoTreeDotfile", { fg = palette.hex05 })
 
 		hi("NeoTreeFilterTerm", { fg = palette.hex10 })
-		NeoTreeFloatTitle = "FloatTitle"
 		hi("NeoTreeTitleBar", { fg = palette.hex10, bg = palette.hex04 })
 
 		hi("NeoTreeGitAdded", { link = "Icon" })
@@ -450,30 +449,31 @@ M.bufferline = {
 
 	diagnostic = { link = "TabLine" },
 	diagnostic_visible = { link = "TabLine" },
+	diagnostic_selected = { link = "TabLineSel" },
 
 	hint = { link = "TabLine" },
 	hint_visible = { link = "TabLine" },
 	hint_diagnostic = { link = "TabLine" },
 	hint_diagnostic_visible = { link = "TabLine" },
-	hint_selected = { link = "TabLineSel" },
+	hint_diagnostic_selected = { link = "DiagnosticHint" },
 
 	info = { link = "TabLine" },
 	info_visible = { link = "TabLine" },
 	info_diagnostic = { link = "TabLine" },
 	info_diagnostic_visible = { link = "TabLine" },
-	info_selected = { link = "TabLineSel" },
+	info_diagnostic_selected = { link = "DiagnosticInfo" },
 
 	warning = { link = "TabLine" },
 	warning_visible = { link = "TabLine" },
 	warning_diagnostic = { link = "TabLine" },
 	warning_diagnostic_visible = { link = "TabLine" },
-	warning_selected = { link = "TabLineSel" },
+	warning_diagnostic_selected = { link = "DiagnosticWarn" },
 
 	error = { link = "TabLine" },
 	error_visible = { link = "TabLine" },
 	error_diagnostic = { link = "TabLine" },
 	error_diagnostic_visible = { link = "TabLine" },
-	error_selected = { link = "TabLineSel" },
+	error_diagnostic_selected = { link = "DiagnosticError" },
 
 	modified = { link = "TabLine" },
 	modified_visible = { link = "TabLine" },
