@@ -207,14 +207,9 @@ M.setup = function()
 
 	if toggle.plugins.devicons then
 		local ok, devicons = pcall(require, "nvim-web-devicons")
-
 		if ok then
 			local icons = devicons.get_icons()
-
 			for _, icon in pairs(icons) do
-				if icon.name == "default" then
-					vim.print(icon)
-				end
 				icon.color = palette.hex10
 			end
 		end
