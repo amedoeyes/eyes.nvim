@@ -1,7 +1,26 @@
-local config = require("eyes.config")
 local M = {}
 
----@class PaletteDark
+local config = require("eyes.config")
+
+---@class Palette
+---@field hex00 string?
+---@field hex01 string?
+---@field hex02 string?
+---@field hex03 string?
+---@field hex04 string?
+---@field hex05 string?
+---@field hex06 string?
+---@field hex07 string?
+---@field hex08 string?
+---@field hex09 string?
+---@field hex10 string?
+---@field hex11 string?
+---@field hex12 string?
+---@field hex13 string?
+---@field hex14 string?
+---@field hex15 string?
+
+---@type Palette
 M.dark = {
 	hex00 = "#000000",
 	hex01 = "#101010",
@@ -14,16 +33,11 @@ M.dark = {
 	hex08 = "#808080",
 	hex09 = "#909090",
 	hex10 = "#A0A0A0",
-	hex11 = "#B0B0B0",
-	hex12 = "#C0C0C0",
-	hex13 = "#D0D0D0",
-	hex14 = "#E0E0E0",
-	hex15 = "#F0F0F0",
 }
 
----@class PaletteLight
+---@type Palette
 M.light = {
-	hex00 = "#F0F0F0",
+	hex00 = "#FFFFFF",
 	hex01 = "#E0E0E0",
 	hex02 = "#D0D0D0",
 	hex03 = "#C0C0C0",
@@ -34,14 +48,11 @@ M.light = {
 	hex08 = "#707070",
 	hex09 = "#606060",
 	hex10 = "#505050",
-	hex11 = "#404040",
-	hex12 = "#303030",
-	hex13 = "#202020",
-	hex14 = "#101010",
-	hex15 = "#000000",
 }
 
----@return PaletteDark | PaletteLight
+---@type Palette
+M.palette = {}
+
 M.setup = function()
 	local palette = config.options.palette
 	local extend = config.options.extend
@@ -50,7 +61,7 @@ M.setup = function()
 		vim.notify("Unrecognized palette", vim.log.levels.WARN)
 	end
 
-	return vim.tbl_extend("force", palette == "light" and M.light or M.dark, extend.palette)
+	M.palette = vim.tbl_extend("force", palette == "light" and M.light or M.dark, extend.palette)
 end
 
 return M

@@ -2,25 +2,26 @@ local M = {}
 
 ---@class Options
 ---@field palette "dark"|"light
----@field toggle Toggle
+---@field features Features
 ---@field extend Extend
 M.options = {
 	autoload = true,
 	palette = "dark",
 
-	---@class Toggle
-	---@field plugins TogglePlugins
-	toggle = {
-		diagnostics = true,
-		spell = true,
+	---@class Features
+	---@field plugins Plugins
+	features = {
+		editor = true,
 		terminal = true,
+		syntax = true,
+		spell = true,
+		diagnostics = true,
 
-		---@class TogglePlugins
+		---@class Plugins
 		plugins = {
 			cmp = true,
 			codeium = true,
-			dap = true,
-			devicons = true,
+			dap_ui = true,
 			flash = true,
 			illuminate = true,
 			indent_blankline = true,
@@ -31,16 +32,15 @@ M.options = {
 			neo_tree = true,
 			noice = true,
 			notify = true,
-			null_ls = true,
 			telescope = true,
-			treesitter = true,
-			undotree = true,
+			undo_tree = true,
+			web_devicons = true,
 		},
 	},
 
 	---@class Extend
 	---@field highlights table<string, vim.api.keyset.highlight>
-	---@field palette PaletteDark | PaletteLight
+	---@field palette Palette
 	extend = {
 		highlights = {},
 		palette = {},
