@@ -44,7 +44,7 @@ M.setup = function()
 	hl("SpecialComment", { link = "Special" })
 	hl("Debug", { link = "Special" })
 
-	hl("Underlined", { fg = palette.hex10 })
+	hl("Underlined", { fg = palette.hex10, underline = true })
 
 	hl("Ignore", { fg = palette.hex04 })
 
@@ -76,6 +76,8 @@ M.setup = function()
 	hl("@text.strong", { bold = true })
 	hl("@text.reference", { fg = palette.hex08 })
 	hl("@text.uri", { fg = palette.hex09, underline = true })
+
+	hl("@mark.uri", { fg = palette.hex09, underline = true })
 end
 
 return M
