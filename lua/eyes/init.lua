@@ -1,5 +1,7 @@
 local M = {}
 
+local utiltiy = require("eyes.utility")
+
 M.setup = require("eyes.config").setup
 
 M.load = function()
@@ -10,7 +12,7 @@ M.load = function()
 	if not vim.tbl_isempty(extend.highlights) then
 		for k, v in pairs(extend.highlights) do
 			v = vim.tbl_extend("force", vim.api.nvim_get_hl(0, { name = k }), v)
-			M.hl(k, v)
+			utiltiy.hl(k, v)
 		end
 	end
 end
