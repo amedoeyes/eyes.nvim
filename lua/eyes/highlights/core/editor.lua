@@ -4,6 +4,8 @@ local hl = require("eyes.utility").hl
 local palette = require("eyes.palette").palette
 
 M.setup = function()
+	hl("NonText", { fg = palette.hex04 })
+	hl("SpecialKey", { link = "NonText" })
 	hl("ColorColumn", { bg = nil })
 	hl("CurSearch", { link = "Search" })
 	hl("Cursor", { fg = palette.hex00, bg = palette.hex10 })
