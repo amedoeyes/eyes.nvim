@@ -1,18 +1,17 @@
 local M = {}
 
-local utiltiy = require("eyes.utility")
+local config = require("eyes.config")
+local utility = require("eyes.utility")
 
-M.setup = require("eyes.config").setup
+M.setup = config.setup
 
 M.load = function()
 	require("eyes.palette").setup()
 	require("eyes.highlights.core").setup()
 	require("eyes.highlights.plugins").setup()
-	local extend = require("eyes.config").options.extend
-	if not vim.tbl_isempty(extend.highlights) then
-		for k, v in pairs(extend.highlights) do
-			v = vim.tbl_extend("force", vim.api.nvim_get_hl(0, { name = k }), v)
-			utiltiy.hl(k, v)
+	if not vim.tbl_isempty(config.options.extend.highlights) then
+		for name, hl in pairs(config.options.extend.highlights) do
+			utility.hl(name, utility.extend(name, hl))
 		end
 	end
 end
