@@ -10,13 +10,6 @@
   <img alt="Preview Light" src="https://files.catbox.moe/i60s89.png" width=1000>
 </p>
 
-## Features
-
-- Dark and light pallets
-- Configurable
-- Extensible
-- Support for lualine, bufferline, and various plugins
-
 ## Installation
 
 Installing using [lazy](https://github.com/folke/lazy.nvim)
@@ -24,6 +17,7 @@ Installing using [lazy](https://github.com/folke/lazy.nvim)
 ```lua
 {
   "amedoeyes/eyes.nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
   lazy = false,
   priority = 1000,
   opts = {},
@@ -44,7 +38,7 @@ Applying the colorscheme to [bufferline](https://github.com/akinsho/bufferline.n
 
 ```lua
 require("bufferline").setup({
-  highlights = highlights = require("eyes.highlights.plugins.bufferline"),
+  highlights = require("eyes.highlights.plugins.bufferline"),
 })
 ```
 
@@ -54,13 +48,13 @@ Defaults
 
 ```lua
 require("eyes").setup({
-  --autoloads the colorscheme
+  -- autoloads the colorscheme
   autoload = true,
-  --changes the palette of the colorscheme
-  --"dark" or "light"
+  -- changes the palette of the colorscheme
+  -- "dark" or "light"
   pallete = "dark",
 
-  --toggles monochrome for these elements
+  -- enables/disables highlighting for the specified element
   features = {
     editor = true,
     terminal = true,
@@ -88,7 +82,7 @@ require("eyes").setup({
     },
   },
 
-  --extends/overwrites highlights and palette
+  -- extends/overwrites highlights and palette
   extend = {
     highlights = {},
     palette = {},
@@ -102,6 +96,7 @@ Example using [lazy](https://github.com/folke/lazy.nvim)
 {
   "amedoeyes/eyes.nvim",
   lazy = false,
+  dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
   priority = 1000,
   opts = {
     features = {
@@ -126,3 +121,7 @@ Example using [lazy](https://github.com/folke/lazy.nvim)
 }
 
 ```
+
+## Issues and Requests
+
+If you encounter an issue or have a feature request, please feel free to [open an issue](https://github.com/amedoeyes/eyes.nvim/issues).
