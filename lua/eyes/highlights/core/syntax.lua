@@ -13,7 +13,7 @@ M.setup = function()
 	hl("Boolean", { link = "Constant" })
 	hl("Float", { link = "Constant" })
 
-	hl("Identifier", { fg = palette.hex10 })
+	hl("Identifier", { fg = "fg" })
 	hl("Function", { fg = palette.hex09 })
 
 	hl("Statement", { fg = palette.hex06 })
@@ -42,13 +42,13 @@ M.setup = function()
 	hl("SpecialComment", { link = "Special" })
 	hl("Debug", { link = "Special" })
 
-	hl("Underlined", { fg = palette.hex10, underline = true })
+	hl("Underlined", { underline = true })
 
 	hl("Ignore", { fg = palette.hex04 })
 
-	hl("Error", { fg = palette.hex10 })
+	hl("Error", { link = "DiagnosticError" })
 
-	hl("Todo", { fg = palette.hex10 })
+	hl("Todo", { fg = "fg" })
 
 	hl("Added", { link = "DiffAdd" })
 	hl("Changed", { link = "DiffChange" })
@@ -138,13 +138,13 @@ M.setup = function()
 	hl("@markup.strikethrough", { strikethrough = true })
 	hl("@markup.underline", { underline = true })
 
-	hl("@markup.heading", { fg = palette.hex10, bold = true })
-	hl("@markup.heading.1", { fg = palette.hex10, bold = true })
-	hl("@markup.heading.2", { fg = palette.hex10, bold = true })
-	hl("@markup.heading.3", { fg = palette.hex10, bold = true })
-	hl("@markup.heading.4", { fg = palette.hex10, bold = true })
-	hl("@markup.heading.5", { fg = palette.hex10, bold = true })
-	hl("@markup.heading.6", { fg = palette.hex10, bold = true })
+	hl("@markup.heading", { bold = true })
+	hl("@markup.heading.1", { link = "@markup.heading" })
+	hl("@markup.heading.2", { link = "@markup.heading" })
+	hl("@markup.heading.3", { link = "@markup.heading" })
+	hl("@markup.heading.4", { link = "@markup.heading" })
+	hl("@markup.heading.5", { link = "@markup.heading" })
+	hl("@markup.heading.6", { link = "@markup.heading" })
 
 	hl("@markup.quote", { fg = palette.hex08 })
 	hl("@markup.math", { fg = palette.hex08 })
@@ -156,7 +156,7 @@ M.setup = function()
 	hl("@markup.raw", { fg = palette.hex08 })
 	hl("@markup.raw.block", { link = "@markup.raw" })
 
-	hl("@markup.list", { fg = palette.hex08 })
+	hl("@markup.list", { fg = "fg" })
 	hl("@markup.list.checked", { link = "@markup.list" })
 	hl("@markup.list.unchecked", { link = "@markup.list" })
 
