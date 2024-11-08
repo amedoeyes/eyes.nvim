@@ -1,16 +1,22 @@
 local M = {}
 
-local palette = require("eyes.palette").palette
+local utility = require("eyes.utility")
+local hl = utility.hl
 
 M.setup = function()
 	local ok, devicons = pcall(require, "nvim-web-devicons")
 	if ok then
-		local icons = devicons.get_icons()
-		for _, icon in pairs(icons) do
-			icon.color = palette.hex10
-		end
-	else
-		vim.notify("Could not require nvim-web-devicons", vim.log.levels.ERROR)
+		devicons.setup({
+			color_icons = false,
+			default = true,
+			override = {
+				["default_icon"] = {
+					icon = "",
+					name = "Default",
+				},
+			},
+		})
+		hl("DevIconDefault", { link = "Icon" })
 	end
 end
 
