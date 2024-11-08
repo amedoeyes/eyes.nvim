@@ -11,6 +11,10 @@ M.setup = function()
 		require("eyes.highlights.core.editor").setup()
 	end
 
+	if features.diff then
+		require("eyes.highlights.core.diff").setup()
+	end
+
 	if features.terminal then
 		require("eyes.highlights.core.terminal").setup()
 	end

@@ -12,6 +12,7 @@ M.options = {
 	---@field plugins Plugins
 	features = {
 		editor = true,
+		diff = true,
 		terminal = true,
 		syntax = true,
 		spell = true,

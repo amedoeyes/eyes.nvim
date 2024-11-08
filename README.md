@@ -57,6 +57,7 @@ require("eyes").setup({
   -- enables/disables highlighting for the specified element
   features = {
     editor = true,
+    diff = true,
     terminal = true,
     syntax = true,
     spell = true,
