@@ -1,12 +1,12 @@
 local M = {}
 
-local hl = require("eyes.utility").hl
-local palette = require("eyes.palette").palette
+local utility = require("eyes.utility")
+local hl = utility.hl
 
 M.setup = function()
-	hl("IlluminatedWordText", { fg = palette.hex10, bg = palette.hex02 })
-	hl("IlluminatedWordRead", { fg = palette.hex10, bg = palette.hex02 })
-	hl("IlluminatedWordWrite", { fg = palette.hex10, bg = palette.hex02 })
+	hl("IlluminatedWordText", { link = "LspReferenceText" })
+	hl("IlluminatedWordRead", { link = "LspReferenceRead" })
+	hl("IlluminatedWordWrite", { link = "LspReferenceWrite" })
 end
 
 return M
