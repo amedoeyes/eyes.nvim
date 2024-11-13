@@ -72,6 +72,7 @@ require("eyes").setup({
       indent_blankline = true,
       lazy = true,
       leap = true,
+      markview = true,
       mason = true,
       mini_indentscope = true,
       neo_tree = true,
