@@ -33,6 +33,7 @@ M.options = {
 			neo_tree = true,
 			noice = true,
 			notify = true,
+			render_markdown = true,
 			telescope = true,
 			undo_tree = true,
 			web_devicons = true,
