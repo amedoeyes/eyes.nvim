@@ -17,7 +17,8 @@ Installing using [lazy](https://github.com/folke/lazy.nvim)
 ```lua
 {
   "amedoeyes/eyes.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
+  -- only requird if using nvim-web-devicons for icons
+  -- dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
   lazy = false,
   priority = 1000,
   opts = {},
@@ -75,6 +76,7 @@ require("eyes").setup({
       leap = true,
       markview = true,
       mason = true,
+      mini_icons = true,
       mini_indentscope = true,
       neo_tree = true,
       noice = true,

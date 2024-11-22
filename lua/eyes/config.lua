@@ -31,6 +31,7 @@ M.options = {
 			leap = true,
 			markview = true,
 			mason = true,
+			mini_icons = true,
 			mini_indentscope = true,
 			neo_tree = true,
 			noice = true,
