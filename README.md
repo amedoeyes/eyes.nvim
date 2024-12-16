@@ -70,6 +70,7 @@ require("eyes").setup({
       codeium = true,
       dap_ui = true,
       flash = true,
+      fzf = true,
       helpview = true,
       illuminate = true,
       indent_blankline = true,
