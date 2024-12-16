@@ -65,6 +65,7 @@ require("eyes").setup({
     diagnostics = true,
 
     plugins = {
+      blink_cmp = true,
       cmp = true,
       codeium = true,
       dap_ui = true,

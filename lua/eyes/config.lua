@@ -20,6 +20,7 @@ M.options = {
 
 		---@class Plugins
 		plugins = {
+			blink_cmp = true,
 			cmp = true,
 			codeium = true,
 			dap_ui = true,
