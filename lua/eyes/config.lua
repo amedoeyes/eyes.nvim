@@ -39,6 +39,7 @@ M.options = {
 			noice = true,
 			notify = true,
 			render_markdown = true,
+			snacks = true,
 			telescope = true,
 			undo_tree = true,
 			web_devicons = true,
