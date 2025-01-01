@@ -1,13 +1,14 @@
 local M = {}
 
-local hl = require("eyes.utility").hl
+local utility = require("eyes.utility")
+local hl = utility.hl
 
 M.setup = function()
 	hl("MasonHeader", { link = "Title" })
 	hl("MasonHeaderSecondary", { link = "Title" })
 	hl("MasonHeading", { link = "Title" })
 
-	hl("MasonMuted", { link = "Comment" })
+	hl("MasonMuted", { link = "NonText" })
 	hl("MasonMutedBlock", { link = "Button" })
 	hl("MasonMutedBlockBold", { link = "Button" })
 
