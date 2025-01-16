@@ -68,7 +68,7 @@ M.setup = function()
 	hl("PmenuExtraSel", { link = "PmenuSel" })
 	hl("PmenuSbar", { bg = palette.hex01 })
 	hl("PmenuThumb", { bg = palette.hex03 })
-	hl("PmenuMatch", { fg = "fg", bold = true })
+	hl("PmenuMatch", { bold = true })
 	hl("PmenuMatchSel", extend("ColorColumn", { bold = true }))
 	hl("WildMenu", { link = "ColorColumn" })
 
