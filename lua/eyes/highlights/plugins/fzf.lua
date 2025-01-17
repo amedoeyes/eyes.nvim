@@ -39,8 +39,8 @@ M.setup = function()
 	hl("FzfLuaTabTitle", { fg = "fg" })
 	hl("FzfLuaTabMarker", { link = "Special" })
 
-	hl("FzfLuaDirIcon", { fg = "fg" })
-	hl("FzfLuaDirPart", { fg = "fg" })
+	hl("FzfLuaDirIcon", { link = "Icon" })
+	hl("FzfLuaDirPart", { link = "Directory" })
 	hl("FzfLuaFilePart", { fg = "fg" })
 
 	hl("FzfLuaFzfNormal", { link = "FzfLuaNormal" })

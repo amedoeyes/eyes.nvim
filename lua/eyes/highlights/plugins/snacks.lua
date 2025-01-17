@@ -13,7 +13,7 @@ M.dashboard = function()
 	hl("SnacksDashboardIcon", { link = "Icon" })
 	hl("SnacksDashboardDesc", { fg = "fg" })
 	hl("SnacksDashboardKey", { link = "Special" })
-	hl("SnacksDashboardDir", { fg = "fg" })
+	hl("SnacksDashboardDir", { link = "Directory" })
 	hl("SnacksDashboardFile", { fg = "fg" })
 	hl("SnacksDashboardSpecial", { link = "Special" })
 end
@@ -94,7 +94,7 @@ M.picker = function()
 	hl("SnacksPickerItalic", { link = "Italic" })
 	hl("SnacksPickerSpecial", { link = "Special" })
 
-	hl("SnacksPickerDir", { fg = "fg" })
+	hl("SnacksPickerDir", { link = "Directory" })
 	hl("SnacksPickerFile", { fg = "fg" })
 
 	hl("SnacksPickerBufNr", { link = "Special" })
