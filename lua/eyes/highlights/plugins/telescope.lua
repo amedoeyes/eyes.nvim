@@ -18,7 +18,7 @@ M.setup = function()
 	hl("TelescopePromptNormal", { link = "TelescopeNormal" })
 	hl("TelescopePromptTitle", { link = "TelescopeTitle" })
 	hl("TelescopePromptBorder", { link = "TelescopeBorder" })
-	hl("TelescopePromptCounter", { link = "NonText" })
+	hl("TelescopePromptCounter", { link = "Dim" })
 	hl("TelescopePromptPrefix", { fg = "fg" })
 
 	hl("TelescopeResultsNormal", { link = "TelescopeNormal" })

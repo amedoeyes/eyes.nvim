@@ -1,10 +1,12 @@
 local M = {}
 
-local hl = require("eyes.utility").hl
+local utility = require("eyes.utility")
+local hl = utility.hl
+local extend = utility.extend
 local palette = require("eyes.palette").palette
 
 M.setup = function()
-	hl("Comment", { fg = palette.hex04, italic = true })
+	hl("Comment", extend("Dim", { italic = true }))
 
 	hl("Constant", { fg = palette.hex08 })
 	hl("String", { link = "Constant" })
@@ -44,7 +46,7 @@ M.setup = function()
 
 	hl("Underlined", { underline = true })
 
-	hl("Ignore", { fg = palette.hex04 })
+	hl("Ignore", { link = "Dim" })
 
 	hl("Error", { link = "DiagnosticError" })
 

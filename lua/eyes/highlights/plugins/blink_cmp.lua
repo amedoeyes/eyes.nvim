@@ -18,7 +18,7 @@ M.setup = function()
 	hl("BlinkCmpLabelDeprecated", extend("Comment", { strikethrough = true }))
 	hl("BlinkCmpLabelMatch", { link = "PmenuMatch" })
 
-	hl("BlinkCmpGhostText", { link = "NonText" })
+	hl("BlinkCmpGhostText", { link = "Dim" })
 	hl("BlinkCmpKind", { link = "Icon" })
 
 	hl("BlinkCmpDoc", { link = "NormalFloat" })
