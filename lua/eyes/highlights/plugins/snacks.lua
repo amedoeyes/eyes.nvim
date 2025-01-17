@@ -4,6 +4,20 @@ local palette = require("eyes.palette").palette
 local utility = require("eyes.utility")
 local hl = utility.hl
 
+M.dashboard = function()
+	hl("SnacksDashboardNormal", { link = "Normal" })
+	hl("SnacksDashboardHeader", { fg = "fg" })
+	hl("SnacksDashboardFooter", { fg = "fg" })
+	hl("SnacksDashboardTitle", { link = "Title" })
+	hl("SnacksDashboardTerminal", { link = "None" })
+	hl("SnacksDashboardIcon", { link = "Icon" })
+	hl("SnacksDashboardDesc", { fg = "fg" })
+	hl("SnacksDashboardKey", { link = "Special" })
+	hl("SnacksDashboardDir", { fg = "fg" })
+	hl("SnacksDashboardFile", { fg = "fg" })
+	hl("SnacksDashboardSpecial", { link = "Special" })
+end
+
 M.indent = function()
 	hl("SnacksIndent", { fg = palette.hex03 })
 	hl("SnacksIndent1", { fg = palette.hex01 })
@@ -144,6 +158,7 @@ M.picker = function()
 end
 
 M.setup = function()
+	M.dashboard()
 	M.indent()
 	M.input()
 	M.picker()
