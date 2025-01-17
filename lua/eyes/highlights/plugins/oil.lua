@@ -6,7 +6,7 @@ local hl = utility.hl
 M.setup = function()
 	hl("OilDir", { link = "Directory" })
 	hl("OilDirIcon", { link = "Icon" })
-	hl("OilSocket", { link = "Special" })
+	hl("OilSocket", { link = "Mute" })
 
 	hl("OilChange", { fg = "fg" })
 	hl("OilCopy", { fg = "fg" })
@@ -17,9 +17,9 @@ M.setup = function()
 	hl("OilRestore", { fg = "fg" })
 	hl("OilTrash", { fg = "fg" })
 
-	hl("OilLinkTarget", { link = "Special" })
-	hl("OilOrphanLinkTarget", { link = "Special" })
-	hl("OilTrashSourcePath", { link = "Special" })
+	hl("OilLinkTarget", { link = "Mute" })
+	hl("OilOrphanLinkTarget", { link = "Mute" })
+	hl("OilTrashSourcePath", { link = "Mute" })
 
 	hl("OilHidden", { link = "Dim" })
 	hl("OilDirHidden", { link = "OilHidden" })
