@@ -9,10 +9,11 @@ M.setup = function()
 	hl("MasonHeading", { link = "Title" })
 
 	hl("MasonMuted", { link = "Mute" })
+	hl("MasonHighlight", { fg = "fg" })
+
 	hl("MasonMutedBlock", { link = "Button" })
 	hl("MasonMutedBlockBold", { link = "Button" })
 
-	hl("MasonHighlight", { link = "Title" })
 	hl("MasonHighlightBlock", { link = "ButtonActive" })
 	hl("MasonHighlightBlockBold", { link = "ButtonActive" })
 
