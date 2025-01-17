@@ -83,6 +83,7 @@ require("eyes").setup({
       neo_tree = true,
       noice = true,
       notify = true,
+      oil = true,
       render_markdown = true,
       snacks = true,
       telescope = true,
