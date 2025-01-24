@@ -1,17 +1,17 @@
 local M = {}
 
----@class Options
+---@class eyes.Options
 ---@field palette "dark"|"light
----@field features Features
+---@field features eyes.Options.Features
 ---@field transparent boolean
----@field extend Extend
+---@field extend eyes.Options.Extend
 M.options = {
 	autoload = true,
 	palette = "dark",
 	transparent = false,
 
-	---@class Features
-	---@field plugins Plugins
+	---@class eyes.Options.Features
+	---@field plugins eyes.Options.Features.Plugins
 	features = {
 		editor = true,
 		diff = true,
@@ -20,7 +20,7 @@ M.options = {
 		spell = true,
 		diagnostics = true,
 
-		---@class Plugins
+		---@class eyes.Options.Features.Plugins
 		plugins = {
 			blink_cmp = true,
 			cmp = true,
@@ -49,16 +49,16 @@ M.options = {
 		},
 	},
 
-	---@class Extend
+	---@class eyes.Options.Extend
 	---@field highlights table<string, vim.api.keyset.highlight>
-	---@field palette Palette
+	---@field palette eyes.Palette
 	extend = {
 		highlights = {},
 		palette = {},
 	},
 }
 
----@param options? Options
+---@param options? eyes.Options
 M.setup = function(options)
 	M.options = vim.tbl_deep_extend("force", M.options, options or {})
 

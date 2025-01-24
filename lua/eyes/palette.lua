@@ -2,7 +2,7 @@ local M = {}
 
 local config = require("eyes.config")
 
----@class Palette
+---@class eyes.Palette
 ---@field hex00 string?
 ---@field hex01 string?
 ---@field hex02 string?
@@ -20,7 +20,7 @@ local config = require("eyes.config")
 ---@field hex14 string?
 ---@field hex15 string?
 
----@type Palette
+---@type eyes.Palette
 M.dark = {
 	hex00 = "#000000",
 	hex01 = "#101010",
@@ -35,7 +35,7 @@ M.dark = {
 	hex10 = "#A0A0A0",
 }
 
----@type Palette
+---@type eyes.Palette
 M.light = {
 	hex00 = "#FFFFFF",
 	hex01 = "#E0E0E0",
@@ -50,7 +50,7 @@ M.light = {
 	hex10 = "#505050",
 }
 
----@type Palette
+---@type eyes.Palette
 M.palette = {}
 
 M.setup = function()
