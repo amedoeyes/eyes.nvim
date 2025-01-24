@@ -6,11 +6,15 @@ local utility = require("eyes.utility")
 M.setup = config.setup
 
 M.load = function()
+	local opts = config.options
 	require("eyes.palette").setup()
 	require("eyes.highlights.core").setup()
 	require("eyes.highlights.plugins").setup()
-	if not vim.tbl_isempty(config.options.extend.highlights) then
-		for name, hl in pairs(config.options.extend.highlights) do
+	if opts.transparent then
+		utility.hl("Normal", utility.extend("Normal", { bg = "none" }))
+	end
+	if not vim.tbl_isempty(opts.extend.highlights) then
+		for name, hl in pairs(opts.extend.highlights) do
 			utility.hl(name, utility.extend(name, hl))
 		end
 	end

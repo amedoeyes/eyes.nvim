@@ -3,10 +3,12 @@ local M = {}
 ---@class Options
 ---@field palette "dark"|"light
 ---@field features Features
+---@field transparent boolean
 ---@field extend Extend
 M.options = {
 	autoload = true,
 	palette = "dark",
+	transparent = false,
 
 	---@class Features
 	---@field plugins Plugins

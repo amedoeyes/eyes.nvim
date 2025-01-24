@@ -54,6 +54,7 @@ require("eyes").setup({
   -- changes the palette of the colorscheme
   -- "dark" or "light"
   pallete = "dark",
+  transparent = false,
 
   -- enables/disables highlighting for the specified element
   features = {
