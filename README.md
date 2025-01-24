@@ -1,14 +1,12 @@
 <h1 align="center">
-  <p align="center">eyes.nvim</p>
   <p>&lt;O&gt;</p>
 </h1>
 
-<p align="center">Monochrome colorscheme for Neovim.</p>
+<p align="center">Monochrome colorscheme for Neovim</p>
 
-<p align="center">
-  <img alt="Preview Dark" src="https://files.catbox.moe/jwm9kk.png" width=1000>
-  <img alt="Preview Light" src="https://files.catbox.moe/i60s89.png" width=1000>
-</p>
+| Dark                                         | Light                                         |
+| -------------------------------------------- | --------------------------------------------- |
+| ![dark](https://files.catbox.moe/jwm9kk.png) | ![light](https://files.catbox.moe/i60s89.png) |
 
 ## Installation
 
@@ -45,92 +43,49 @@ require("bufferline").setup({
 
 ## Configurations
 
-Defaults
+Defaults:
 
 ```lua
-require("eyes").setup({
-  -- autoloads the colorscheme
+{
   autoload = true,
-  -- changes the palette of the colorscheme
-  -- "dark" or "light"
-  pallete = "dark",
+  palette = "dark" -- "dark" or "light",
   transparent = false,
-
-  -- enables/disables highlighting for the specified element
-  features = {
-    editor = true,
-    diff = true,
-    terminal = true,
-    syntax = true,
-    spell = true,
-    diagnostics = true,
-
-    plugins = {
-      blink_cmp = true,
-      cmp = true,
-      codeium = true,
-      dap_ui = true,
-      flash = true,
-      fzf = true,
-      helpview = true,
-      illuminate = true,
-      indent_blankline = true,
-      lazy = true,
-      leap = true,
-      markview = true,
-      mason = true,
-      mini_icons = true,
-      mini_indentscope = true,
-      neo_tree = true,
-      noice = true,
-      notify = true,
-      oil = true,
-      render_markdown = true,
-      snacks = true,
-      telescope = true,
-      undo_tree = true,
-      web_devicons = true,
-    },
+  highlights = {
+    -- table of modules to load or "all" to load them all
+    -- modules: { "diagnostics", "diff", "editor", "spell", "syntax", "terminal" }
+    core = "all",
+    -- table of plugins to load, "auto" to only load plugins installed with lazy or "all" to load them all
+    -- list of plugins can be found in lua/eyes/highlights/plugins
+    plugins = package.loaded.lazy and "auto" or "all",
   },
-
-  -- extends/overwrites highlights and palette
+  -- extends/overwrites highlights and current palette
   extend = {
     highlights = {},
     palette = {},
   },
-})
+}
 ```
 
-Example using [lazy](https://github.com/folke/lazy.nvim)
+Example:
 
 ```lua
 {
-  "amedoeyes/eyes.nvim",
-  lazy = false,
-  dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
-  priority = 1000,
-  opts = {
-    features = {
-      diagnostics = false,
-
-      plugins = {
-        neo_tree = false,
-        illuminate = false,
-      }
+  transparent = true,
+  highlights = {
+    core = { "editor", "syntax" },
+    plugins = { "blink_cmp", "render_markdown", "oil" }
+  },
+  extend = {
+    highlights = {
+      Normal = { bg = "#101010", fg = "#808080" },
+      CursorLine = { bg = "#202020" },
+      Type = { italic = true },
     },
-    extend = {
-        highlights = {
-          Normal = { bg = "#101010", fg = "#808080" },
-          CursorLine = { bg = "#202020" },
-          Type = { italic = true },
-        },
-        palette = {
-          hex00 = "#101010",
-        },
+    palette = {
+      hex00 = "#101010",
     },
   },
 }
-
 ```
 
 ## Issues and Requests
