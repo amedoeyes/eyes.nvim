@@ -90,6 +90,9 @@ M.setup = function()
 	hl("EndOfBuffer", { link = "NonText" })
 	hl("SpecialKey", { link = "NonText" })
 	hl("Whitespace", { link = "NonText" })
+
+	hl("debugPC", { link = "ColorColumn" })
+	hl("debugBreakpoint", { link = "Icon" })
 end
 
 return M
