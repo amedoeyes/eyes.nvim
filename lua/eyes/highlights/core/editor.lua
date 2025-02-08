@@ -71,6 +71,7 @@ M.setup = function()
 	hl("PmenuMatch", { bold = true })
 	hl("PmenuMatchSel", extend("ColorColumn", { bold = true }))
 	hl("WildMenu", { link = "ColorColumn" })
+	hl("ComplMatchIns", { link = "Dim" })
 
 	hl("Visual", { bg = palette.hex02 })
 	hl("VisualNOS", { link = "Visual" })
