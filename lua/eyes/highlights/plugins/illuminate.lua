@@ -4,9 +4,9 @@ local utility = require("eyes.utility")
 local hl = utility.hl
 
 M.setup = function()
-	hl("IlluminatedWordText", { link = "LspReferenceText" })
-	hl("IlluminatedWordRead", { link = "LspReferenceRead" })
-	hl("IlluminatedWordWrite", { link = "LspReferenceWrite" })
+	hl("IlluminatedWordText", "LspReferenceText")
+	hl("IlluminatedWordRead", "LspReferenceRead")
+	hl("IlluminatedWordWrite", "LspReferenceWrite")
 end
 
 return M

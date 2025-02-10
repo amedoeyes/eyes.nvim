@@ -16,7 +16,7 @@ M.setup = function()
 				},
 			},
 		})
-		hl("DevIconDefault", { link = "Icon" })
+		hl("DevIconDefault", "Icon")
 	end
 end
 

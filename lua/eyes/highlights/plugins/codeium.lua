@@ -3,7 +3,7 @@ local M = {}
 local hl = require("eyes.utility").hl
 
 M.setup = function()
-	hl("CodeiumSuggestion", { link = "Comment" })
+	hl("CodeiumSuggestion", "Comment")
 end
 
 return M

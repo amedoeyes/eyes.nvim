@@ -5,29 +5,29 @@ local hl = utility.hl
 local extend = utility.extend
 
 M.setup = function()
-	hl("BlinkCmpMenu", { link = "Pmenu" })
-	hl("BlinkCmpMenuBorder", { link = "FloatBorder" })
-	hl("BlinkCmpMenuSelection", { link = "PmenuSel" })
+	hl("BlinkCmpMenu", "Pmenu")
+	hl("BlinkCmpMenuBorder", "FloatBorder")
+	hl("BlinkCmpMenuSelection", "PmenuSel")
 
-	hl("BlinkCmpScrollBarThumb", { link = "PmenuThumb" })
-	hl("BlinkCmpScrollBarGutter", { link = "PmenuSbar" })
+	hl("BlinkCmpScrollBarThumb", "PmenuThumb")
+	hl("BlinkCmpScrollBarGutter", "PmenuSbar")
 
-	hl("BlinkCmpLabel", { link = "Pmenu" })
-	hl("BlinkCmpLabelDescription", { link = "Pmenu" })
-	hl("BlinkCmpLabelDetail", { link = "Pmenu" })
+	hl("BlinkCmpLabel", "Pmenu")
+	hl("BlinkCmpLabelDescription", "Pmenu")
+	hl("BlinkCmpLabelDetail", "Pmenu")
 	hl("BlinkCmpLabelDeprecated", extend("Comment", { strikethrough = true }))
-	hl("BlinkCmpLabelMatch", { link = "PmenuMatch" })
+	hl("BlinkCmpLabelMatch", "PmenuMatch")
 
-	hl("BlinkCmpGhostText", { link = "Dim" })
-	hl("BlinkCmpKind", { link = "Icon" })
+	hl("BlinkCmpGhostText", "Dim")
+	hl("BlinkCmpKind", "Icon")
 
-	hl("BlinkCmpDoc", { link = "NormalFloat" })
-	hl("BlinkCmpDocBorder", { link = "FloatBorder" })
-	hl("BlinkCmpDocCursorLine", { link = "CursorLine" })
+	hl("BlinkCmpDoc", "NormalFloat")
+	hl("BlinkCmpDocBorder", "FloatBorder")
+	hl("BlinkCmpDocCursorLine", "CursorLine")
 
-	hl("BlinkCmpSignatureHelp", { link = "NormalFloat" })
-	hl("BlinkCmpSignatureHelpBorder", { link = "FloatBorder" })
-	hl("BlinkCmpSignatureHelpActiveParameter", { link = "LspSignatureActiveParameter" })
+	hl("BlinkCmpSignatureHelp", "NormalFloat")
+	hl("BlinkCmpSignatureHelpBorder", "FloatBorder")
+	hl("BlinkCmpSignatureHelpActiveParameter", "LspSignatureActiveParameter")
 end
 
 return M

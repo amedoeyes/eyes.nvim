@@ -4,22 +4,22 @@ local utility = require("eyes.utility")
 local hl = utility.hl
 
 M.setup = function()
-	hl("MasonHeader", { link = "Title" })
-	hl("MasonHeaderSecondary", { link = "Title" })
-	hl("MasonHeading", { link = "Title" })
+	hl("MasonHeader", "Title")
+	hl("MasonHeaderSecondary", "Title")
+	hl("MasonHeading", "Title")
 
-	hl("MasonMuted", { link = "Mute" })
+	hl("MasonMuted", "Mute")
 	hl("MasonHighlight", { fg = "fg" })
 
-	hl("MasonMutedBlock", { link = "Button" })
-	hl("MasonMutedBlockBold", { link = "Button" })
+	hl("MasonMutedBlock", "Button")
+	hl("MasonMutedBlockBold", "Button")
 
-	hl("MasonHighlightBlock", { link = "ButtonActive" })
-	hl("MasonHighlightBlockBold", { link = "ButtonActive" })
+	hl("MasonHighlightBlock", "ButtonActive")
+	hl("MasonHighlightBlockBold", "ButtonActive")
 
-	hl("MasonHighlightSecondary", { link = "Title" })
-	hl("MasonHighlightBlockSecondary", { link = "ButtonActive" })
-	hl("MasonHighlightBlockBoldSecondary", { link = "ButtonActive" })
+	hl("MasonHighlightSecondary", "Title")
+	hl("MasonHighlightBlockSecondary", "ButtonActive")
+	hl("MasonHighlightBlockBoldSecondary", "ButtonActive")
 end
 
 return M

@@ -4,25 +4,25 @@ local hl = require("eyes.utility").hl
 local palette = require("eyes.palette").palette
 
 M.setup = function()
-	hl("NoiceCmdlineIcon", { link = "Icon" })
-	hl("NoiceCmdlineIconSearch", { link = "Icon" })
-	hl("NoiceCmdlinePopupBorder", { link = "Border" })
+	hl("NoiceCmdlineIcon", "Icon")
+	hl("NoiceCmdlineIconSearch", "Icon")
+	hl("NoiceCmdlinePopupBorder", "Border")
 	hl("NoiceCmdlinePopupBorderSearch", { fg = palette.hex10 })
-	hl("NoiceCmdlinePopupTitle", { link = "Title" })
+	hl("NoiceCmdlinePopupTitle", "Title")
 
-	hl("NoiceCompletionItemKindDefault", { link = "Icon" })
+	hl("NoiceCompletionItemKindDefault", "Icon")
 	hl("NoicePopupmenuMatch", { fg = palette.hex10 })
 	hl("NoiceCompletionItemWord", { fg = palette.hex10 })
 
-	hl("NoiceVirtualText", { link = "Comment" })
+	hl("NoiceVirtualText", "Comment")
 
-	hl("NoiceConfirmBorder", { link = "Border" })
-	hl("NoiceFormatConfirm", { link = "Button" })
-	hl("NoiceFormatConfirmDefault", { link = "ButtonActive" })
+	hl("NoiceConfirmBorder", "Border")
+	hl("NoiceFormatConfirm", "Button")
+	hl("NoiceFormatConfirmDefault", "ButtonActive")
 
-	hl("NoiceLspProgressClient", { link = "Title" })
-	hl("NoiceLspProgressSpinner", { link = "Title" })
-	hl("NoiceLspProgressTitle", { link = "Title" })
+	hl("NoiceLspProgressClient", "Title")
+	hl("NoiceLspProgressSpinner", "Title")
+	hl("NoiceLspProgressTitle", "Title")
 
 	hl("NoiceFormatProgressTodo", { bg = palette.hex02 })
 	hl("NoiceFormatProgressDone", { bg = palette.hex06 })

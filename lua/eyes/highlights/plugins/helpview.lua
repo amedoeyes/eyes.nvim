@@ -14,9 +14,9 @@ M.setup = function()
 	hl("HelpviewHeading3", mix("@markup.heading.3", "ColorColumn"))
 	hl("HelpviewHeading4", mix("@markup.heading.4", "ColorColumn"))
 
-	hl("HelpviewInlineCode", { link = "ColorColumn" })
+	hl("HelpviewInlineCode", "ColorColumn")
 	hl("HelpviewCodeLanguage", extend("ColorColumn", { fg = palette.hex06 }))
-	hl("HelpviewCode", { link = "ColorColumn" })
+	hl("HelpviewCode", "ColorColumn")
 
 	hl("HelpviewGradient1", { fg = palette.hex01 })
 	hl("HelpviewGradient2", { fg = palette.hex02 })
@@ -31,7 +31,7 @@ M.setup = function()
 
 	hl("HelpviewTaglink", extend("ColorColumn", { fg = palette.hex08 }))
 	hl("HelpviewOptionlink", extend("ColorColumn", { fg = palette.hex08 }))
-	hl("HelpviewMentionlink", { link = "@markup.link" })
+	hl("HelpviewMentionlink", "@markup.link")
 end
 
 return M

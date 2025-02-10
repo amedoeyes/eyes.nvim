@@ -1,9 +1,14 @@
 local M = {}
 
 ---@param name string
----@param hl vim.api.keyset.highlight
+---@param hl vim.api.keyset.highlight|string
 M.hl = function(name, hl)
-	vim.api.nvim_set_hl(0, name, hl)
+	---@type vim.api.keyset.highlight
+	if type(hl) == "string" then
+		vim.api.nvim_set_hl(0, name, { link = hl })
+	else
+		vim.api.nvim_set_hl(0, name, hl)
+	end
 end
 
 ---@param name string

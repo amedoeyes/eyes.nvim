@@ -10,16 +10,16 @@ M.setup = function()
 	hl("NeoTreeFilterTerm", { fg = palette.hex10 })
 	hl("NeoTreeTitleBar", { fg = palette.hex10, bg = palette.hex04 })
 
-	hl("NeoTreeGitAdded", { link = "Icon" })
-	hl("NeoTreeGitConflict", { link = "Icon" })
-	hl("NeoTreeGitDeleted", { link = "Icon" })
-	hl("NeoTreeGitIgnored", { link = "Icon" })
-	hl("NeoTreeGitModified", { link = "Icon" })
-	hl("NeoTreeGitUnstaged", { link = "Icon" })
-	hl("NeoTreeGitUntracked", { link = "Icon" })
-	hl("NeoTreeGitStaged", { link = "Icon" })
+	hl("NeoTreeGitAdded", "Icon")
+	hl("NeoTreeGitConflict", "Icon")
+	hl("NeoTreeGitDeleted", "Icon")
+	hl("NeoTreeGitIgnored", "Icon")
+	hl("NeoTreeGitModified", "Icon")
+	hl("NeoTreeGitUnstaged", "Icon")
+	hl("NeoTreeGitUntracked", "Icon")
+	hl("NeoTreeGitStaged", "Icon")
 
-	hl("NeoTreeModified", { link = "Icon" })
+	hl("NeoTreeModified", "Icon")
 end
 
 return M

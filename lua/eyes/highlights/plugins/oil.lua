@@ -4,9 +4,9 @@ local utility = require("eyes.utility")
 local hl = utility.hl
 
 M.setup = function()
-	hl("OilDir", { link = "Directory" })
-	hl("OilDirIcon", { link = "Icon" })
-	hl("OilSocket", { link = "Mute" })
+	hl("OilDir", "Directory")
+	hl("OilDirIcon", "Icon")
+	hl("OilSocket", "Mute")
 
 	hl("OilChange", { fg = "fg" })
 	hl("OilCopy", { fg = "fg" })
@@ -17,18 +17,18 @@ M.setup = function()
 	hl("OilRestore", { fg = "fg" })
 	hl("OilTrash", { fg = "fg" })
 
-	hl("OilLinkTarget", { link = "Mute" })
-	hl("OilOrphanLinkTarget", { link = "Mute" })
-	hl("OilTrashSourcePath", { link = "Mute" })
+	hl("OilLinkTarget", "Mute")
+	hl("OilOrphanLinkTarget", "Mute")
+	hl("OilTrashSourcePath", "Mute")
 
-	hl("OilHidden", { link = "Dim" })
-	hl("OilDirHidden", { link = "OilHidden" })
-	hl("OilFileHidden", { link = "OilHidden" })
-	hl("OilLinkHidden", { link = "OilHidden" })
-	hl("OilLinkTargetHidden", { link = "OilHidden" })
-	hl("OilOrphanLinkHidden", { link = "OilHidden" })
-	hl("OilOrphanLinkTargetHidden", { link = "OilHidden" })
-	hl("OilSocketHidden", { link = "OilHidden" })
+	hl("OilHidden", "Dim")
+	hl("OilDirHidden", "OilHidden")
+	hl("OilFileHidden", "OilHidden")
+	hl("OilLinkHidden", "OilHidden")
+	hl("OilLinkTargetHidden", "OilHidden")
+	hl("OilOrphanLinkHidden", "OilHidden")
+	hl("OilOrphanLinkTargetHidden", "OilHidden")
+	hl("OilSocketHidden", "OilHidden")
 end
 
 return M
