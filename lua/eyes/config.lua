@@ -7,7 +7,7 @@ M.defaults = {
 	transparent = false,
 	highlights = {
 		core = "all",
-		plugins = package.loaded.lazy and "auto" or "all",
+		plugins = (package.loaded.lazy or package.loaded["mini.deps"]) and "auto" or "all",
 	},
 	extend = {},
 }

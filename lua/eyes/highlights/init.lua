@@ -51,17 +51,38 @@ M.setup = function()
 			for plugin, _ in pairs(plugins_map) do
 				table.insert(plugins, plugin)
 			end
-		elseif load == "auto" and package.loaded.lazy then
-			local lazy_plugins = require("lazy.core.config").plugins
-			for plugin, name in pairs(plugins_map) do
-				if lazy_plugins[name] then
-					table.insert(plugins, plugin)
-				end
-			end
-			if lazy_plugins["mini.nvim"] then
-				for plugin, _ in pairs(plugins_map) do
-					if plugin:find("^mini_") then
+		elseif load == "auto" then
+			if package.loaded.lazy then
+				local lazy_plugins = require("lazy.core.config").plugins
+				for plugin, name in pairs(plugins_map) do
+					if lazy_plugins[name] then
 						table.insert(plugins, plugin)
+					end
+				end
+				if lazy_plugins["mini.nvim"] then
+					for plugin, _ in pairs(plugins_map) do
+						if plugin:find("^mini_") then
+							table.insert(plugins, plugin)
+						end
+					end
+				end
+			elseif package.loaded["mini.deps"] then
+				local mini_plugins = vim
+					.iter(require("mini.deps").get_session())
+					:map(function(p)
+						return p.name
+					end)
+					:totable()
+				for plugin, name in pairs(plugins_map) do
+					if vim.tbl_contains(mini_plugins, name) then
+						table.insert(plugins, plugin)
+					end
+				end
+				if vim.tbl_contains(mini_plugins, "mini.nvim") then
+					for plugin, _ in pairs(plugins_map) do
+						if plugin:find("^mini_") then
+							table.insert(plugins, plugin)
+						end
 					end
 				end
 			end

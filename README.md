@@ -54,9 +54,9 @@ Defaults:
     -- table of modules to load or "all" to load them all
     -- modules: { "diagnostics", "diff", "editor", "spell", "syntax", "terminal" }
     core = "all",
-    -- table of plugins to load, "auto" to only load plugins installed with lazy or "all" to load them all
+    -- table of plugins to load, "auto" to only load plugins installed with lazy or mini.deps or "all" to load them all
     -- list of plugins can be found in lua/eyes/highlights/plugins
-    plugins = package.loaded.lazy and "auto" or "all",
+    plugins = (package.loaded.lazy or package.loaded["mini.deps"]) and "auto" or "all",
   },
   -- extends/overwrites highlights and current palette
   extend = {
