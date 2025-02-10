@@ -1,31 +1,32 @@
 local M = {}
 
----@type table<eyes.Highlights.Plugins,string>
+---@type table<string,eyes.Highlights.Plugins|eyes.Highlights.Plugins[]>
 local plugins_map = {
-	blink_cmp = "blink.cmp",
-	cmp = "nvim-cmp",
-	codeium = "codeium.nvim",
-	dap_ui = "nvim-dap-ui",
-	flash = "flash.nvim",
-	fzf = "fzf-lua",
-	helpview = "helpview.nvim",
-	illuminate = "vim-illuminate",
-	indent_blankline = "indent-blankline.nvim",
-	lazy = "lazy.nvim",
-	leap = "leap.nvim",
-	markview = "markview.nvim",
-	mason = "mason.nvim",
-	mini_icons = "mini.icons",
-	mini_indentscope = "mini.indentscope",
-	neo_tree = "neo-tree.nvim",
-	noice = "noice.nvim",
-	notify = "nvim-notify",
-	oil = "oil.nvim",
-	render_markdown = "render-markdown.nvim",
-	snacks = "snacks.nvim",
-	telescope = "telescope.nvim",
-	undotree = "undotree",
-	web_devicons = "nvim-web-devicons",
+	["blink.cmp"] = "blink_cmp",
+	["codeium.nvim"] = "codeium",
+	["flash.nvim"] = "flash",
+	["fzf-lua"] = "fzf",
+	["helpview.nvim"] = "helpview",
+	["indent-blankline.nvim"] = "indent_blankline",
+	["lazy.nvim"] = "lazy",
+	["leap.nvim"] = "leap",
+	["markview.nvim"] = "markview",
+	["mason.nvim"] = "mason",
+	["mini.icons"] = "mini_icons",
+	["mini.indentscope"] = "mini_indentscope",
+	["mini.nvim"] = { "mini_icons", "mini_indentscope" },
+	["neo-tree.nvim"] = "neo_tree",
+	["noice.nvim"] = "noice",
+	["nvim-cmp"] = "cmp",
+	["nvim-dap-ui"] = "dap_ui",
+	["nvim-notify"] = "notify",
+	["nvim-web-devicons"] = "web_devicons",
+	["oil.nvim"] = "oil",
+	["render-markdown.nvim"] = "render_markdown",
+	["snacks.nvim"] = "snacks",
+	["telescope.nvim"] = "telescope",
+	["undotree"] = "undotree",
+	["vim-illuminate"] = "illuminate",
 }
 
 M.setup = function()
@@ -48,43 +49,30 @@ M.setup = function()
 	elseif type(opts.highlights.plugins) == "string" then
 		local load = opts.highlights.plugins
 		if load == "all" then
-			for plugin, _ in pairs(plugins_map) do
-				table.insert(plugins, plugin)
-			end
+			plugins = vim.iter(vim.tbl_values(plugins_map)):flatten():totable()
 		elseif load == "auto" then
 			if package.loaded.lazy then
-				local lazy_plugins = require("lazy.core.config").plugins
-				for plugin, name in pairs(plugins_map) do
-					if lazy_plugins[name] then
-						table.insert(plugins, plugin)
-					end
-				end
-				if lazy_plugins["mini.nvim"] then
-					for plugin, _ in pairs(plugins_map) do
-						if plugin:find("^mini_") then
-							table.insert(plugins, plugin)
-						end
-					end
-				end
-			elseif package.loaded["mini.deps"] then
-				local mini_plugins = vim
-					.iter(require("mini.deps").get_session())
-					:map(function(p)
-						return p.name
+				plugins = vim
+					.iter(vim.tbl_keys(require("lazy.core.config").plugins))
+					:filter(function(p)
+						return plugins_map[p] ~= nil
 					end)
+					:map(function(p)
+						return plugins_map[p]
+					end)
+					:flatten()
 					:totable()
-				for plugin, name in pairs(plugins_map) do
-					if vim.tbl_contains(mini_plugins, name) then
-						table.insert(plugins, plugin)
-					end
-				end
-				if vim.tbl_contains(mini_plugins, "mini.nvim") then
-					for plugin, _ in pairs(plugins_map) do
-						if plugin:find("^mini_") then
-							table.insert(plugins, plugin)
-						end
-					end
-				end
+			elseif package.loaded["mini.deps"] then
+				plugins = vim
+					.iter(require("mini.deps").get_session())
+					:filter(function(p)
+						return plugins_map[p.name] ~= nil
+					end)
+					:map(function(p)
+						return plugins_map[p.name]
+					end)
+					:flatten()
+					:totable()
 			end
 		end
 	end
