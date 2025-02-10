@@ -44,8 +44,19 @@ M.setup = function()
 
 	-- credits to https://github.com/folke/tokyonight.nvim
 	if type(opts.highlights.plugins) == "table" then
-		---@diagnostic disable-next-line: cast-local-type
-		plugins = opts.highlights.plugins
+		---@diagnostic disable-next-line: param-type-mismatch
+		for _, p in ipairs(opts.highlights.plugins) do
+			if plugins_map[p] == nil then
+				vim.notify("Unkown plugin: " .. p, vim.log.levels.ERROR)
+			end
+		end
+		plugins = vim
+			.iter(opts.highlights.plugins)
+			:map(function(p)
+				return plugins_map[p]
+			end)
+			:flatten()
+			:totable()
 	elseif type(opts.highlights.plugins) == "string" then
 		local load = opts.highlights.plugins
 		if load == "all" then

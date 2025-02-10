@@ -8,6 +8,38 @@
 | -------------------------------------------- | --------------------------------------------- |
 | ![dark](https://files.catbox.moe/jwm9kk.png) | ![light](https://files.catbox.moe/i60s89.png) |
 
+<details>
+<summary>Supported Plugins</summary>
+
+- [blink.cmp](https://github.com/Saghen/blink.cmp)
+- [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
+- [codeium.nvim](https://github.com/Exafunction/codeium.nvim)
+- [flash.nvim](https://github.com/folke/flash.nvim)
+- [fzf-lua](https://github.com/ibhagwan/fzf-lua)
+- [helpview.nvim](https://github.com/OXY2DEV/helpview.nvim)
+- [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [lazy.nvim](https://github.com/folke/lazy.nvim)
+- [leap.nvim](https://github.com/ggandor/leap.nvim)
+- [lualine](https://github.com/nvim-lualine/lualine.nvim)
+- [markview.nvim](https://github.com/OXY2DEV/markview.nvim)
+- [mason.nvim](https://github.com/williamboman/mason.nvim)
+- [mini.icons](https://github.com/echasnovski/mini.icons)
+- [mini.indentscope](https://github.com/echasnovski/mini.indentscope)
+- [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- [noice.nvim](https://github.com/folke/noice.nvim)
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
+- [nvim-notify](https://github.com/rcarriga/nvim-notify)
+- [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+- [oil.nvim](https://github.com/stevearc/oil.nvim)
+- [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
+- [snacks.nvim](https://github.com/folke/snacks.nvim)
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [undotree](https://github.com/mbbill/undotree)
+- [vim-illuminate](https://github.com/RRethy/vim-illuminate)
+
+</details>
+
 ## Installation
 
 Installing using [lazy](https://github.com/folke/lazy.nvim)
@@ -55,7 +87,6 @@ Defaults:
     -- modules: { "diagnostics", "diff", "editor", "spell", "syntax", "terminal" }
     core = "all",
     -- table of plugins to load, "auto" to only load plugins installed with lazy or mini.deps or "all" to load them all
-    -- list of plugins can be found in lua/eyes/highlights/plugins
     plugins = (package.loaded.lazy or package.loaded["mini.deps"]) and "auto" or "all",
   },
   -- extends/overwrites highlights and current palette
@@ -73,7 +104,7 @@ Example:
   transparent = true,
   highlights = {
     core = { "editor", "syntax" },
-    plugins = { "blink_cmp", "render_markdown", "oil" }
+    plugins = { "blink.cmp", "render-markdown.nvim", "oil.nvim" }
   },
   extend = {
     highlights = {
