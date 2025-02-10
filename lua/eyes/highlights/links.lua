@@ -11,6 +11,7 @@ M.setup = function()
 	hl("Mute", { fg = palette.hex06 })
 	hl("Highlight", { fg = "fg", bg = palette.hex02 })
 	hl("Icon", { fg = "fg" })
+	hl("Deprecated", { fg = palette.hex04, strikethrough = true })
 end
 
 return M
