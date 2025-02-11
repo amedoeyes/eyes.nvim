@@ -44,7 +44,6 @@
 
 ---@class eyes.Options
 ---@field palette eyes.Palettes
----@field autoload boolean
 ---@field transparent boolean
 ---@field highlights {
 ---  core: eyes.Highlights.Core[]|"all",

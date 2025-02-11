@@ -79,7 +79,6 @@ Defaults:
 
 ```lua
 {
-  autoload = true,
   palette = "dark" -- "dark" or "light",
   transparent = false,
   highlights = {

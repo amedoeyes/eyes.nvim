@@ -4,10 +4,6 @@ local M = {}
 M.setup = function(opts)
 	local config = require("eyes.config")
 	config.setup(opts)
-
-	if config.options.autoload then
-		vim.cmd([[colorscheme eyes]])
-	end
 end
 
 M.load = function()

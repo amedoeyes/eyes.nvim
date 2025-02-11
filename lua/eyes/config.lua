@@ -3,7 +3,6 @@ local M = {}
 ---@type eyes.Options
 M.defaults = {
 	palette = "dark",
-	autoload = true,
 	transparent = false,
 	highlights = {
 		core = "all",
