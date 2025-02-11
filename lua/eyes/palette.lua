@@ -6,12 +6,13 @@ setmetatable(M, {
 	end,
 })
 
+local opts = require("eyes.config")
+
 ---@type eyes.Palette
 M.palette = {}
 
 ---@param palette eyes.Palette
 M.setup = function(palette)
-	local opts = require("eyes.config").options
 	M.palette = palette
 	if opts.extend.palette then
 		M.palette = vim.tbl_extend("force", M.palette, opts.extend.palette)

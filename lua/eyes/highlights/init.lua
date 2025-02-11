@@ -1,5 +1,8 @@
 local M = {}
 
+local opts = require("eyes.config")
+local utility = require("eyes.utility")
+
 ---@type table<string,eyes.Highlights.Plugins|eyes.Highlights.Plugins[]>
 local plugins_map = {
 	["blink.cmp"] = "blink_cmp",
@@ -30,8 +33,6 @@ local plugins_map = {
 }
 
 M.setup = function()
-	local opts = require("eyes.config").options
-	local utility = require("eyes.utility")
 	local core = {}
 	local plugins = {}
 

@@ -1,5 +1,11 @@
 local M = {}
 
+setmetatable(M, {
+	__index = function(_, key)
+		return M.options[key]
+	end,
+})
+
 ---@type eyes.Options
 M.defaults = {
 	transparent = false,
