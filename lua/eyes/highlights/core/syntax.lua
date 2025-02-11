@@ -52,10 +52,6 @@ M.setup = function()
 
 	hl("Todo", { fg = "fg" })
 
-	hl("Added", "DiffAdd")
-	hl("Changed", "DiffChange")
-	hl("Removed", "DiffDelete")
-
 	hl("@variable", "Identifier")
 	hl("@variable.builtin", "Identifier")
 	hl("@variable.parameter", "Identifier")
@@ -161,10 +157,6 @@ M.setup = function()
 	hl("@markup.list", { fg = "fg" })
 	hl("@markup.list.checked", "@markup.list")
 	hl("@markup.list.unchecked", "@markup.list")
-
-	hl("@diff.plus", "DiffAdd")
-	hl("@diff.minus", "DiffDelete")
-	hl("@diff.delta", "DiffChange")
 
 	hl("@tag", "Tag")
 	hl("@tag.builtin", "Tag")

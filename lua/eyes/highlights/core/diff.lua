@@ -8,6 +8,14 @@ M.setup = function()
 	hl("DiffChange", { fg = palette.hex06 })
 	hl("DiffDelete", { fg = palette.hex04 })
 	hl("DiffText", { fg = palette.hex08 })
+
+	hl("Added", "DiffAdd")
+	hl("Changed", "DiffChange")
+	hl("Removed", "DiffDelete")
+
+	hl("@diff.plus", "DiffAdd")
+	hl("@diff.minus", "DiffDelete")
+	hl("@diff.delta", "DiffChange")
 end
 
 return M
