@@ -15,7 +15,7 @@
 
 ---@alias eyes.Palettes "light"|"dark"
 
----@alias eyes.Highlights.Core "diagnostics"|"diff"|"editor"|"spell"|"syntax"|"terminal"
+---@alias eyes.Highlights.Core "diagnostics"|"diff"|"editor"|"spell"|"syntax"|"terminal"|"treesitter"
 ---@alias eyes.Highlights.Plugins
 ---| "blink_cmp"
 ---| "cmp"

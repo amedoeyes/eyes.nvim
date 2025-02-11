@@ -39,7 +39,7 @@ M.setup = function()
 		---@diagnostic disable-next-line: cast-local-type
 		core = opts.highlights.core
 	elseif type(opts.highlights.core) == "string" and opts.highlights.core == "all" then
-		core = { "diagnostics", "diff", "editor", "spell", "syntax", "terminal" }
+		core = { "diagnostics", "diff", "editor", "spell", "syntax", "terminal", "treesitter" }
 	end
 
 	-- credits to https://github.com/folke/tokyonight.nvim

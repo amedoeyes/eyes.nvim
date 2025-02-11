@@ -84,7 +84,7 @@ Defaults:
   transparent = false,
   highlights = {
     -- table of modules to load or "all" to load them all
-    -- modules: { "diagnostics", "diff", "editor", "spell", "syntax", "terminal" }
+    -- modules: { "diagnostics", "diff", "editor", "spell", "syntax", "terminal", "treesitter" }
     core = "all",
     -- table of plugins to load, "auto" to only load plugins installed with lazy or mini.deps or "all" to load them all
     plugins = (package.loaded.lazy or package.loaded["mini.deps"]) and "auto" or "all",
