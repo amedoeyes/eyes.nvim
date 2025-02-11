@@ -13,8 +13,6 @@
 ---@field hex09 string?
 ---@field hex10 string?
 
----@alias eyes.Palettes "light"|"dark"
-
 ---@alias eyes.Highlights.Core "diagnostics"|"diff"|"editor"|"spell"|"syntax"|"terminal"|"treesitter"
 ---@alias eyes.Highlights.Plugins
 ---| "blink_cmp"
@@ -43,7 +41,6 @@
 ---| "web_devicons"
 
 ---@class eyes.Options
----@field palette eyes.Palettes
 ---@field transparent boolean
 ---@field highlights {
 ---  core: eyes.Highlights.Core[]|"all",

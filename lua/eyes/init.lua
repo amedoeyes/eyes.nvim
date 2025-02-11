@@ -6,8 +6,13 @@ M.setup = function(opts)
 	config.setup(opts)
 end
 
-M.load = function()
-	require("eyes.palette").setup()
+---@param palette eyes.Palette
+M.load = function(palette)
+	local opts = require("eyes.config").options
+	M.palette = palette
+	if opts.extend.palette then
+		M.palette = vim.tbl_extend("force", M.palette, opts.extend.palette)
+	end
 	require("eyes.highlights").setup()
 end
 

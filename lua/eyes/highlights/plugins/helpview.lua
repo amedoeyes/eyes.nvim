@@ -5,7 +5,7 @@ local hl = utility.hl
 local extend = utility.extend
 local mix = utility.mix
 
-local palette = require("eyes.palette").palette
+local palette = require("eyes.palette")
 
 M.setup = function()
 	hl("Helpviewtitle", mix("@markup.heading", "ColorColumn"))

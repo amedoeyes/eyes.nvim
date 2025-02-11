@@ -1,8 +1,6 @@
 local M = {}
 
-local utility = require("eyes.utility")
-local hl = utility.hl
-local mix = utility.mix
+local hl = require("eyes.utility").hl
 
 M.setup = function()
 	hl("DiagnosticError", { fg = "fg" })

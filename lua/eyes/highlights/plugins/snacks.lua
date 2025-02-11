@@ -1,6 +1,6 @@
 local M = {}
 
-local palette = require("eyes.palette").palette
+local palette = require("eyes.palette")
 local utility = require("eyes.utility")
 local hl = utility.hl
 

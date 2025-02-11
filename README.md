@@ -79,7 +79,6 @@ Defaults:
 
 ```lua
 {
-  palette = "dark" -- "dark" or "light",
   transparent = false,
   highlights = {
     -- table of modules to load or "all" to load them all

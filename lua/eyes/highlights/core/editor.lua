@@ -3,7 +3,7 @@ local M = {}
 local utility = require("eyes.utility")
 local hl = utility.hl
 local extend = utility.extend
-local palette = require("eyes.palette").palette
+local palette = require("eyes.palette")
 
 M.setup = function()
 	hl("Normal", { fg = palette.hex10, bg = palette.hex00 })
@@ -20,7 +20,7 @@ M.setup = function()
 	hl("FloatFooter", { fg = "fg" })
 	hl("FloatTitle", "Title")
 
-	hl("Cursor", { fg = "bg", bg = "fg" })
+	hl("Cursor", "Reverse")
 	hl("lCursor", "Cursor")
 	hl("CursorIM", "Cursor")
 	hl("TermCursor", "Cursor")
