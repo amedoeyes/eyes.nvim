@@ -12,6 +12,17 @@ M.setup = function()
 	hl("Highlight", { fg = "fg", bg = palette.hex02 })
 	hl("Icon", { fg = "fg" })
 	hl("Deprecated", { fg = palette.hex04, strikethrough = true })
+
+	hl("Bold", { bold = true })
+	hl("Italic", { italic = true })
+	hl("Reverse", { reverse = true })
+	hl("Standout", { standout = true })
+	hl("Strikethrough", { strikethrough = true })
+	hl("Undercurl", { undercurl = true })
+	hl("Underdashed", { underdashed = true })
+	hl("Underdotted", { underdotted = true })
+	hl("Underdouble", { underdouble = true })
+	hl("Underline", { underline = true })
 end
 
 return M
