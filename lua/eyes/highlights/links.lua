@@ -18,11 +18,11 @@ M.setup = function()
 	hl("Reverse", { reverse = true })
 	hl("Standout", { standout = true })
 	hl("Strikethrough", { strikethrough = true })
-	hl("Undercurl", { undercurl = true })
-	hl("Underdashed", { underdashed = true })
-	hl("Underdotted", { underdotted = true })
-	hl("Underdouble", { underdouble = true })
-	hl("Underline", { underline = true })
+	hl("Undercurl", { sp = "fg", undercurl = true })
+	hl("Underdashed", { sp = "fg", underdashed = true })
+	hl("Underdotted", { sp = "fg", underdotted = true })
+	hl("Underdouble", { sp = "fg", underdouble = true })
+	hl("Underline", { sp = "fg", underline = true })
 end
 
 return M

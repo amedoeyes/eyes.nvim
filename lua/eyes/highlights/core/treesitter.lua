@@ -1,6 +1,8 @@
 local M = {}
 
-local hl = require("eyes.utility").hl
+local utility = require("eyes.utility")
+local hl = utility.hl
+local mix = utility.mix
 local palette = require("eyes.palette")
 
 M.setup = function()
@@ -25,7 +27,7 @@ M.setup = function()
 	hl("@string.special", "String")
 	hl("@string.special.symbol", "String")
 	hl("@string.special.path", "String")
-	hl("@string.special.url", { link = "String", underline = true })
+	hl("@string.special.url", mix("Constant", "Underline"))
 
 	hl("@character", "Character")
 	hl("@character.special", "Character")
@@ -86,7 +88,7 @@ M.setup = function()
 	hl("@markup.strong", { bold = true })
 	hl("@markup.italic", { italic = true })
 	hl("@markup.strikethrough", { strikethrough = true })
-	hl("@markup.underline", { underline = true })
+	hl("@markup.underline", "Underline")
 
 	hl("@markup.heading", { bold = true })
 	hl("@markup.heading.1", "@markup.heading")
@@ -99,7 +101,7 @@ M.setup = function()
 	hl("@markup.quote", { fg = palette.hex08 })
 	hl("@markup.math", { fg = palette.hex08 })
 
-	hl("@markup.link", { fg = palette.hex08, underline = true })
+	hl("@markup.link", { fg = palette.hex08, sp = palette.hex08, underline = true })
 	hl("@markup.link.label", "@markup.link")
 	hl("@markup.link.url", "@markup.link")
 

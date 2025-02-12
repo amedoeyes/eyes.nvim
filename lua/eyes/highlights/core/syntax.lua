@@ -42,7 +42,7 @@ M.setup = function()
 	hl("SpecialComment", "Special")
 	hl("Debug", "Special")
 
-	hl("Underlined", { underline = true })
+	hl("Underlined", "Underline")
 
 	hl("Ignore", { fg = palette.hex04 })
 
