@@ -1,23 +1,24 @@
 local M = {}
 
-local utility = require("eyes.utility")
-local hl = utility.hl
+local hl = require("eyes.utility").hl
 
 M.setup = function()
 	hl("FzfLuaNormal", "Normal")
 	hl("FzfLuaBorder", "Border")
 	hl("FzfLuaTitle", "Title")
+	hl("FzfLuaTitleFlags", "Mute")
 	hl("FzfLuaBackdrop", { bg = "black" })
 	hl("FzfLuaHeaderBind", "Mute")
 	hl("FzfLuaHeaderText", "Mute")
-	hl("FzfLuaSearch", "IncSearch")
+	hl("FzfLuaSearch", "Search")
 	hl("FzfLuaPathColNr", "Mute")
 	hl("FzfLuaPathLineNr", "Mute")
 	hl("FzfLuaLiveSym", "PmenuMatch")
+	hl("FzfLuaLivePrompt", { fg = "fg" }) -- Not sure what this highlight does
 
-	hl("FzfLuaPreviewBorder", "FzfLuaBorder")
-	hl("FzfLuaPreviewNormal", "FzfLuaNormal")
-	hl("FzfLuaPreviewTitle", "FzfLuaTitle")
+	hl("FzfLuaPreviewBorder", "Border")
+	hl("FzfLuaPreviewNormal", "Normal")
+	hl("FzfLuaPreviewTitle", "Title")
 
 	hl("FzfLuaCursor", "Cursor")
 	hl("FzfLuaCursorLine", "CursorLine")
@@ -28,11 +29,13 @@ M.setup = function()
 	hl("FzfLuaScrollFloatEmpty", "PmenuSbar")
 	hl("FzfLuaScrollFloatFull", "PmenuThumb")
 
-	hl("FzfLuaHelpNormal", "FzfLuaNormal")
-	hl("FzfLuaHelpBorder", "FzfLuaBorder")
+	hl("FzfLuaHelpNormal", "Normal")
+	hl("FzfLuaHelpBorder", "Border")
 
 	hl("FzfLuaBufName", { fg = "fg" })
 	hl("FzfLuaBufNr", "Mute")
+	hl("FzfLuaBufId", "Mute")
+	hl("FzfLuaBufLineNr", "Mute")
 	hl("FzfLuaBufFlagCur", "Mute")
 	hl("FzfLuaBufFlagAlt", "Mute")
 
@@ -43,18 +46,18 @@ M.setup = function()
 	hl("FzfLuaDirPart", "Directory")
 	hl("FzfLuaFilePart", { fg = "fg" })
 
-	hl("FzfLuaFzfNormal", "FzfLuaNormal")
-	hl("FzfLuaFzfCursorLine", "FzfLuaCursorLine")
+	hl("FzfLuaFzfNormal", "Normal")
+	hl("FzfLuaFzfCursorLine", "CursorLine")
 	hl("FzfLuaFzfMatch", "PmenuMatch")
-	hl("FzfLuaFzfBorder", "FzfLuaBorder")
-	hl("FzfLuaFzfScrollbar", "FzfLuaFzfBorder")
-	hl("FzfLuaFzfSeparator", "FzfLuaFzfBorder")
+	hl("FzfLuaFzfBorder", "Border")
+	hl("FzfLuaFzfScrollbar", "Border")
+	hl("FzfLuaFzfSeparator", "Border")
 	hl("FzfLuaFzfGutter", "None")
-	hl("FzfLuaFzfHeader", "FzfLuaTitle")
+	hl("FzfLuaFzfHeader", "Title")
 	hl("FzfLuaFzfInfo", "Dim")
 	hl("FzfLuaFzfPointer", "Cursor")
-	hl("FzfLuaFzfMarker", "FzfLuaFzfPointer")
-	hl("FzfLuaFzfSpinner", "FzfLuaFzfInfo")
+	hl("FzfLuaFzfMarker", "Cursor")
+	hl("FzfLuaFzfSpinner", "Dim")
 	hl("FzfLuaFzfPrompt", "Mute")
 	hl("FzfLuaFzfQuery", { fg = "fg" })
 end
