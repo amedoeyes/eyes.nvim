@@ -27,7 +27,7 @@ local plugins_map = {
 	["oil.nvim"] = "oil",
 	["render-markdown.nvim"] = "render_markdown",
 	["snacks.nvim"] = "snacks",
-	["telescope.nvim"] = "telescope",
+	["telescope.nvim"] = "telescope_nvim",
 	["undotree"] = "undotree",
 	["vim-illuminate"] = "illuminate",
 }
