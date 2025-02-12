@@ -3,10 +3,10 @@ local M = {}
 local opts = require("eyes.config")
 local utility = require("eyes.utility")
 
----@type table<string,eyes.Highlights.Plugins|eyes.Highlights.Plugins[]>
+---@type table<eyes.Highlights.Plugins,string|string[]>
 local plugins_map = {
 	["blink.cmp"] = "blink_cmp",
-	["codeium.nvim"] = "codeium",
+	["codeium.nvim"] = "codeium_nvim",
 	["flash.nvim"] = "flash",
 	["fzf-lua"] = "fzf",
 	["helpview.nvim"] = "helpview",
@@ -20,7 +20,7 @@ local plugins_map = {
 	["mini.nvim"] = { "mini_icons", "mini_indentscope" },
 	["neo-tree.nvim"] = "neo_tree",
 	["noice.nvim"] = "noice",
-	["nvim-cmp"] = "cmp",
+	["nvim-cmp"] = "nvim_cmp",
 	["nvim-dap-ui"] = "dap_ui",
 	["nvim-notify"] = "notify",
 	["nvim-web-devicons"] = "web_devicons",
@@ -37,7 +37,6 @@ M.setup = function()
 	local plugins = {}
 
 	if type(opts.highlights.core) == "table" then
-		---@diagnostic disable-next-line: cast-local-type
 		core = opts.highlights.core
 	elseif type(opts.highlights.core) == "string" and opts.highlights.core == "all" then
 		core = { "diagnostics", "diff", "editor", "spell", "syntax", "terminal", "treesitter" }
@@ -45,7 +44,6 @@ M.setup = function()
 
 	-- credits to https://github.com/folke/tokyonight.nvim
 	if type(opts.highlights.plugins) == "table" then
-		---@diagnostic disable-next-line: param-type-mismatch
 		for _, p in ipairs(opts.highlights.plugins) do
 			if plugins_map[p] == nil then
 				vim.notify("Unkown plugin: " .. p, vim.log.levels.ERROR)
@@ -91,12 +89,10 @@ M.setup = function()
 
 	require("eyes.highlights.links").setup()
 
-	---@diagnostic disable-next-line: param-type-mismatch
 	for _, module in ipairs(core) do
 		require("eyes.highlights.core." .. module).setup()
 	end
 
-	---@diagnostic disable-next-line: param-type-mismatch
 	for _, plugin in ipairs(plugins) do
 		require("eyes.highlights.plugins." .. plugin).setup()
 	end
