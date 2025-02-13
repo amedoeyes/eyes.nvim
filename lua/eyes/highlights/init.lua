@@ -27,7 +27,7 @@ local plugins_map = {
 	["snacks.nvim"] = "snacks_nvim",
 	["telescope.nvim"] = "telescope_nvim",
 	["undotree"] = "undotree",
-	["vim-illuminate"] = "illuminate",
+	["vim-illuminate"] = "vim_illuminate",
 }
 
 M.setup = function()
