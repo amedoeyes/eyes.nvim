@@ -11,15 +11,15 @@ M.setup = function()
 	hl("MasonMuted", "Mute")
 	hl("MasonHighlight", { fg = "fg" })
 
-	hl("MasonMutedBlock", "Button")
-	hl("MasonMutedBlockBold", "Button")
+	hl("MasonMutedBlock", "Mute")
+	hl("MasonMutedBlockBold", "Mute")
 
-	hl("MasonHighlightBlock", "ButtonActive")
-	hl("MasonHighlightBlockBold", "ButtonActive")
+	hl("MasonHighlightBlock", "Title")
+	hl("MasonHighlightBlockBold", "Title")
 
 	hl("MasonHighlightSecondary", "Title")
-	hl("MasonHighlightBlockSecondary", "ButtonActive")
-	hl("MasonHighlightBlockBoldSecondary", "ButtonActive")
+	hl("MasonHighlightBlockSecondary", "Title")
+	hl("MasonHighlightBlockBoldSecondary", "Title")
 end
 
 return M
