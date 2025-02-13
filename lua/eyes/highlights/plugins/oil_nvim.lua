@@ -22,13 +22,13 @@ M.setup = function()
 	hl("OilTrashSourcePath", "Mute")
 
 	hl("OilHidden", "Dim")
-	hl("OilDirHidden", "OilHidden")
-	hl("OilFileHidden", "OilHidden")
-	hl("OilLinkHidden", "OilHidden")
-	hl("OilLinkTargetHidden", "OilHidden")
-	hl("OilOrphanLinkHidden", "OilHidden")
-	hl("OilOrphanLinkTargetHidden", "OilHidden")
-	hl("OilSocketHidden", "OilHidden")
+	hl("OilDirHidden", "Dim")
+	hl("OilFileHidden", "Dim")
+	hl("OilLinkHidden", "Dim")
+	hl("OilLinkTargetHidden", "Dim")
+	hl("OilOrphanLinkHidden", "Dim")
+	hl("OilOrphanLinkTargetHidden", "Dim")
+	hl("OilSocketHidden", "Dim")
 end
 
 return M
