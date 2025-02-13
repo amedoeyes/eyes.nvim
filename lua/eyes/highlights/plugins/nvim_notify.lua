@@ -3,11 +3,11 @@ local M = {}
 local hl = require("eyes.utility").hl
 
 M.setup = function()
-	hl("NotifyERRORBorder", "Border")
-	hl("NotifyWARNBorder", "Border")
-	hl("NotifyINFOBorder", "Border")
-	hl("NotifyDEBUGBorder", "Border")
-	hl("NotifyTRACEBorder", "Border")
+	hl("NotifyERRORBorder", "FloatBorder")
+	hl("NotifyWARNBorder", "FloatBorder")
+	hl("NotifyINFOBorder", "FloatBorder")
+	hl("NotifyDEBUGBorder", "FloatBorder")
+	hl("NotifyTRACEBorder", "FloatBorder")
 
 	hl("NotifyERRORIcon", "Icon")
 	hl("NotifyWARNIcon", "Icon")
@@ -15,11 +15,11 @@ M.setup = function()
 	hl("NotifyDEBUGIcon", "Icon")
 	hl("NotifyTRACEIcon", "Icon")
 
-	hl("NotifyERRORTitle", "Title")
-	hl("NotifyWARNTitle", "Title")
-	hl("NotifyINFOTitle", "Title")
-	hl("NotifyDEBUGTitle", "Title")
-	hl("NotifyTRACETitle", "Title")
+	hl("NotifyERRORTitle", "FloatTitle")
+	hl("NotifyWARNTitle", "FloatTitle")
+	hl("NotifyINFOTitle", "FloatTitle")
+	hl("NotifyDEBUGTitle", "FloatTitle")
+	hl("NotifyTRACETitle", "FloatTitle")
 
 	hl("NotifyERRORBody", "NormalFloat")
 	hl("NotifyWARNBody", "NormalFloat")
