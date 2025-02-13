@@ -4,8 +4,8 @@
 
 <p align="center">Monochrome colorscheme for Neovim</p>
 
-| Dark                                         | Light                                         |
-| -------------------------------------------- | --------------------------------------------- |
+| Dark                                                                                     | Light                                                                                     |
+| ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | ![dark](https://github.com/user-attachments/assets/8048c8b8-4f8e-45d1-9b21-1f16e9e30c2b) | ![light](https://github.com/user-attachments/assets/b00bb56c-a298-4bce-acc9-b272bf02ff67) |
 
 <details>
@@ -104,7 +104,7 @@ Example:
   },
   extend = {
     highlights = {
-      Normal = { bg = "#101010", fg = "#808080" },
+      Normal = { fg = "#808080" },
       CursorLine = { bg = "#202020" },
       Type = { italic = true },
     },
