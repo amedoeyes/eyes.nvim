@@ -6,7 +6,7 @@
 
 | Dark                                         | Light                                         |
 | -------------------------------------------- | --------------------------------------------- |
-| ![dark](https://files.catbox.moe/jwm9kk.png) | ![light](https://files.catbox.moe/i60s89.png) |
+| ![dark](https://github.com/user-attachments/assets/8048c8b8-4f8e-45d1-9b21-1f16e9e30c2b) | ![light](https://github.com/user-attachments/assets/b00bb56c-a298-4bce-acc9-b272bf02ff67) |
 
 <details>
 <summary>Supported Plugins</summary>
