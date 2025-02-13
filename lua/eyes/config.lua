@@ -17,15 +17,11 @@ M.defaults = {
 }
 
 ---@type eyes.Options
-M.options = nil
+M.options = M.defaults
 
----@param opts? eyes.Options
+---@param opts eyes.Options
 M.setup = function(opts)
-	if opts then
-		M.options = vim.tbl_deep_extend("force", M.defaults, opts)
-	else
-		M.options = M.defaults
-	end
+	M.options = vim.tbl_deep_extend("force", M.defaults, opts)
 end
 
 return M
