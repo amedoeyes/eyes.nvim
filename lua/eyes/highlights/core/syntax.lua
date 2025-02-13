@@ -49,6 +49,8 @@ M.setup = function()
 	hl("Error", "DiagnosticError")
 
 	hl("Todo", { fg = "fg" })
+
+	hl("Whitespace", { fg = palette.hex03 })
 end
 
 return M

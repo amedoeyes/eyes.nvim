@@ -18,7 +18,7 @@ M.dashboard = function()
 end
 
 M.indent = function()
-	hl("SnacksIndent", { fg = palette.hex03 })
+	hl("SnacksIndent", "Whitespace")
 	hl("SnacksIndent1", { fg = palette.hex01 })
 	hl("SnacksIndent2", { fg = palette.hex02 })
 	hl("SnacksIndent3", { fg = palette.hex03 })

@@ -90,7 +90,6 @@ M.setup = function()
 	hl("Conceal", "NonText")
 	hl("EndOfBuffer", "NonText")
 	hl("SpecialKey", "NonText")
-	hl("Whitespace", "NonText")
 
 	hl("debugPC", "ColorColumn")
 	hl("debugBreakpoint", "Icon")
