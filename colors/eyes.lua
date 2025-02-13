@@ -1,5 +1,5 @@
 ---@type eyes.Palette
-local palette = {}
+local palette = nil
 
 if vim.o.background == "dark" then
 	palette = {
@@ -31,5 +31,8 @@ else
 	}
 end
 
-require("eyes.palette").setup(palette)
-require("eyes.highlights").setup()
+if palette ~= nil then
+	require("eyes.palette").setup(palette)
+	require("eyes.highlights").setup()
+	vim.g.colors_name = "eyes"
+end
