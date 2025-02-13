@@ -1,7 +1,6 @@
 local M = {}
 
-local utility = require("eyes.utility")
-local hl = utility.hl
+local hl = require("eyes.utility").hl
 
 M.setup = function()
 	hl("RenderMarkdownH1", "@markup.heading.1.markdown")
@@ -20,6 +19,7 @@ M.setup = function()
 
 	hl("RenderMarkdownCode", "ColorColumn")
 	hl("RenderMarkdownCodeInline", "ColorColumn")
+	hl("RenderMarkdownInlineHighlight", "ColorColumn")
 	hl("RenderMarkdownMath", "@markup.math")
 
 	hl("RenderMarkdownQuote", "@markup.quote")
@@ -43,6 +43,8 @@ M.setup = function()
 	hl("RenderMarkdownTableHead", "Border")
 	hl("RenderMarkdownTableRow", "Border")
 	hl("RenderMarkdownTableFill", "none")
+
+	hl("RenderMarkdownHtmlComment", "@comment")
 end
 
 return M
