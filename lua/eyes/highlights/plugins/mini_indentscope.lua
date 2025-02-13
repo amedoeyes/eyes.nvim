@@ -1,10 +1,10 @@
 local M = {}
 
 local hl = require("eyes.utility").hl
-local palette = require("eyes.palette")
 
 M.setup = function()
-	hl("MiniIndentscopeSymbol", { fg = palette.hex06 })
+	hl("MiniIndentscopeSymbol", "Mute")
+	hl("MiniIndentscopeSymbolOff", "Mute")
 end
 
 return M
