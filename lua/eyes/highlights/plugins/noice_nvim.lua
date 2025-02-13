@@ -1,105 +1,99 @@
-local M = {}
+return {
+	NoiceCmdline = { fg = "fg" },
+	NoiceCmdlinePrompt = { fg = "fg" },
 
-local hl = require("eyes.utility").hl
+	NoiceCmdlineIcon = "Icon",
+	NoiceCmdlineIconCalculator = "Icon",
+	NoiceCmdlineIconCmdline = "Icon",
+	NoiceCmdlineIconFilter = "Icon",
+	NoiceCmdlineIconHelp = "Icon",
+	NoiceCmdlineIconInput = "Icon",
+	NoiceCmdlineIconLua = "Icon",
+	NoiceCmdlineIconSearch = "Icon",
 
-M.setup = function()
-	hl("NoiceCmdline", { fg = "fg" })
-	hl("NoiceCmdlinePrompt", { fg = "fg" })
+	NoiceCmdlinePopup = "NormalFloat",
+	NoiceCmdlinePopupBorder = "FloatBorder",
+	NoiceCmdlinePopupBorderCalculator = "FloatBorder",
+	NoiceCmdlinePopupBorderCmdline = "FloatBorder",
+	NoiceCmdlinePopupBorderFilter = "FloatBorder",
+	NoiceCmdlinePopupBorderHelp = "FloatBorder",
+	NoiceCmdlinePopupBorderInput = "FloatBorder",
+	NoiceCmdlinePopupBorderLua = "FloatBorder",
+	NoiceCmdlinePopupBorderSearch = "FloatBorder",
 
-	hl("NoiceCmdlineIcon", "Icon")
-	hl("NoiceCmdlineIconCalculator", "Icon")
-	hl("NoiceCmdlineIconCmdline", "Icon")
-	hl("NoiceCmdlineIconFilter", "Icon")
-	hl("NoiceCmdlineIconHelp", "Icon")
-	hl("NoiceCmdlineIconInput", "Icon")
-	hl("NoiceCmdlineIconLua", "Icon")
-	hl("NoiceCmdlineIconSearch", "Icon")
+	NoiceCmdlinePopupTitle = "FloatTitle",
+	NoiceCmdlinePopupTitleCalculator = "FloatTitle",
+	NoiceCmdlinePopupTitleCmdline = "FloatTitle",
+	NoiceCmdlinePopupTitleFilter = "FloatTitle",
+	NoiceCmdlinePopupTitleHelp = "FloatTitle",
+	NoiceCmdlinePopupTitleInput = "FloatTitle",
+	NoiceCmdlinePopupTitleLua = "FloatTitle",
+	NoiceCmdlinePopupTitleSearch = "FloatTitle",
 
-	hl("NoiceCmdlinePopup", "NormalFloat")
-	hl("NoiceCmdlinePopupBorder", "FloatBorder")
-	hl("NoiceCmdlinePopupBorderCalculator", "FloatBorder")
-	hl("NoiceCmdlinePopupBorderCmdline", "FloatBorder")
-	hl("NoiceCmdlinePopupBorderFilter", "FloatBorder")
-	hl("NoiceCmdlinePopupBorderHelp", "FloatBorder")
-	hl("NoiceCmdlinePopupBorderInput", "FloatBorder")
-	hl("NoiceCmdlinePopupBorderLua", "FloatBorder")
-	hl("NoiceCmdlinePopupBorderSearch", "FloatBorder")
+	NoiceCompletionItemKindDefault = { fg = "fg" },
+	NoiceCompletionItemKindClass = { fg = "fg" },
+	NoiceCompletionItemKindColor = { fg = "fg" },
+	NoiceCompletionItemKindConstant = { fg = "fg" },
+	NoiceCompletionItemKindConstructor = { fg = "fg" },
+	NoiceCompletionItemKindEnum = { fg = "fg" },
+	NoiceCompletionItemKindEnumMember = { fg = "fg" },
+	NoiceCompletionItemKindField = { fg = "fg" },
+	NoiceCompletionItemKindFile = { fg = "fg" },
+	NoiceCompletionItemKindFolder = { fg = "fg" },
+	NoiceCompletionItemKindFunction = { fg = "fg" },
+	NoiceCompletionItemKindInterface = { fg = "fg" },
+	NoiceCompletionItemKindKeyword = { fg = "fg" },
+	NoiceCompletionItemKindMethod = { fg = "fg" },
+	NoiceCompletionItemKindModule = { fg = "fg" },
+	NoiceCompletionItemKindProperty = { fg = "fg" },
+	NoiceCompletionItemKindSnippet = { fg = "fg" },
+	NoiceCompletionItemKindStruct = { fg = "fg" },
+	NoiceCompletionItemKindText = { fg = "fg" },
+	NoiceCompletionItemKindUnit = { fg = "fg" },
+	NoiceCompletionItemKindValue = { fg = "fg" },
+	NoiceCompletionItemKindVariable = { fg = "fg" },
 
-	hl("NoiceCmdlinePopupTitle", "FloatTitle")
-	hl("NoiceCmdlinePopupTitleCalculator", "FloatTitle")
-	hl("NoiceCmdlinePopupTitleCmdline", "FloatTitle")
-	hl("NoiceCmdlinePopupTitleFilter", "FloatTitle")
-	hl("NoiceCmdlinePopupTitleHelp", "FloatTitle")
-	hl("NoiceCmdlinePopupTitleInput", "FloatTitle")
-	hl("NoiceCmdlinePopupTitleLua", "FloatTitle")
-	hl("NoiceCmdlinePopupTitleSearch", "FloatTitle")
+	NoiceConfirm = "NormalFloat",
+	NoiceConfirmBorder = "FloatBorder",
+	NoiceFormatConfirm = "Mute",
+	NoiceFormatConfirmDefault = "Title",
 
-	hl("NoiceCompletionItemKindDefault", { fg = "fg" })
-	hl("NoiceCompletionItemKindClass", { fg = "fg" })
-	hl("NoiceCompletionItemKindColor", { fg = "fg" })
-	hl("NoiceCompletionItemKindConstant", { fg = "fg" })
-	hl("NoiceCompletionItemKindConstructor", { fg = "fg" })
-	hl("NoiceCompletionItemKindEnum", { fg = "fg" })
-	hl("NoiceCompletionItemKindEnumMember", { fg = "fg" })
-	hl("NoiceCompletionItemKindField", { fg = "fg" })
-	hl("NoiceCompletionItemKindFile", { fg = "fg" })
-	hl("NoiceCompletionItemKindFolder", { fg = "fg" })
-	hl("NoiceCompletionItemKindFunction", { fg = "fg" })
-	hl("NoiceCompletionItemKindInterface", { fg = "fg" })
-	hl("NoiceCompletionItemKindKeyword", { fg = "fg" })
-	hl("NoiceCompletionItemKindMethod", { fg = "fg" })
-	hl("NoiceCompletionItemKindModule", { fg = "fg" })
-	hl("NoiceCompletionItemKindProperty", { fg = "fg" })
-	hl("NoiceCompletionItemKindSnippet", { fg = "fg" })
-	hl("NoiceCompletionItemKindStruct", { fg = "fg" })
-	hl("NoiceCompletionItemKindText", { fg = "fg" })
-	hl("NoiceCompletionItemKindUnit", { fg = "fg" })
-	hl("NoiceCompletionItemKindValue", { fg = "fg" })
-	hl("NoiceCompletionItemKindVariable", { fg = "fg" })
+	NoiceCursor = "Cursor",
 
-	hl("NoiceConfirm", "NormalFloat")
-	hl("NoiceConfirmBorder", "FloatBorder")
-	hl("NoiceFormatConfirm", "Mute")
-	hl("NoiceFormatConfirmDefault", "Title")
+	NoiceFormatDate = "Mute",
+	NoiceFormatEvent = "NonText",
+	NoiceFormatKind = "NonText",
+	NoiceFormatTitle = "Title",
 
-	hl("NoiceCursor", "Cursor")
+	NoiceFormatLevelOff = "NonText",
+	NoiceFormatLevelDebug = "NonText",
+	NoiceFormatLevelTrace = "NonText",
+	NoiceFormatLevelError = "DiagnosticVirtualTextError",
+	NoiceFormatLevelInfo = "DiagnosticVirtualTextInfo",
+	NoiceFormatLevelWarn = "DiagnosticVirtualTextWarn",
 
-	hl("NoiceFormatDate", "Mute")
-	hl("NoiceFormatEvent", "NonText")
-	hl("NoiceFormatKind", "NonText")
-	hl("NoiceFormatTitle", "Title")
+	NoiceHiddenCursor = { blend = 100 },
 
-	hl("NoiceFormatLevelOff", "NonText")
-	hl("NoiceFormatLevelDebug", "NonText")
-	hl("NoiceFormatLevelTrace", "NonText")
-	hl("NoiceFormatLevelError", "DiagnosticVirtualTextError")
-	hl("NoiceFormatLevelInfo", "DiagnosticVirtualTextInfo")
-	hl("NoiceFormatLevelWarn", "DiagnosticVirtualTextWarn")
+	NoiceLspProgressClient = "Title",
+	NoiceLspProgressSpinner = { fg = "fg" },
+	NoiceLspProgressTitle = { fg = "fg" },
+	NoiceFormatProgressDone = { reverse = true },
+	NoiceFormatProgressTodo = "Normal",
 
-	hl("NoiceHiddenCursor", { blend = 100 })
+	NoiceMini = { fg = "fg" },
 
-	hl("NoiceLspProgressClient", "Title")
-	hl("NoiceLspProgressSpinner", { fg = "fg" })
-	hl("NoiceLspProgressTitle", { fg = "fg" })
-	hl("NoiceFormatProgressDone", { reverse = true })
-	hl("NoiceFormatProgressTodo", "Normal")
+	NoicePopup = "NormalFloat",
+	NoicePopupBorder = "FloatBorder",
+	NoicePopupmenu = "Pmenu",
+	NoicePopupmenuBorder = "FloatBorder",
+	NoicePopupmenuMatch = "PmenuMatch",
+	NoicePopupmenuSelected = "PmenuSel",
 
-	hl("NoiceMini", { fg = "fg" })
+	NoiceScrollbar = "PmenuSbar",
+	NoiceScrollbarThumb = "PmenuThumb",
 
-	hl("NoicePopup", "NormalFloat")
-	hl("NoicePopupBorder", "FloatBorder")
-	hl("NoicePopupmenu", "Pmenu")
-	hl("NoicePopupmenuBorder", "FloatBorder")
-	hl("NoicePopupmenuMatch", "PmenuMatch")
-	hl("NoicePopupmenuSelected", "PmenuSel")
+	NoiceSplit = "NormalFloat",
+	NoiceSplitBorder = "FloatBorder",
 
-	hl("NoiceScrollbar", "PmenuSbar")
-	hl("NoiceScrollbarThumb", "PmenuThumb")
-
-	hl("NoiceSplit", "NormalFloat")
-	hl("NoiceSplitBorder", "FloatBorder")
-
-	hl("NoiceVirtualText", "Dim")
-end
-
-return M
+	NoiceVirtualText = "Dim",
+}

@@ -1,98 +1,92 @@
-local M = {}
-
-local utility = require("eyes.utility")
-local hl = utility.hl
-local extend = utility.extend
+local extend = require("eyes.utility").extend
 local palette = require("eyes.palette")
 
-M.setup = function()
-	hl("Normal", { fg = palette.hex10, bg = palette.hex00 })
-	hl("NormalNC", "Normal")
-	hl("ColorColumn", { bg = palette.hex01 })
-	hl("Directory", { fg = palette.hex08 })
-	hl("Folded", extend("ColorColumn", { fg = palette.hex08 }))
-	hl("Question", { fg = "fg" })
-	hl("Title", { fg = "fg", bold = true })
-	hl("WinSeparator", "Border")
+return {
+	Normal = { fg = palette.hex10, bg = palette.hex00 },
+	NormalNC = "Normal",
+	ColorColumn = { bg = palette.hex01 },
+	Directory = { fg = palette.hex08 },
+	Folded = extend("ColorColumn", { fg = palette.hex08 }),
+	Question = { fg = "fg" },
+	Title = { fg = "fg", bold = true },
+	WinSeparator = "Border",
 
-	hl("NormalFloat", "Normal")
-	hl("FloatBorder", "Border")
-	hl("FloatFooter", { fg = "fg" })
-	hl("FloatTitle", "Title")
+	NormalFloat = "Normal",
+	FloatBorder = "Border",
+	FloatFooter = { fg = "fg" },
+	FloatTitle = "Title",
 
-	hl("Cursor", "Reverse")
-	hl("lCursor", "Cursor")
-	hl("CursorIM", "Cursor")
-	hl("TermCursor", "Cursor")
-	hl("TermCursorNC", "Cursor")
-	hl("CursorColumn", "ColorColumn")
-	hl("CursorLine", "ColorColumn")
-	hl("CursorLineNr", { fg = "fg" })
-	hl("CursorLineFold", { fg = "fg" })
-	hl("CursorLineSign", { fg = "fg" })
-	hl("QuickFixLine", "ColorColumn")
+	Cursor = "Reverse",
+	lCursor = "Cursor",
+	CursorIM = "Cursor",
+	TermCursor = "Cursor",
+	TermCursorNC = "Cursor",
+	CursorColumn = "ColorColumn",
+	CursorLine = "ColorColumn",
+	CursorLineNr = { fg = "fg" },
+	CursorLineFold = { fg = "fg" },
+	CursorLineSign = { fg = "fg" },
+	QuickFixLine = "ColorColumn",
 
-	hl("LineNr", { fg = palette.hex04 })
-	hl("LineNrAbove", "LineNr")
-	hl("LineNrBelow", "LineNr")
-	hl("FoldColumn", { fg = "fg" })
-	hl("SignColumn", { fg = "fg" })
+	LineNr = { fg = palette.hex04 },
+	LineNrAbove = "LineNr",
+	LineNrBelow = "LineNr",
+	FoldColumn = { fg = "fg" },
+	SignColumn = { fg = "fg" },
 
-	hl("LspCodeLens", "Dim")
-	hl("LspCodeLensSeparator", "Dim")
-	hl("LspInlayHint", "Dim")
-	hl("LspReferenceRead", "Highlight")
-	hl("LspReferenceText", "Highlight")
-	hl("LspReferenceWrite", "Highlight")
-	hl("LspSignatureActiveParameter", "Highlight")
-	hl("MatchParen", "Highlight")
-	hl("SnippetTabstop", "Highlight")
+	LspCodeLens = "Dim",
+	LspCodeLensSeparator = "Dim",
+	LspInlayHint = "Dim",
+	LspReferenceRead = "Highlight",
+	LspReferenceText = "Highlight",
+	LspReferenceWrite = "Highlight",
+	LspSignatureActiveParameter = "Highlight",
+	MatchParen = "Highlight",
+	SnippetTabstop = "Highlight",
 
-	hl("MsgArea", { fg = "fg" })
-	hl("ModeMsg", { fg = "fg" })
-	hl("MoreMsg", { fg = "fg" })
-	hl("ErrorMsg", "DiagnosticError")
-	hl("WarningMsg", "DiagnosticWarn")
-	hl("MsgSeparator", "Border")
+	MsgArea = { fg = "fg" },
+	ModeMsg = { fg = "fg" },
+	MoreMsg = { fg = "fg" },
+	ErrorMsg = "DiagnosticError",
+	WarningMsg = "DiagnosticWarn",
+	MsgSeparator = "Border",
 
-	hl("Search", { fg = "fg", bg = palette.hex03 })
-	hl("CurSearch", "Search")
-	hl("IncSearch", "Search")
-	hl("Substitute", "Search")
+	Search = { fg = "fg", bg = palette.hex03 },
+	CurSearch = "Search",
+	IncSearch = "Search",
+	Substitute = "Search",
 
-	hl("Pmenu", { fg = "fg" })
-	hl("PmenuSel", "ColorColumn")
-	hl("PmenuKind", "Pmenu")
-	hl("PmenuKindSel", "PmenuSel")
-	hl("PmenuExtra", "Pmenu")
-	hl("PmenuExtraSel", "PmenuSel")
-	hl("PmenuSbar", { bg = palette.hex01 })
-	hl("PmenuThumb", { bg = palette.hex03 })
-	hl("PmenuMatch", { bold = true })
-	hl("PmenuMatchSel", extend("ColorColumn", { bold = true }))
-	hl("WildMenu", "ColorColumn")
-	hl("ComplMatchIns", "Dim")
+	Pmenu = { fg = "fg" },
+	PmenuSel = "ColorColumn",
+	PmenuKind = "Pmenu",
+	PmenuKindSel = "PmenuSel",
+	PmenuExtra = "Pmenu",
+	PmenuExtraSel = "PmenuSel",
+	PmenuSbar = { bg = palette.hex01 },
+	PmenuThumb = { bg = palette.hex03 },
+	PmenuMatch = { bold = true },
+	PmenuMatchSel = extend("ColorColumn", { bold = true }),
+	WildMenu = "ColorColumn",
+	ComplMatchIns = "Dim",
 
-	hl("Visual", { bg = palette.hex02 })
-	hl("VisualNOS", "Visual")
+	Visual = { bg = palette.hex02 },
+	VisualNOS = "Visual",
 
-	hl("StatusLine", { fg = "fg", bg = "bg" })
-	hl("StatusLineNC", { fg = palette.hex06, bg = "bg" })
-	hl("StatusLineTerm", "StatusLine")
-	hl("StatusLineTermNC", "StatusLineNC")
-	hl("TabLine", "StatusLineNC")
-	hl("TabLineFill", "TabLine")
-	hl("TabLineSel", { fg = "fg", bold = true })
-	hl("WinBar", "StatusLine")
-	hl("WinBarNC", "StatusLineNC")
+	StatusLine = { fg = "fg", bg = "bg" },
+	StatusLineNC = { fg = palette.hex06, bg = "bg" },
+	StatusLineTerm = "StatusLine",
+	StatusLineTermNC = "StatusLineNC",
+	TabLine = "StatusLineNC",
+	TabLineFill = "TabLine",
+	TabLineSel = { fg = "fg", bold = true },
+	WinBar = "StatusLine",
+	WinBarNC = "StatusLineNC",
 
-	hl("NonText", "Dim")
-	hl("Conceal", "NonText")
-	hl("EndOfBuffer", "NonText")
-	hl("SpecialKey", "NonText")
+	NonText = "Dim",
+	Conceal = "NonText",
+	EndOfBuffer = "NonText",
+	SpecialKey = "NonText",
 
-	hl("debugPC", "ColorColumn")
-	hl("debugBreakpoint", "Icon")
-end
-
-return M
+	debugPC = "ColorColumn",
+	debugBreakpoint = "Icon",
+}

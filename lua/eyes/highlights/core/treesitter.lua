@@ -1,123 +1,117 @@
-local M = {}
-
-local utility = require("eyes.utility")
-local hl = utility.hl
-local mix = utility.mix
+local mix = require("eyes.utility").mix
 local palette = require("eyes.palette")
 
-M.setup = function()
-	hl("@variable", "Identifier")
-	hl("@variable.builtin", "Identifier")
-	hl("@variable.parameter", "Identifier")
-	hl("@variable.parameter.builtin", "Identifier")
-	hl("@variable.member", "Identifier")
+return {
+	["@variable"] = "Identifier",
+	["@variable.builtin"] = "Identifier",
+	["@variable.parameter"] = "Identifier",
+	["@variable.parameter.builtin"] = "Identifier",
+	["@variable.member"] = "Identifier",
 
-	hl("@constant", "Constant")
-	hl("@constant.builtin", "Constant")
-	hl("@constant.macro", "Constant")
+	["@constant"] = "Constant",
+	["@constant.builtin"] = "Constant",
+	["@constant.macro"] = "Constant",
 
-	hl("@module", "Structure")
-	hl("@module.builtin", "Structure")
-	hl("@label", "Label")
+	["@module"] = "Structure",
+	["@module.builtin"] = "Structure",
+	["@label"] = "Label",
 
-	hl("@string", "String")
-	hl("@string.documentation", "String")
-	hl("@string.regexp", "String")
-	hl("@string.escape", "String")
-	hl("@string.special", "String")
-	hl("@string.special.symbol", "String")
-	hl("@string.special.path", "String")
-	hl("@string.special.url", mix("Constant", "Underline"))
+	["@string"] = "String",
+	["@string.documentation"] = "String",
+	["@string.regexp"] = "String",
+	["@string.escape"] = "String",
+	["@string.special"] = "String",
+	["@string.special.symbol"] = "String",
+	["@string.special.path"] = "String",
+	["@string.special.url"] = mix("Constant", "Underline"),
 
-	hl("@character", "Character")
-	hl("@character.special", "Character")
+	["@character"] = "Character",
+	["@character.special"] = "Character",
 
-	hl("@boolean", "Constant")
-	hl("@number", "Constant")
-	hl("@number.float", "Constant")
+	["@boolean"] = "Constant",
+	["@number"] = "Constant",
+	["@number.float"] = "Constant",
 
-	hl("@type", "Type")
-	hl("@type.builtin", "Type")
-	hl("@type.definition", "Type")
+	["@type"] = "Type",
+	["@type.builtin"] = "Type",
+	["@type.definition"] = "Type",
 
-	hl("@attribute", "Statement")
-	hl("@attribute.builtin", "Statement")
-	hl("@property", "Identifier")
+	["@attribute"] = "Statement",
+	["@attribute.builtin"] = "Statement",
+	["@property"] = "Identifier",
 
-	hl("@function", "Function")
-	hl("@function.builtin", "Function")
-	hl("@function.call", "Function")
-	hl("@function.macro", "Function")
+	["@function"] = "Function",
+	["@function.builtin"] = "Function",
+	["@function.call"] = "Function",
+	["@function.macro"] = "Function",
 
-	hl("@function.method", "Function")
-	hl("@function.method.call", "Function")
+	["@function.method"] = "Function",
+	["@function.method.call"] = "Function",
 
-	hl("@constructor", "Function")
-	hl("@operator", "Operator")
+	["@constructor"] = "Function",
+	["@operator"] = "Operator",
 
-	hl("@keyword", "Statement")
-	hl("@keyword.coroutine", "Statement")
-	hl("@keyword.function", "Statement")
-	hl("@keyword.operator", "Statement")
-	hl("@keyword.import", "Statement")
-	hl("@keyword.type", "Statement")
-	hl("@keyword.modifier", "Statement")
-	hl("@keyword.repeat", "Statement")
-	hl("@keyword.return", "Statement")
-	hl("@keyword.debug", "Statement")
-	hl("@keyword.exception", "Statement")
+	["@keyword"] = "Statement",
+	["@keyword.coroutine"] = "Statement",
+	["@keyword.function"] = "Statement",
+	["@keyword.operator"] = "Statement",
+	["@keyword.import"] = "Statement",
+	["@keyword.type"] = "Statement",
+	["@keyword.modifier"] = "Statement",
+	["@keyword.repeat"] = "Statement",
+	["@keyword.return"] = "Statement",
+	["@keyword.debug"] = "Statement",
+	["@keyword.exception"] = "Statement",
 
-	hl("@keyword.conditional", "Statement")
-	hl("@keyword.conditional.ternary", "Statement")
+	["@keyword.conditional"] = "Statement",
+	["@keyword.conditional.ternary"] = "Statement",
 
-	hl("@keyword.directive", "PreProc")
-	hl("@keyword.directive.define", "Define")
+	["@keyword.directive"] = "PreProc",
+	["@keyword.directive.define"] = "Define",
 
-	hl("@punctuation.delimiter", "Delimiter")
-	hl("@punctuation.bracket", "Delimiter")
-	hl("@punctuation.special", "Delimiter")
+	["@punctuation.delimiter"] = "Delimiter",
+	["@punctuation.bracket"] = "Delimiter",
+	["@punctuation.special"] = "Delimiter",
 
-	hl("@comment", "Comment")
-	hl("@comment.documentation", "Comment")
+	["@comment"] = "Comment",
+	["@comment.documentation"] = "Comment",
 
-	hl("@comment.error", "DiagnosticError")
-	hl("@comment.warning", "DiagnosticWarn")
-	hl("@comment.todo", "Todo")
-	hl("@comment.note", "DiagnosticInfo")
+	["@comment.error"] = "DiagnosticError",
+	["@comment.warning"] = "DiagnosticWarn",
+	["@comment.todo"] = "Todo",
+	["@comment.note"] = "DiagnosticInfo",
 
-	hl("@markup.strong", { bold = true })
-	hl("@markup.italic", { italic = true })
-	hl("@markup.strikethrough", { strikethrough = true })
-	hl("@markup.underline", "Underline")
+	["@markup.strong"] = { bold = true },
+	["@markup.italic"] = { italic = true },
+	["@markup.strikethrough"] = { strikethrough = true },
+	["@markup.underline"] = "Underline",
 
-	hl("@markup.heading", { bold = true })
-	hl("@markup.heading.1", "@markup.heading")
-	hl("@markup.heading.2", "@markup.heading")
-	hl("@markup.heading.3", "@markup.heading")
-	hl("@markup.heading.4", "@markup.heading")
-	hl("@markup.heading.5", "@markup.heading")
-	hl("@markup.heading.6", "@markup.heading")
+	["@markup.heading"] = { bold = true },
+	["@markup.heading.1"] = "@markup.heading",
+	["@markup.heading.2"] = "@markup.heading",
+	["@markup.heading.3"] = "@markup.heading",
+	["@markup.heading.4"] = "@markup.heading",
+	["@markup.heading.5"] = "@markup.heading",
+	["@markup.heading.6"] = "@markup.heading",
 
-	hl("@markup.quote", { fg = palette.hex08 })
-	hl("@markup.math", { fg = palette.hex08 })
+	["@markup.quote"] = { fg = palette.hex08 },
+	["@markup.math"] = { fg = palette.hex08 },
 
-	hl("@markup.link", { fg = palette.hex08, sp = palette.hex08, underline = true })
-	hl("@markup.link.label", "@markup.link")
-	hl("@markup.link.url", "@markup.link")
+	["@markup.link"] = { fg = palette.hex08, sp = palette.hex08, underline = true },
+	["@markup.link.label"] = "@markup.link",
+	["@markup.link.url"] = "@markup.link",
 
-	hl("@markup.raw", { fg = palette.hex08 })
-	hl("@markup.raw.block", "@markup.raw")
+	["@markup.raw"] = { fg = palette.hex08 },
+	["@markup.raw.block"] = "@markup.raw",
 
-	hl("@markup.list", { fg = "fg" })
-	hl("@markup.list.checked", "@markup.list")
-	hl("@markup.list.unchecked", "@markup.list")
+	["@markup.list"] = { fg = "fg" },
+	["@markup.list.checked"] = "@markup.list",
+	["@markup.list.unchecked"] = "@markup.list",
 
-	hl("@tag", "Tag")
-	hl("@tag.builtin", "Tag")
-	hl("@tag.attribute", "@property")
-	hl("@tag.delimiter", "Delimiter")
+	["@tag"] = "Tag",
+	["@tag.builtin"] = "Tag",
+	["@tag.attribute"] = "@property",
+	["@tag.delimiter"] = "Delimiter",
 
-	hl("@constructor.lua", "Delimiter")
-end
-
-return M
+	["@constructor.lua"] = "Delimiter",
+}

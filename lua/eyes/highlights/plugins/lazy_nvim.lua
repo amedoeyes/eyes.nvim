@@ -1,54 +1,48 @@
-local M = {}
+return {
+	LazyNormal = "NormalFloat",
 
-local hl = require("eyes.utility").hl
+	LazyProp = "Mute",
+	LazyBackdrop = { bg = "black" },
 
-M.setup = function()
-	hl("LazyNormal", "NormalFloat")
+	LazyButton = "Mute",
+	LazyButtonActive = "Title",
 
-	hl("LazyProp", "Mute")
-	hl("LazyBackdrop", { bg = "black" })
+	LazyH1 = "Title",
+	LazyH2 = "Title",
 
-	hl("LazyButton", "Mute")
-	hl("LazyButtonActive", "Title")
+	LazyCommit = "Mute",
+	LazyCommitIssue = "Mute",
+	LazyCommitScope = "Italic",
+	LazyCommitType = "Bold",
 
-	hl("LazyH1", "Title")
-	hl("LazyH2", "Title")
+	LazyProgressDone = { fg = "fg" },
+	LazyProgressTodo = "Border",
 
-	hl("LazyCommit", "Mute")
-	hl("LazyCommitIssue", "Mute")
-	hl("LazyCommitScope", "Italic")
-	hl("LazyCommitType", "Bold")
+	LazyReasonCmd = "Mute",
+	LazyReasonEvent = "Mute",
+	LazyReasonFt = "Mute",
+	LazyReasonImport = "Mute",
+	LazyReasonKeys = "Mute",
+	LazyReasonPlugin = "Mute",
+	LazyReasonRequire = "Mute",
+	LazyReasonRuntime = "Mute",
+	LazyReasonSource = "Mute",
+	LazyReasonStart = "Mute",
 
-	hl("LazyProgressDone", { fg = "fg" })
-	hl("LazyProgressTodo", "Border")
+	LazyNoCond = "DiagnosticWarn",
+	LazyLocal = { fg = "fg" },
+	LazyTaskOutput = { fg = "fg" },
 
-	hl("LazyReasonCmd", "Mute")
-	hl("LazyReasonEvent", "Mute")
-	hl("LazyReasonFt", "Mute")
-	hl("LazyReasonImport", "Mute")
-	hl("LazyReasonKeys", "Mute")
-	hl("LazyReasonPlugin", "Mute")
-	hl("LazyReasonRequire", "Mute")
-	hl("LazyReasonRuntime", "Mute")
-	hl("LazyReasonSource", "Mute")
-	hl("LazyReasonStart", "Mute")
+	LazyBold = "Bold",
+	LazyComment = "Comment",
+	LazyDimmed = "Dim",
+	LazyDir = "Directory",
+	LazyItalic = "Italic",
+	LazySpecial = "Special",
+	LazyUrl = "@markup.link",
+	LazyValue = { fg = "fg" },
 
-	hl("LazyNoCond", "DiagnosticWarn")
-	hl("LazyLocal", { fg = "fg" })
-	hl("LazyTaskOutput", { fg = "fg" })
-
-	hl("LazyBold", "Bold")
-	hl("LazyComment", "Comment")
-	hl("LazyDimmed", "Dim")
-	hl("LazyDir", "Directory")
-	hl("LazyItalic", "Italic")
-	hl("LazySpecial", "Special")
-	hl("LazyUrl", "@markup.link")
-	hl("LazyValue", { fg = "fg" })
-
-	hl("LazyError", "DiagnosticError")
-	hl("LazyInfo", "DiagnosticInfo")
-	hl("LazyWarning", "DiagnosticWarn")
-end
-
-return M
+	LazyError = "DiagnosticError",
+	LazyInfo = "DiagnosticInfo",
+	LazyWarning = "DiagnosticWarn",
+}

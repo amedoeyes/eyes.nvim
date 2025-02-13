@@ -1,8 +1,6 @@
-local M = {}
-
 local palette = require("eyes.palette")
 
-M.setup = function()
+return function()
 	vim.g.terminal_color_0 = palette.hex04
 	vim.g.terminal_color_1 = palette.hex06
 	vim.g.terminal_color_2 = palette.hex08
@@ -20,5 +18,3 @@ M.setup = function()
 	vim.g.terminal_color_14 = palette.hex08
 	vim.g.terminal_color_15 = palette.hex10
 end
-
-return M

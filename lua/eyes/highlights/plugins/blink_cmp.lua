@@ -1,60 +1,54 @@
-local M = {}
+return {
+	BlinkCmpMenu = "Pmenu",
+	BlinkCmpMenuBorder = "FloatBorder",
+	BlinkCmpMenuSelection = "PmenuSel",
 
-local hl = require("eyes.utility").hl
+	BlinkCmpScrollBarGutter = "PmenuSbar",
+	BlinkCmpScrollBarThumb = "PmenuThumb",
 
-M.setup = function()
-	hl("BlinkCmpMenu", "Pmenu")
-	hl("BlinkCmpMenuBorder", "FloatBorder")
-	hl("BlinkCmpMenuSelection", "PmenuSel")
+	BlinkCmpLabel = "Pmenu",
+	BlinkCmpLabelDeprecated = "Deprecated",
+	BlinkCmpLabelDescription = "Pmenu",
+	BlinkCmpLabelDetail = "Mute",
+	BlinkCmpLabelMatch = "PmenuMatch",
 
-	hl("BlinkCmpScrollBarGutter", "PmenuSbar")
-	hl("BlinkCmpScrollBarThumb", "PmenuThumb")
+	BlinkCmpKind = "Icon",
+	BlinkCmpKindClass = "BlinkCmpKind",
+	BlinkCmpKindColor = "BlinkCmpKind",
+	BlinkCmpKindConstant = "BlinkCmpKind",
+	BlinkCmpKindConstructor = "BlinkCmpKind",
+	BlinkCmpKindEnum = "BlinkCmpKind",
+	BlinkCmpKindEnumMember = "BlinkCmpKind",
+	BlinkCmpKindEvent = "BlinkCmpKind",
+	BlinkCmpKindField = "BlinkCmpKind",
+	BlinkCmpKindFile = "BlinkCmpKind",
+	BlinkCmpKindFolder = "BlinkCmpKind",
+	BlinkCmpKindFunction = "BlinkCmpKind",
+	BlinkCmpKindInterface = "BlinkCmpKind",
+	BlinkCmpKindKeyword = "BlinkCmpKind",
+	BlinkCmpKindMethod = "BlinkCmpKind",
+	BlinkCmpKindModule = "BlinkCmpKind",
+	BlinkCmpKindOperator = "BlinkCmpKind",
+	BlinkCmpKindProperty = "BlinkCmpKind",
+	BlinkCmpKindReference = "BlinkCmpKind",
+	BlinkCmpKindSnippet = "BlinkCmpKind",
+	BlinkCmpKindStruct = "BlinkCmpKind",
+	BlinkCmpKindText = "BlinkCmpKind",
+	BlinkCmpKindTypeParameter = "BlinkCmpKind",
+	BlinkCmpKindUnit = "BlinkCmpKind",
+	BlinkCmpKindValue = "BlinkCmpKind",
+	BlinkCmpKindVariable = "BlinkCmpKind",
 
-	hl("BlinkCmpLabel", "Pmenu")
-	hl("BlinkCmpLabelDeprecated", "Deprecated")
-	hl("BlinkCmpLabelDescription", "Pmenu")
-	hl("BlinkCmpLabelDetail", "Mute")
-	hl("BlinkCmpLabelMatch", "PmenuMatch")
+	BlinkCmpDoc = "NormalFloat",
+	BlinkCmpDocBorder = "FloatBorder",
+	BlinkCmpDocCursorLine = "CursorLine",
+	BlinkCmpDocSeparator = "FloatBorder",
 
-	hl("BlinkCmpKind", "Icon")
-	hl("BlinkCmpKindClass", "BlinkCmpKind")
-	hl("BlinkCmpKindColor", "BlinkCmpKind")
-	hl("BlinkCmpKindConstant", "BlinkCmpKind")
-	hl("BlinkCmpKindConstructor", "BlinkCmpKind")
-	hl("BlinkCmpKindEnum", "BlinkCmpKind")
-	hl("BlinkCmpKindEnumMember", "BlinkCmpKind")
-	hl("BlinkCmpKindEvent", "BlinkCmpKind")
-	hl("BlinkCmpKindField", "BlinkCmpKind")
-	hl("BlinkCmpKindFile", "BlinkCmpKind")
-	hl("BlinkCmpKindFolder", "BlinkCmpKind")
-	hl("BlinkCmpKindFunction", "BlinkCmpKind")
-	hl("BlinkCmpKindInterface", "BlinkCmpKind")
-	hl("BlinkCmpKindKeyword", "BlinkCmpKind")
-	hl("BlinkCmpKindMethod", "BlinkCmpKind")
-	hl("BlinkCmpKindModule", "BlinkCmpKind")
-	hl("BlinkCmpKindOperator", "BlinkCmpKind")
-	hl("BlinkCmpKindProperty", "BlinkCmpKind")
-	hl("BlinkCmpKindReference", "BlinkCmpKind")
-	hl("BlinkCmpKindSnippet", "BlinkCmpKind")
-	hl("BlinkCmpKindStruct", "BlinkCmpKind")
-	hl("BlinkCmpKindText", "BlinkCmpKind")
-	hl("BlinkCmpKindTypeParameter", "BlinkCmpKind")
-	hl("BlinkCmpKindUnit", "BlinkCmpKind")
-	hl("BlinkCmpKindValue", "BlinkCmpKind")
-	hl("BlinkCmpKindVariable", "BlinkCmpKind")
+	BlinkCmpSignatureHelp = "NormalFloat",
+	BlinkCmpSignatureHelpActiveParameter = "LspSignatureActiveParameter",
+	BlinkCmpSignatureHelpBorder = "FloatBorder",
 
-	hl("BlinkCmpDoc", "NormalFloat")
-	hl("BlinkCmpDocBorder", "FloatBorder")
-	hl("BlinkCmpDocCursorLine", "CursorLine")
-	hl("BlinkCmpDocSeparator", "FloatBorder")
+	BlinkCmpSource = "Dim",
 
-	hl("BlinkCmpSignatureHelp", "NormalFloat")
-	hl("BlinkCmpSignatureHelpActiveParameter", "LspSignatureActiveParameter")
-	hl("BlinkCmpSignatureHelpBorder", "FloatBorder")
-
-	hl("BlinkCmpSource", "Dim")
-
-	hl("BlinkCmpGhostText", "Dim")
-end
-
-return M
+	BlinkCmpGhostText = "Dim",
+}

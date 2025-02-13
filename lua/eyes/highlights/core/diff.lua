@@ -1,21 +1,16 @@
-local M = {}
-
-local hl = require("eyes.utility").hl
 local palette = require("eyes.palette")
 
-M.setup = function()
-	hl("DiffAdd", { fg = palette.hex08 })
-	hl("DiffChange", { fg = palette.hex06 })
-	hl("DiffDelete", { fg = palette.hex04 })
-	hl("DiffText", { fg = palette.hex08 })
+return {
+	DiffAdd = { fg = palette.hex08 },
+	DiffChange = { fg = palette.hex06 },
+	DiffDelete = { fg = palette.hex04 },
+	DiffText = { fg = palette.hex08 },
 
-	hl("Added", "DiffAdd")
-	hl("Changed", "DiffChange")
-	hl("Removed", "DiffDelete")
+	Added = "DiffAdd",
+	Changed = "DiffChange",
+	Removed = "DiffDelete",
 
-	hl("@diff.plus", "DiffAdd")
-	hl("@diff.minus", "DiffDelete")
-	hl("@diff.delta", "DiffChange")
-end
-
-return M
+	["@diff.plus"] = "DiffAdd",
+	["@diff.minus"] = "DiffDelete",
+	["@diff.delta"] = "DiffChange",
+}

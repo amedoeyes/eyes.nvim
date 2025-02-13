@@ -1,265 +1,238 @@
-local M = {}
-
 local palette = require("eyes.palette")
-local hl = require("eyes.utility").hl
 
-M.dashboard = function()
-	hl("SnacksDashboardNormal", "Normal")
-	hl("SnacksDashboardHeader", { fg = "fg" })
-	hl("SnacksDashboardFooter", { fg = "fg" })
-	hl("SnacksDashboardTitle", "Title")
-	hl("SnacksDashboardTerminal", "None")
-	hl("SnacksDashboardIcon", "Icon")
-	hl("SnacksDashboardDesc", { fg = "fg" })
-	hl("SnacksDashboardKey", "Mute")
-	hl("SnacksDashboardDir", "Directory")
-	hl("SnacksDashboardFile", { fg = "fg" })
-	hl("SnacksDashboardSpecial", "Mute")
-end
+return {
+	SnacksDashboardNormal = "Normal",
+	SnacksDashboardHeader = { fg = "fg" },
+	SnacksDashboardFooter = { fg = "fg" },
+	SnacksDashboardTitle = "Title",
+	SnacksDashboardTerminal = "None",
+	SnacksDashboardIcon = "Icon",
+	SnacksDashboardDesc = { fg = "fg" },
+	SnacksDashboardKey = "Mute",
+	SnacksDashboardDir = "Directory",
+	SnacksDashboardFile = { fg = "fg" },
+	SnacksDashboardSpecial = "Mute",
 
-M.indent = function()
-	hl("SnacksIndent", "Whitespace")
-	hl("SnacksIndent1", { fg = palette.hex01 })
-	hl("SnacksIndent2", { fg = palette.hex02 })
-	hl("SnacksIndent3", { fg = palette.hex03 })
-	hl("SnacksIndent4", { fg = palette.hex04 })
-	hl("SnacksIndent5", { fg = palette.hex05 })
-	hl("SnacksIndent6", { fg = palette.hex06 })
-	hl("SnacksIndent7", { fg = palette.hex07 })
-	hl("SnacksIndent8", { fg = palette.hex08 })
-	hl("SnacksIndentBlank", "Dim")
-	hl("SnacksIndentChunk", "Mute")
-	hl("SnacksIndentScope", "Mute")
-end
+	SnacksIndent = "Whitespace",
+	SnacksIndent1 = { fg = palette.hex01 },
+	SnacksIndent2 = { fg = palette.hex02 },
+	SnacksIndent3 = { fg = palette.hex03 },
+	SnacksIndent4 = { fg = palette.hex04 },
+	SnacksIndent5 = { fg = palette.hex05 },
+	SnacksIndent6 = { fg = palette.hex06 },
+	SnacksIndent7 = { fg = palette.hex07 },
+	SnacksIndent8 = { fg = palette.hex08 },
+	SnacksIndentBlank = "Dim",
+	SnacksIndentChunk = "Mute",
+	SnacksIndentScope = "Mute",
 
-M.input = function()
-	hl("SnacksInputNormal", "NormalFloat")
-	hl("SnacksInputBorder", "FloatBorder")
-	hl("SnacksInputTitle", "FloatTitle")
-	hl("SnacksInputPrompt", "FloatTitle")
-	hl("SnacksInputIcon", "Icon")
-end
+	SnacksInputNormal = "NormalFloat",
+	SnacksInputBorder = "FloatBorder",
+	SnacksInputTitle = "FloatTitle",
+	SnacksInputPrompt = "FloatTitle",
+	SnacksInputIcon = "Icon",
 
-M.notifier = function()
-	hl("SnacksNotifierMinimal", "NormalFloat")
+	SnacksNotifierMinimal = "NormalFloat",
 
-	hl("SnacksNotifierError", "NormalFloat")
-	hl("SnacksNotifierTitleError", "DiagnosticError")
-	hl("SnacksNotifierFooterError", "DiagnosticError")
-	hl("SnacksNotifierBorderError", "FloatBorder")
-	hl("SnacksNotifierIconError", "DiagnosticSignError")
+	SnacksNotifierError = "NormalFloat",
+	SnacksNotifierTitleError = "DiagnosticError",
+	SnacksNotifierFooterError = "DiagnosticError",
+	SnacksNotifierBorderError = "FloatBorder",
+	SnacksNotifierIconError = "DiagnosticSignError",
 
-	hl("SnacksNotifierWarn", "NormalFloat")
-	hl("SnacksNotifierTitleWarn", "DiagnosticWarn")
-	hl("SnacksNotifierFooterWarn", "DiagnosticWarn")
-	hl("SnacksNotifierBorderWarn", "FloatBorder")
-	hl("SnacksNotifierIconWarn", "DiagnosticSignWarn")
+	SnacksNotifierWarn = "NormalFloat",
+	SnacksNotifierTitleWarn = "DiagnosticWarn",
+	SnacksNotifierFooterWarn = "DiagnosticWarn",
+	SnacksNotifierBorderWarn = "FloatBorder",
+	SnacksNotifierIconWarn = "DiagnosticSignWarn",
 
-	hl("SnacksNotifierInfo", "NormalFloat")
-	hl("SnacksNotifierTitleInfo", "DiagnosticInfo")
-	hl("SnacksNotifierFooterInfo", "DiagnosticInfo")
-	hl("SnacksNotifierBorderInfo", "FloatBorder")
-	hl("SnacksNotifierIconInfo", "DiagnosticSignInfo")
+	SnacksNotifierInfo = "NormalFloat",
+	SnacksNotifierTitleInfo = "DiagnosticInfo",
+	SnacksNotifierFooterInfo = "DiagnosticInfo",
+	SnacksNotifierBorderInfo = "FloatBorder",
+	SnacksNotifierIconInfo = "DiagnosticSignInfo",
 
-	hl("SnacksNotifierDebug", "NormalFloat")
-	hl("SnacksNotifierTitleDebug", "NonText")
-	hl("SnacksNotifierFooterDebug", "NonText")
-	hl("SnacksNotifierBorderDebug", "FloatBorder")
-	hl("SnacksNotifierIconDebug", "NonText")
+	SnacksNotifierDebug = "NormalFloat",
+	SnacksNotifierTitleDebug = "NonText",
+	SnacksNotifierFooterDebug = "NonText",
+	SnacksNotifierBorderDebug = "FloatBorder",
+	SnacksNotifierIconDebug = "NonText",
 
-	hl("SnacksNotifierTrace", "NormalFloat")
-	hl("SnacksNotifierTitleTrace", "NonText")
-	hl("SnacksNotifierFooterTrace", "NonText")
-	hl("SnacksNotifierBorderTrace", "FloatBorder")
-	hl("SnacksNotifierIconTrace", "NonText")
+	SnacksNotifierTrace = "NormalFloat",
+	SnacksNotifierTitleTrace = "NonText",
+	SnacksNotifierFooterTrace = "NonText",
+	SnacksNotifierBorderTrace = "FloatBorder",
+	SnacksNotifierIconTrace = "NonText",
 
-	hl("SnacksNotifierHistory", "NormalFloat")
-	hl("SnacksNotifierHistoryTitle", "FloatTitle")
-	hl("SnacksNotifierHistoryDateTime", "Mute")
-end
+	SnacksNotifierHistory = "NormalFloat",
+	SnacksNotifierHistoryTitle = "FloatTitle",
+	SnacksNotifierHistoryDateTime = "Mute",
 
-M.picker = function()
-	hl("SnacksPicker", "NormalFloat")
-	hl("SnacksPickerTitle", "FloatTitle")
-	hl("SnacksPickerBorder", "FloatBorder")
-	hl("FloatFooter", "FloatFooter")
-	hl("SnacksPickerCursorLine", "CursorLine")
+	SnacksPicker = "NormalFloat",
+	SnacksPickerTitle = "FloatTitle",
+	SnacksPickerBorder = "FloatBorder",
+	FloatFooter = "FloatFooter",
+	SnacksPickerCursorLine = "CursorLine",
 
-	hl("SnacksPickerInput", "NormalFloat")
-	hl("SnacksPickerInputTitle", "FloatTitle")
-	hl("SnacksPickerInputBorder", "FloatBorder")
-	hl("SnacksPickerInputFooter", "FloatFooter")
-	hl("SnacksPickerInputCursorLine", "CursorLine")
-	hl("SnacksPickerInputSearch", "Search")
-	hl("SnacksPickerPrompt", "Mute")
+	SnacksPickerInput = "NormalFloat",
+	SnacksPickerInputTitle = "FloatTitle",
+	SnacksPickerInputBorder = "FloatBorder",
+	SnacksPickerInputFooter = "FloatFooter",
+	SnacksPickerInputCursorLine = "CursorLine",
+	SnacksPickerInputSearch = "Search",
+	SnacksPickerPrompt = "Mute",
 
-	hl("SnacksPickerPreview", "NormalFloat")
-	hl("SnacksPickerPreviewTitle", "FloatTitle")
-	hl("SnacksPickerPreviewBorder", "FloatBorder")
-	hl("SnacksPickerPreviewFooter", "FloatFooter")
-	hl("SnacksPickerPreviewCursorLine", "CursorLine")
+	SnacksPickerPreview = "NormalFloat",
+	SnacksPickerPreviewTitle = "FloatTitle",
+	SnacksPickerPreviewBorder = "FloatBorder",
+	SnacksPickerPreviewFooter = "FloatFooter",
+	SnacksPickerPreviewCursorLine = "CursorLine",
 
-	hl("SnacksPickerList", "NormalFloat")
-	hl("SnacksPickerListTitle", "FloatTitle")
-	hl("SnacksPickerListBorder", "FloatBorder")
-	hl("SnacksPickerListFooter", "FloatFooter")
-	hl("SnacksPickerListCursorLine", "CursorLine")
+	SnacksPickerList = "NormalFloat",
+	SnacksPickerListTitle = "FloatTitle",
+	SnacksPickerListBorder = "FloatBorder",
+	SnacksPickerListFooter = "FloatFooter",
+	SnacksPickerListCursorLine = "CursorLine",
 
-	hl("SnacksPickerBox", "NormalFloat")
-	hl("SnacksPickerBoxTitle", "FloatTitle")
-	hl("SnacksPickerBoxBorder", "FloatBorder")
-	hl("SnacksPickerBoxFooter", "FloatFooter")
-	hl("SnacksPickerBoxCursorLine", "CursorLine")
+	SnacksPickerBox = "NormalFloat",
+	SnacksPickerBoxTitle = "FloatTitle",
+	SnacksPickerBoxBorder = "FloatBorder",
+	SnacksPickerBoxFooter = "FloatFooter",
+	SnacksPickerBoxCursorLine = "CursorLine",
 
-	hl("SnacksPickerToggle", "Mute")
-	hl("SnacksPickerToggleFollow", "Mute")
-	hl("SnacksPickerToggleHidden", "Mute")
-	hl("SnacksPickerToggleIgnored", "Mute")
-	hl("SnacksPickerToggleModified", "Mute")
-	hl("SnacksPickerToggleRegex", "Mute")
+	SnacksPickerToggle = "Mute",
+	SnacksPickerToggleFollow = "Mute",
+	SnacksPickerToggleHidden = "Mute",
+	SnacksPickerToggleIgnored = "Mute",
+	SnacksPickerToggleModified = "Mute",
+	SnacksPickerToggleRegex = "Mute",
 
-	hl("SnacksPickerSelected", { fg = "fg" })
-	hl("SnacksPickerUnselected", "Dim")
+	SnacksPickerSelected = { fg = "fg" },
+	SnacksPickerUnselected = "Dim",
 
-	hl("SnacksPickerSpinner", "Dim")
-	hl("SnacksPickerTotals", "Dim")
+	SnacksPickerSpinner = "Dim",
+	SnacksPickerTotals = "Dim",
 
-	hl("SnacksPickerSearch", "Search")
-	hl("SnacksPickerMatch", "PmenuMatch")
+	SnacksPickerSearch = "Search",
+	SnacksPickerMatch = "PmenuMatch",
 
-	hl("SnacksPickerTime", "Mute")
-	hl("SnacksPickerTree", "Dim")
-	hl("SnacksPickerIdx", "Mute")
-	hl("SnacksPickerCode", "@markup.raw.markdown_inline")
+	SnacksPickerTime = "Mute",
+	SnacksPickerTree = "Dim",
+	SnacksPickerIdx = "Mute",
+	SnacksPickerCode = "@markup.raw.markdown_inline",
 
-	hl("SnacksPickerBold", "Bold")
-	hl("SnacksPickerComment", "Comment")
-	hl("SnacksPickerDelim", "Delimiter")
-	hl("SnacksPickerDimmed", "Dim")
-	hl("SnacksPickerItalic", "Italic")
-	hl("SnacksPickerSpecial", "Special")
+	SnacksPickerBold = "Bold",
+	SnacksPickerComment = "Comment",
+	SnacksPickerDelim = "Delimiter",
+	SnacksPickerDimmed = "Dim",
+	SnacksPickerItalic = "Italic",
+	SnacksPickerSpecial = "Special",
 
-	hl("SnacksPickerFile", { fg = "fg" })
-	hl("SnacksPickerDirectory", "Directory")
-	hl("SnacksPickerDir", "Directory")
-	hl("SnacksPickerLink", "Mute")
-	hl("SnacksPickerLinkBroken", "Deprecated")
-	hl("SnacksPickerPathHidden", "Dim")
-	hl("SnacksPickerPathIgnored", "Dim")
-	hl("SnacksPickerLabel", "Mute")
-	hl("SnacksPickerRow", "Mute")
-	hl("SnacksPickerCol", "Mute")
+	SnacksPickerFile = { fg = "fg" },
+	SnacksPickerDirectory = "Directory",
+	SnacksPickerDir = "Directory",
+	SnacksPickerLink = "Mute",
+	SnacksPickerLinkBroken = "Deprecated",
+	SnacksPickerPathHidden = "Dim",
+	SnacksPickerPathIgnored = "Dim",
+	SnacksPickerLabel = "Mute",
+	SnacksPickerRow = "Mute",
+	SnacksPickerCol = "Mute",
 
-	hl("SnacksPickerIconArray", "Icon")
-	hl("SnacksPickerIconBoolean", "Icon")
-	hl("SnacksPickerIconClass", "Icon")
-	hl("SnacksPickerIconConstant", "Icon")
-	hl("SnacksPickerIconConstructor", "Icon")
-	hl("SnacksPickerIconEnum", "Icon")
-	hl("SnacksPickerIconEnumMember", "Icon")
-	hl("SnacksPickerIconEvent", "Icon")
-	hl("SnacksPickerIconField", "Icon")
-	hl("SnacksPickerIconFile", "Icon")
-	hl("SnacksPickerIconFunction", "Icon")
-	hl("SnacksPickerIconInterface", "Icon")
-	hl("SnacksPickerIconKey", "Icon")
-	hl("SnacksPickerIconMethod", "Icon")
-	hl("SnacksPickerIconModule", "Icon")
-	hl("SnacksPickerIconNamespace", "Icon")
-	hl("SnacksPickerIconNull", "Icon")
-	hl("SnacksPickerIconNumber", "Icon")
-	hl("SnacksPickerIconObject", "Icon")
-	hl("SnacksPickerIconOperator", "Icon")
-	hl("SnacksPickerIconPackage", "Icon")
-	hl("SnacksPickerIconProperty", "Icon")
-	hl("SnacksPickerIconString", "Icon")
-	hl("SnacksPickerIconStruct", "Icon")
-	hl("SnacksPickerIconTypeParameter", "Icon")
-	hl("SnacksPickerIconVariable", "Icon")
+	SnacksPickerIconArray = "Icon",
+	SnacksPickerIconBoolean = "Icon",
+	SnacksPickerIconClass = "Icon",
+	SnacksPickerIconConstant = "Icon",
+	SnacksPickerIconConstructor = "Icon",
+	SnacksPickerIconEnum = "Icon",
+	SnacksPickerIconEnumMember = "Icon",
+	SnacksPickerIconEvent = "Icon",
+	SnacksPickerIconField = "Icon",
+	SnacksPickerIconFile = "Icon",
+	SnacksPickerIconFunction = "Icon",
+	SnacksPickerIconInterface = "Icon",
+	SnacksPickerIconKey = "Icon",
+	SnacksPickerIconMethod = "Icon",
+	SnacksPickerIconModule = "Icon",
+	SnacksPickerIconNamespace = "Icon",
+	SnacksPickerIconNull = "Icon",
+	SnacksPickerIconNumber = "Icon",
+	SnacksPickerIconObject = "Icon",
+	SnacksPickerIconOperator = "Icon",
+	SnacksPickerIconPackage = "Icon",
+	SnacksPickerIconProperty = "Icon",
+	SnacksPickerIconString = "Icon",
+	SnacksPickerIconStruct = "Icon",
+	SnacksPickerIconTypeParameter = "Icon",
+	SnacksPickerIconVariable = "Icon",
 
-	hl("SnacksPickerAuEvent", "Mute")
-	hl("SnacksPickerAuGroup", { fg = "fg" })
-	hl("SnacksPickerAuPattern", "Mute")
+	SnacksPickerAuEvent = "Mute",
+	SnacksPickerAuGroup = { fg = "fg" },
+	SnacksPickerAuPattern = "Mute",
 
-	hl("SnacksPickerBufFlags", "Mute")
-	hl("SnacksPickerBufNr", "Mute")
+	SnacksPickerBufFlags = "Mute",
+	SnacksPickerBufNr = "Mute",
 
-	hl("SnacksPickerCmd", { fg = "fg" })
-	hl("SnacksPickerCmdBuiltin", { fg = "fg" })
-	hl("SnacksPickerDesc", "Mute")
+	SnacksPickerCmd = { fg = "fg" },
+	SnacksPickerCmdBuiltin = { fg = "fg" },
+	SnacksPickerDesc = "Mute",
 
-	hl("SnacksPickerDiagnosticCode", "Mute")
-	hl("SnacksPickerDiagnosticSource", "Dim")
+	SnacksPickerDiagnosticCode = "Mute",
+	SnacksPickerDiagnosticSource = "Dim",
 
-	hl("SnacksPickerGitBranch", { fg = "fg" })
-	hl("SnacksPickerGitBranchCurrent", { fg = "fg" })
-	hl("SnacksPickerGitDetached", { fg = "fg" })
+	SnacksPickerGitBranch = { fg = "fg" },
+	SnacksPickerGitBranchCurrent = { fg = "fg" },
+	SnacksPickerGitDetached = { fg = "fg" },
 
-	hl("SnacksPickerGitBreaking", "Error")
-	hl("SnacksPickerGitCommit", "Mute")
-	hl("SnacksPickerGitDate", "Mute")
-	hl("SnacksPickerGitIssue", "Mute")
-	hl("SnacksPickerGitScope", "Italic")
-	hl("SnacksPickerGitType", "Bold")
+	SnacksPickerGitBreaking = "Error",
+	SnacksPickerGitCommit = "Mute",
+	SnacksPickerGitDate = "Mute",
+	SnacksPickerGitIssue = "Mute",
+	SnacksPickerGitScope = "Italic",
+	SnacksPickerGitType = "Bold",
 
-	hl("SnacksPickerGitStatus", "Mute")
-	hl("SnacksPickerGitStatusAdded", "Added")
-	hl("SnacksPickerGitStatusCopied", "Added")
-	hl("SnacksPickerGitStatusDeleted", "Removed")
-	hl("SnacksPickerGitStatusIgnored", "Dim")
-	hl("SnacksPickerGitStatusModified", "Changed")
-	hl("SnacksPickerGitStatusRenamed", "Changed")
-	hl("SnacksPickerGitStatusStaged", "Added")
-	hl("SnacksPickerGitStatusUnmerged", "Dim")
-	hl("SnacksPickerGitStatusUntracked", "Dim")
+	SnacksPickerGitStatus = "Mute",
+	SnacksPickerGitStatusAdded = "Added",
+	SnacksPickerGitStatusCopied = "Added",
+	SnacksPickerGitStatusDeleted = "Removed",
+	SnacksPickerGitStatusIgnored = "Dim",
+	SnacksPickerGitStatusModified = "Changed",
+	SnacksPickerGitStatusRenamed = "Changed",
+	SnacksPickerGitStatusStaged = "Added",
+	SnacksPickerGitStatusUnmerged = "Dim",
+	SnacksPickerGitStatusUntracked = "Dim",
 
-	hl("SnacksPickerIcon", "Icon")
-	hl("SnacksPickerIconCategory", "Mute")
-	hl("SnacksPickerIconName", { fg = "fg" })
-	hl("SnacksPickerIconSource", "Mute")
+	SnacksPickerIcon = "Icon",
+	SnacksPickerIconCategory = "Mute",
+	SnacksPickerIconName = { fg = "fg" },
+	SnacksPickerIconSource = "Mute",
 
-	hl("SnacksPickerKeymapLhs", "Mute")
-	hl("SnacksPickerKeymapMode", "Mute")
-	hl("SnacksPickerKeymapNowait", "Mute")
-	hl("SnacksPickerKeymapRhs", "Mute")
+	SnacksPickerKeymapLhs = "Mute",
+	SnacksPickerKeymapMode = "Mute",
+	SnacksPickerKeymapNowait = "Mute",
+	SnacksPickerKeymapRhs = "Mute",
 
-	hl("SnacksPickerManPage", "Mute")
-	hl("SnacksPickerManSection", "Mute")
+	SnacksPickerManPage = "Mute",
+	SnacksPickerManSection = "Mute",
 
-	hl("SnacksPickerPickWin", "Search")
-	hl("SnacksPickerPickWinCurrent", "CurSearch")
+	SnacksPickerPickWin = "Search",
+	SnacksPickerPickWinCurrent = "CurSearch",
 
-	hl("SnacksPickerRegister", "Mute")
+	SnacksPickerRegister = "Mute",
 
-	hl("SnacksPickerUndoAdded", "Added")
-	hl("SnacksPickerUndoCurrent", { fg = "fg" })
-	hl("SnacksPickerUndoRemoved", "Removed")
-	hl("SnacksPickerUndoSaved", "Mute")
-end
+	SnacksPickerUndoAdded = "Added",
+	SnacksPickerUndoCurrent = { fg = "fg" },
+	SnacksPickerUndoRemoved = "Removed",
+	SnacksPickerUndoSaved = "Mute",
 
-M.statuscolumn = function()
-	hl("SnacksStatusColumnMark", { fg = "fg" })
-end
+	SnacksStatusColumnMark = { fg = "fg" },
 
-M.win = function()
-	hl("SnacksNormal", "Normal")
-	hl("SnacksNormalNC", "NormalNC")
-	hl("SnacksBackdrop", { bg = "black" })
-	hl("SnacksWinBar", "WinBar")
-	hl("SnacksWinBarNC", "WinBarNC")
-	hl("SnacksWinKey", "Mute")
-	hl("SnacksWinKeyDesc", { fg = "fg" })
-	hl("SnacksWinKeySep", "Mute")
-end
-
-M.setup = function()
-	M.dashboard()
-	M.indent()
-	M.input()
-	M.notifier()
-	M.picker()
-	M.statuscolumn()
-	M.win()
-end
-
-return M
+	SnacksNormal = "Normal",
+	SnacksNormalNC = "NormalNC",
+	SnacksBackdrop = { bg = "black" },
+	SnacksWinBar = "WinBar",
+	SnacksWinBarNC = "WinBarNC",
+	SnacksWinKey = "Mute",
+	SnacksWinKeyDesc = { fg = "fg" },
+	SnacksWinKeySep = "Mute",
+}

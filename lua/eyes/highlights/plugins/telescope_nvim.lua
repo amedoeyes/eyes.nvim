@@ -1,67 +1,61 @@
-local M = {}
+return {
+	TelescopeNormal = "NormalFloat",
+	TelescopeTitle = "FloatTitle",
+	TelescopeBorder = "FloatBorder",
+	TelescopeMatching = "PmenuMatch",
 
-local hl = require("eyes.utility").hl
+	TelescopeSelection = "CursorColumn",
+	TelescopeSelectionCaret = "CursorColumn",
+	TelescopeMultiIcon = "Icon",
+	TelescopeMultiSelection = "None",
 
-M.setup = function()
-	hl("TelescopeNormal", "NormalFloat")
-	hl("TelescopeTitle", "FloatTitle")
-	hl("TelescopeBorder", "FloatBorder")
-	hl("TelescopeMatching", "PmenuMatch")
+	TelescopePromptNormal = "NormalFloat",
+	TelescopePromptTitle = "FloatTitle",
+	TelescopePromptBorder = "FloatBorder",
+	TelescopePromptCounter = "Dim",
+	TelescopePromptPrefix = "Mute",
 
-	hl("TelescopeSelection", "CursorColumn")
-	hl("TelescopeSelectionCaret", "CursorColumn")
-	hl("TelescopeMultiIcon", "Icon")
-	hl("TelescopeMultiSelection", "None")
+	TelescopeResultsNormal = "NormalFloat",
+	TelescopeResultsTitle = "FloatTitle",
+	TelescopeResultsBorder = "FloatBorder",
+	TelescopeResultsClass = "@type",
+	TelescopeResultsComment = "@comment",
+	TelescopeResultsConstant = "@constant",
+	TelescopeResultsDiffAdd = "DiffAdd",
+	TelescopeResultsDiffChange = "DiffChange",
+	TelescopeResultsDiffDelete = "DiffDelete",
+	TelescopeResultsDiffUntracked = "Dim",
+	TelescopeResultsField = "@attribute",
+	TelescopeResultsFunction = "@function",
+	TelescopeResultsIdentifier = "@variable",
+	TelescopeResultsLineNr = "LineNr",
+	TelescopeResultsMethod = "@function.method",
+	TelescopeResultsNumber = "@number",
+	TelescopeResultsOperator = "@operator",
+	TelescopeResultsSpecialComment = "@comment",
+	TelescopeResultsStruct = "@type",
+	TelescopeResultsVariable = "@variable",
 
-	hl("TelescopePromptNormal", "NormalFloat")
-	hl("TelescopePromptTitle", "FloatTitle")
-	hl("TelescopePromptBorder", "FloatBorder")
-	hl("TelescopePromptCounter", "Dim")
-	hl("TelescopePromptPrefix", "Mute")
-
-	hl("TelescopeResultsNormal", "NormalFloat")
-	hl("TelescopeResultsTitle", "FloatTitle")
-	hl("TelescopeResultsBorder", "FloatBorder")
-	hl("TelescopeResultsClass", "@type")
-	hl("TelescopeResultsComment", "@comment")
-	hl("TelescopeResultsConstant", "@constant")
-	hl("TelescopeResultsDiffAdd", "DiffAdd")
-	hl("TelescopeResultsDiffChange", "DiffChange")
-	hl("TelescopeResultsDiffDelete", "DiffDelete")
-	hl("TelescopeResultsDiffUntracked", "Dim")
-	hl("TelescopeResultsField", "@attribute")
-	hl("TelescopeResultsFunction", "@function")
-	hl("TelescopeResultsIdentifier", "@variable")
-	hl("TelescopeResultsLineNr", "LineNr")
-	hl("TelescopeResultsMethod", "@function.method")
-	hl("TelescopeResultsNumber", "@number")
-	hl("TelescopeResultsOperator", "@operator")
-	hl("TelescopeResultsSpecialComment", "@comment")
-	hl("TelescopeResultsStruct", "@type")
-	hl("TelescopeResultsVariable", "@variable")
-
-	hl("TelescopePreviewNormal", "NormalFloat")
-	hl("TelescopePreviewTitle", "FloatTitle")
-	hl("TelescopePreviewBorder", "FloatBorder")
-	hl("TelescopePreviewLine", "Visual")
-	hl("TelescopePreviewMatch", "Search")
-	hl("TelescopePreviewMessage", { fg = "fg" })
-	hl("TelescopePreviewMessageFillchar", { fg = "fg" })
-	hl("TelescopePreviewBlock", { fg = "fg" })
-	hl("TelescopePreviewCharDev", { fg = "fg" })
-	hl("TelescopePreviewDate", { fg = "fg" })
-	hl("TelescopePreviewDirectory", "Directory")
-	hl("TelescopePreviewExecute", { fg = "fg" })
-	hl("TelescopePreviewGroup", { fg = "fg" })
-	hl("TelescopePreviewHyphen", { fg = "fg" })
-	hl("TelescopePreviewLink", { fg = "fg" })
-	hl("TelescopePreviewPipe", { fg = "fg" })
-	hl("TelescopePreviewRead", { fg = "fg" })
-	hl("TelescopePreviewSize", { fg = "fg" })
-	hl("TelescopePreviewSocket", { fg = "fg" })
-	hl("TelescopePreviewSticky", { fg = "fg" })
-	hl("TelescopePreviewUser", { fg = "fg" })
-	hl("TelescopePreviewWrite", { fg = "fg" })
-end
-
-return M
+	TelescopePreviewNormal = "NormalFloat",
+	TelescopePreviewTitle = "FloatTitle",
+	TelescopePreviewBorder = "FloatBorder",
+	TelescopePreviewLine = "Visual",
+	TelescopePreviewMatch = "Search",
+	TelescopePreviewMessage = { fg = "fg" },
+	TelescopePreviewMessageFillchar = { fg = "fg" },
+	TelescopePreviewBlock = { fg = "fg" },
+	TelescopePreviewCharDev = { fg = "fg" },
+	TelescopePreviewDate = { fg = "fg" },
+	TelescopePreviewDirectory = "Directory",
+	TelescopePreviewExecute = { fg = "fg" },
+	TelescopePreviewGroup = { fg = "fg" },
+	TelescopePreviewHyphen = { fg = "fg" },
+	TelescopePreviewLink = { fg = "fg" },
+	TelescopePreviewPipe = { fg = "fg" },
+	TelescopePreviewRead = { fg = "fg" },
+	TelescopePreviewSize = { fg = "fg" },
+	TelescopePreviewSocket = { fg = "fg" },
+	TelescopePreviewSticky = { fg = "fg" },
+	TelescopePreviewUser = { fg = "fg" },
+	TelescopePreviewWrite = { fg = "fg" },
+}

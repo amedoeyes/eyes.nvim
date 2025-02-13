@@ -1,56 +1,50 @@
-local M = {}
-
-local hl = require("eyes.utility").hl
-
-M.setup = function()
-	hl("NeoTreeBufferNumber", "Mute")
-	hl("NeoTreeCursorLine", "CursorLine")
-	hl("NeoTreeDimText", "Mute")
-	hl("NeoTreeDirectoryIcon", "Icon")
-	hl("NeoTreeDirectoryName", "Directory")
-	hl("NeoTreeDotfile", "Dim")
-	hl("NeoTreeEndOfBuffer", "EndOfBuffer")
-	hl("NeoTreeExpander", "Icon")
-	hl("NeoTreeFadeText1", "Mute")
-	hl("NeoTreeFadeText2", "Dim")
-	hl("NeoTreeFileIcon", "Icon")
-	hl("NeoTreeFileName", { fg = "fg" })
-	hl("NeoTreeFileNameOpened", { fg = "fg" })
-	hl("NeoTreeFileStats", { fg = "fg" })
-	hl("NeoTreeFileStatsHeader", "Title")
-	hl("NeoTreeFilterTerm", { fg = "fg" })
-	hl("NeoTreeFloatBorder", "FloatBorder")
-	hl("NeoTreeFloatNormal", "NormalFloat")
-	hl("NeoTreeFloatTitle", "FloatTitle")
-	hl("NeoTreeGitAdded", "Added")
-	hl("NeoTreeGitConflict", "Changed")
-	hl("NeoTreeGitDeleted", "Removed")
-	hl("NeoTreeGitIgnored", "Dim")
-	hl("NeoTreeGitModified", "Changed")
-	hl("NeoTreeGitRenamed", "Changed")
-	hl("NeoTreeGitStaged", "Added")
-	hl("NeoTreeGitUnstaged", "Dim")
-	hl("NeoTreeGitUntracked", "Dim")
-	hl("NeoTreeHiddenByName", "Dim")
-	hl("NeoTreeIndentMarker", "Whitespace")
-	hl("NeoTreeMessage", "Dim")
-	hl("NeoTreeModified", "Icon")
-	hl("NeoTreeNormal", "Normal")
-	hl("NeoTreeNormalNC", "NormalNC")
-	hl("NeoTreePreview", "Search")
-	hl("NeoTreeRootName", "Title")
-	hl("NeoTreeSignColumn", "SignColumn")
-	hl("NeoTreeStatusLine", "StatusLine")
-	hl("NeoTreeStatusLineNC", "StatusLineNC")
-	hl("NeoTreeSymbolicLinkTarget", "Mute")
-	hl("NeoTreeTabActive", "TabLineSel")
-	hl("NeoTreeTabInactive", "TabLine")
-	hl("NeoTreeTabSeparatorActive", "Border")
-	hl("NeoTreeTabSeparatorInactive", "Border")
-	hl("NeoTreeTitleBar", "Title")
-	hl("NeoTreeVertSplit", "VertSplit")
-	hl("NeoTreeWinSeparator", "WinSeparator")
-	hl("NeoTreeWindowsHidden", "Dim")
-end
-
-return M
+return {
+	NeoTreeBufferNumber = "Mute",
+	NeoTreeCursorLine = "CursorLine",
+	NeoTreeDimText = "Mute",
+	NeoTreeDirectoryIcon = "Icon",
+	NeoTreeDirectoryName = "Directory",
+	NeoTreeDotfile = "Dim",
+	NeoTreeEndOfBuffer = "EndOfBuffer",
+	NeoTreeExpander = "Icon",
+	NeoTreeFadeText1 = "Mute",
+	NeoTreeFadeText2 = "Dim",
+	NeoTreeFileIcon = "Icon",
+	NeoTreeFileName = { fg = "fg" },
+	NeoTreeFileNameOpened = { fg = "fg" },
+	NeoTreeFileStats = { fg = "fg" },
+	NeoTreeFileStatsHeader = "Title",
+	NeoTreeFilterTerm = { fg = "fg" },
+	NeoTreeFloatBorder = "FloatBorder",
+	NeoTreeFloatNormal = "NormalFloat",
+	NeoTreeFloatTitle = "FloatTitle",
+	NeoTreeGitAdded = "Added",
+	NeoTreeGitConflict = "Changed",
+	NeoTreeGitDeleted = "Removed",
+	NeoTreeGitIgnored = "Dim",
+	NeoTreeGitModified = "Changed",
+	NeoTreeGitRenamed = "Changed",
+	NeoTreeGitStaged = "Added",
+	NeoTreeGitUnstaged = "Dim",
+	NeoTreeGitUntracked = "Dim",
+	NeoTreeHiddenByName = "Dim",
+	NeoTreeIndentMarker = "Whitespace",
+	NeoTreeMessage = "Dim",
+	NeoTreeModified = "Icon",
+	NeoTreeNormal = "Normal",
+	NeoTreeNormalNC = "NormalNC",
+	NeoTreePreview = "Search",
+	NeoTreeRootName = "Title",
+	NeoTreeSignColumn = "SignColumn",
+	NeoTreeStatusLine = "StatusLine",
+	NeoTreeStatusLineNC = "StatusLineNC",
+	NeoTreeSymbolicLinkTarget = "Mute",
+	NeoTreeTabActive = "TabLineSel",
+	NeoTreeTabInactive = "TabLine",
+	NeoTreeTabSeparatorActive = "Border",
+	NeoTreeTabSeparatorInactive = "Border",
+	NeoTreeTitleBar = "Title",
+	NeoTreeVertSplit = "VertSplit",
+	NeoTreeWinSeparator = "WinSeparator",
+	NeoTreeWindowsHidden = "Dim",
+}

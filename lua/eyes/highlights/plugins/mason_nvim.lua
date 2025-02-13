@@ -1,25 +1,18 @@
-local M = {}
+return {
+	MasonHeader = "Title",
+	MasonHeaderSecondary = "Title",
+	MasonHeading = "Title",
 
-local utility = require("eyes.utility")
-local hl = utility.hl
+	MasonMuted = "Mute",
+	MasonHighlight = { fg = "fg" },
 
-M.setup = function()
-	hl("MasonHeader", "Title")
-	hl("MasonHeaderSecondary", "Title")
-	hl("MasonHeading", "Title")
+	MasonMutedBlock = "Mute",
+	MasonMutedBlockBold = "Mute",
 
-	hl("MasonMuted", "Mute")
-	hl("MasonHighlight", { fg = "fg" })
+	MasonHighlightBlock = "Title",
+	MasonHighlightBlockBold = "Title",
 
-	hl("MasonMutedBlock", "Mute")
-	hl("MasonMutedBlockBold", "Mute")
-
-	hl("MasonHighlightBlock", "Title")
-	hl("MasonHighlightBlockBold", "Title")
-
-	hl("MasonHighlightSecondary", "Title")
-	hl("MasonHighlightBlockSecondary", "Title")
-	hl("MasonHighlightBlockBoldSecondary", "Title")
-end
-
-return M
+	MasonHighlightSecondary = "Title",
+	MasonHighlightBlockSecondary = "Title",
+	MasonHighlightBlockBoldSecondary = "Title",
+}

@@ -88,11 +88,25 @@ M.setup = function()
 	require("eyes.highlights.links").setup()
 
 	for _, module in ipairs(core) do
-		require("eyes.highlights.core." .. module).setup()
+		local highlights = require("eyes.highlights.core." .. module)
+		if type(highlights) == "function" then
+			highlights()
+		else
+			for key, value in pairs(highlights) do
+				require("eyes.utility").hl(key, value)
+			end
+		end
 	end
 
 	for _, plugin in ipairs(plugins) do
-		require("eyes.highlights.plugins." .. plugin).setup()
+		local highlights = require("eyes.highlights.plugins." .. plugin)
+		if type(highlights) == "function" then
+			highlights()
+		else
+			for key, value in pairs(highlights) do
+				require("eyes.utility").hl(key, value)
+			end
+		end
 	end
 
 	if opts.transparent then

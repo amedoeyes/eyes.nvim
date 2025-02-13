@@ -1,31 +1,25 @@
-local M = {}
+return {
+	NotifyERRORBorder = "FloatBorder",
+	NotifyWARNBorder = "FloatBorder",
+	NotifyINFOBorder = "FloatBorder",
+	NotifyDEBUGBorder = "FloatBorder",
+	NotifyTRACEBorder = "FloatBorder",
 
-local hl = require("eyes.utility").hl
+	NotifyERRORIcon = "Icon",
+	NotifyWARNIcon = "Icon",
+	NotifyINFOIcon = "Icon",
+	NotifyDEBUGIcon = "Icon",
+	NotifyTRACEIcon = "Icon",
 
-M.setup = function()
-	hl("NotifyERRORBorder", "FloatBorder")
-	hl("NotifyWARNBorder", "FloatBorder")
-	hl("NotifyINFOBorder", "FloatBorder")
-	hl("NotifyDEBUGBorder", "FloatBorder")
-	hl("NotifyTRACEBorder", "FloatBorder")
+	NotifyERRORTitle = "FloatTitle",
+	NotifyWARNTitle = "FloatTitle",
+	NotifyINFOTitle = "FloatTitle",
+	NotifyDEBUGTitle = "FloatTitle",
+	NotifyTRACETitle = "FloatTitle",
 
-	hl("NotifyERRORIcon", "Icon")
-	hl("NotifyWARNIcon", "Icon")
-	hl("NotifyINFOIcon", "Icon")
-	hl("NotifyDEBUGIcon", "Icon")
-	hl("NotifyTRACEIcon", "Icon")
-
-	hl("NotifyERRORTitle", "FloatTitle")
-	hl("NotifyWARNTitle", "FloatTitle")
-	hl("NotifyINFOTitle", "FloatTitle")
-	hl("NotifyDEBUGTitle", "FloatTitle")
-	hl("NotifyTRACETitle", "FloatTitle")
-
-	hl("NotifyERRORBody", "NormalFloat")
-	hl("NotifyWARNBody", "NormalFloat")
-	hl("NotifyINFOBody", "NormalFloat")
-	hl("NotifyDEBUGBody", "NormalFloat")
-	hl("NotifyTRACEBody", "NormalFloat")
-end
-
-return M
+	NotifyERRORBody = "NormalFloat",
+	NotifyWARNBody = "NormalFloat",
+	NotifyINFOBody = "NormalFloat",
+	NotifyDEBUGBody = "NormalFloat",
+	NotifyTRACEBody = "NormalFloat",
+}

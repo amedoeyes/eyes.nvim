@@ -1,56 +1,51 @@
-local M = {}
-
-local hl = require("eyes.utility").hl
 local palette = require("eyes.palette")
 
-M.setup = function()
-	hl("Comment", { fg = palette.hex04, italic = true })
+return {
+	Comment = { fg = palette.hex04, italic = true },
 
-	hl("Constant", { fg = palette.hex08 })
-	hl("String", "Constant")
-	hl("Character", "Constant")
-	hl("Number", "Constant")
-	hl("Boolean", "Constant")
-	hl("Float", "Constant")
+	Constant = { fg = palette.hex08 },
+	String = "Constant",
+	Character = "Constant",
+	Number = "Constant",
+	Boolean = "Constant",
+	Float = "Constant",
 
-	hl("Identifier", { fg = "fg" })
-	hl("Function", { fg = palette.hex09 })
+	Identifier = { fg = "fg" },
+	Function = { fg = palette.hex09 },
 
-	hl("Statement", { fg = palette.hex06 })
-	hl("Conditional", "Statement")
-	hl("Repeat", "Statement")
-	hl("Label", { fg = palette.hex08 })
-	hl("Operator", { fg = palette.hex07 })
-	hl("Keyword", "Statement")
-	hl("Exception", "Statement")
+	Statement = { fg = palette.hex06 },
+	Conditional = "Statement",
+	Repeat = "Statement",
+	Label = { fg = palette.hex08 },
+	Operator = { fg = palette.hex07 },
+	Keyword = "Statement",
+	Exception = "Statement",
 
-	hl("PreProc", "Statement")
-	hl("Include", "PreProc")
-	hl("Define", "PreProc")
-	hl("Macro", "PreProc")
-	hl("PreCondit", "PreProc")
+	PreProc = "Statement",
+	Include = "PreProc",
+	Define = "PreProc",
+	Macro = "PreProc",
+	PreCondit = "PreProc",
 
-	hl("Type", { fg = palette.hex07 })
-	hl("StorageClass", "Type")
-	hl("Structure", "Type")
-	hl("Typedef", "Type")
+	Type = { fg = palette.hex07 },
+	StorageClass = "Type",
+	Structure = "Type",
+	Typedef = "Type",
 
-	hl("Special", { fg = palette.hex06 })
-	hl("SpecialChar", "Special")
-	hl("Tag", { fg = palette.hex08 })
-	hl("Delimiter", "Special")
-	hl("SpecialComment", "Special")
-	hl("Debug", "Special")
+	Special = { fg = palette.hex06 },
+	SpecialChar = "Special",
+	Tag = { fg = palette.hex08 },
+	Delimiter = "Special",
+	SpecialComment = "Special",
+	Debug = "Special",
 
-	hl("Underlined", "Underline")
+	Underlined = "Underline",
 
-	hl("Ignore", { fg = palette.hex04 })
+	Ignore = { fg = palette.hex04 },
 
-	hl("Error", "DiagnosticError")
+	Error = "DiagnosticError",
 
-	hl("Todo", { fg = "fg" })
+	Todo = { fg = "fg" },
 
-	hl("Whitespace", { fg = palette.hex03 })
-end
-
-return M
+	Whitespace = { fg = palette.hex03 },
+}

@@ -1,65 +1,59 @@
-local M = {}
+return {
+	FzfLuaNormal = "Normal",
+	FzfLuaBorder = "Border",
+	FzfLuaTitle = "Title",
+	FzfLuaTitleFlags = "Mute",
+	FzfLuaBackdrop = { bg = "black" },
+	FzfLuaHeaderBind = "Mute",
+	FzfLuaHeaderText = "Mute",
+	FzfLuaSearch = "Search",
+	FzfLuaPathColNr = "Mute",
+	FzfLuaPathLineNr = "Mute",
+	FzfLuaLiveSym = "PmenuMatch",
+	FzfLuaLivePrompt = { fg = "fg" }, -- Not sure what this highlight does
 
-local hl = require("eyes.utility").hl
+	FzfLuaPreviewBorder = "Border",
+	FzfLuaPreviewNormal = "Normal",
+	FzfLuaPreviewTitle = "Title",
 
-M.setup = function()
-	hl("FzfLuaNormal", "Normal")
-	hl("FzfLuaBorder", "Border")
-	hl("FzfLuaTitle", "Title")
-	hl("FzfLuaTitleFlags", "Mute")
-	hl("FzfLuaBackdrop", { bg = "black" })
-	hl("FzfLuaHeaderBind", "Mute")
-	hl("FzfLuaHeaderText", "Mute")
-	hl("FzfLuaSearch", "Search")
-	hl("FzfLuaPathColNr", "Mute")
-	hl("FzfLuaPathLineNr", "Mute")
-	hl("FzfLuaLiveSym", "PmenuMatch")
-	hl("FzfLuaLivePrompt", { fg = "fg" }) -- Not sure what this highlight does
+	FzfLuaCursor = "Cursor",
+	FzfLuaCursorLine = "CursorLine",
+	FzfLuaCursorLineNr = "CursorLineNr",
 
-	hl("FzfLuaPreviewBorder", "Border")
-	hl("FzfLuaPreviewNormal", "Normal")
-	hl("FzfLuaPreviewTitle", "Title")
+	FzfLuaScrollBorderEmpty = "None",
+	FzfLuaScrollBorderFull = "PmenuThumb",
+	FzfLuaScrollFloatEmpty = "PmenuSbar",
+	FzfLuaScrollFloatFull = "PmenuThumb",
 
-	hl("FzfLuaCursor", "Cursor")
-	hl("FzfLuaCursorLine", "CursorLine")
-	hl("FzfLuaCursorLineNr", "CursorLineNr")
+	FzfLuaHelpNormal = "Normal",
+	FzfLuaHelpBorder = "Border",
 
-	hl("FzfLuaScrollBorderEmpty", "None")
-	hl("FzfLuaScrollBorderFull", "PmenuThumb")
-	hl("FzfLuaScrollFloatEmpty", "PmenuSbar")
-	hl("FzfLuaScrollFloatFull", "PmenuThumb")
+	FzfLuaBufName = { fg = "fg" },
+	FzfLuaBufNr = "Mute",
+	FzfLuaBufId = "Mute",
+	FzfLuaBufLineNr = "Mute",
+	FzfLuaBufFlagCur = "Mute",
+	FzfLuaBufFlagAlt = "Mute",
 
-	hl("FzfLuaHelpNormal", "Normal")
-	hl("FzfLuaHelpBorder", "Border")
+	FzfLuaTabTitle = { fg = "fg" },
+	FzfLuaTabMarker = "Mute",
 
-	hl("FzfLuaBufName", { fg = "fg" })
-	hl("FzfLuaBufNr", "Mute")
-	hl("FzfLuaBufId", "Mute")
-	hl("FzfLuaBufLineNr", "Mute")
-	hl("FzfLuaBufFlagCur", "Mute")
-	hl("FzfLuaBufFlagAlt", "Mute")
+	FzfLuaDirIcon = "Icon",
+	FzfLuaDirPart = "Directory",
+	FzfLuaFilePart = { fg = "fg" },
 
-	hl("FzfLuaTabTitle", { fg = "fg" })
-	hl("FzfLuaTabMarker", "Mute")
-
-	hl("FzfLuaDirIcon", "Icon")
-	hl("FzfLuaDirPart", "Directory")
-	hl("FzfLuaFilePart", { fg = "fg" })
-
-	hl("FzfLuaFzfNormal", "Normal")
-	hl("FzfLuaFzfCursorLine", "CursorLine")
-	hl("FzfLuaFzfMatch", "PmenuMatch")
-	hl("FzfLuaFzfBorder", "Border")
-	hl("FzfLuaFzfScrollbar", "Border")
-	hl("FzfLuaFzfSeparator", "Border")
-	hl("FzfLuaFzfGutter", "None")
-	hl("FzfLuaFzfHeader", "Title")
-	hl("FzfLuaFzfInfo", "Dim")
-	hl("FzfLuaFzfPointer", "Cursor")
-	hl("FzfLuaFzfMarker", "Cursor")
-	hl("FzfLuaFzfSpinner", "Dim")
-	hl("FzfLuaFzfPrompt", "Mute")
-	hl("FzfLuaFzfQuery", { fg = "fg" })
-end
-
-return M
+	FzfLuaFzfNormal = "Normal",
+	FzfLuaFzfCursorLine = "CursorLine",
+	FzfLuaFzfMatch = "PmenuMatch",
+	FzfLuaFzfBorder = "Border",
+	FzfLuaFzfScrollbar = "Border",
+	FzfLuaFzfSeparator = "Border",
+	FzfLuaFzfGutter = "None",
+	FzfLuaFzfHeader = "Title",
+	FzfLuaFzfInfo = "Dim",
+	FzfLuaFzfPointer = "Cursor",
+	FzfLuaFzfMarker = "Cursor",
+	FzfLuaFzfSpinner = "Dim",
+	FzfLuaFzfPrompt = "Mute",
+	FzfLuaFzfQuery = { fg = "fg" },
+}

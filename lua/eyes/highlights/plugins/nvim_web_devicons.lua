@@ -1,8 +1,4 @@
-local M = {}
-
-local hl = require("eyes.utility").hl
-
-M.setup = function()
+return function()
 	local ok, devicons = pcall(require, "nvim-web-devicons")
 	if ok then
 		devicons.setup({
@@ -15,8 +11,6 @@ M.setup = function()
 				},
 			},
 		})
-		hl("DevIconDefault", "Icon")
+		require("eyes.utility").hl("DevIconDefault", "Icon")
 	end
 end
-
-return M
