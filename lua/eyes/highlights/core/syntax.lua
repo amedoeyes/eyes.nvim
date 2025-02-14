@@ -1,5 +1,3 @@
-local palette = require("eyes.palette")
-
 return {
 	Boolean = "@boolean",
 
@@ -52,6 +50,4 @@ return {
 	Ignore = "None",
 
 	Error = "DiagnosticError",
-
-	Whitespace = { fg = palette.hex03 },
 }

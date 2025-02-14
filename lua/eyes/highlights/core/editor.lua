@@ -85,6 +85,7 @@ return {
 	Conceal = "NonText",
 	EndOfBuffer = "NonText",
 	SpecialKey = "NonText",
+	Whitespace = { fg = palette.hex03 },
 
 	debugPC = "ColorColumn",
 	debugBreakpoint = "Icon",
