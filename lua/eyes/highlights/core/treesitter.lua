@@ -1,4 +1,3 @@
-local mix = require("eyes.utility").mix
 local palette = require("eyes.palette")
 
 return {
@@ -23,7 +22,7 @@ return {
 	["@string.special"] = "String",
 	["@string.special.symbol"] = "String",
 	["@string.special.path"] = "String",
-	["@string.special.url"] = mix("Constant", "Underline"),
+	["@string.special.url"] = { fg = palette.hex08, sp = palette.hex08, underline = true },
 
 	["@character"] = "Character",
 	["@character.special"] = "Character",

@@ -1,4 +1,3 @@
-local extend = require("eyes.utility").extend
 local palette = require("eyes.palette")
 
 return {
@@ -6,7 +5,7 @@ return {
 	NormalNC = "Normal",
 	ColorColumn = { bg = palette.hex01 },
 	Directory = { fg = palette.hex08 },
-	Folded = extend("ColorColumn", { fg = palette.hex08 }),
+	Folded = { fg = palette.hex08, bg = palette.hex01 },
 	Question = { fg = "fg" },
 	Title = { fg = "fg", bold = true },
 	WinSeparator = "Border",
@@ -65,7 +64,7 @@ return {
 	PmenuSbar = { bg = palette.hex01 },
 	PmenuThumb = { bg = palette.hex03 },
 	PmenuMatch = { bold = true },
-	PmenuMatchSel = extend("ColorColumn", { bold = true }),
+	PmenuMatchSel = { bg = palette.hex01, bold = true },
 	WildMenu = "ColorColumn",
 	ComplMatchIns = "Dim",
 
