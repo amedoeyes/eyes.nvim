@@ -1,51 +1,57 @@
 local palette = require("eyes.palette")
 
 return {
-	Comment = { fg = palette.hex04, italic = true },
+	Boolean = "@boolean",
 
-	Constant = { fg = palette.hex08 },
-	String = "Constant",
-	Character = "Constant",
-	Number = "Constant",
-	Boolean = "Constant",
-	Float = "Constant",
+	Character = "@character",
+	SpecialChar = "@character.special",
 
-	Identifier = { fg = "fg" },
-	Function = { fg = palette.hex09 },
+	Comment = "@comment",
+	SpecialComment = "@comment.documentation",
+	Todo = "@comment.todo",
 
-	Statement = { fg = palette.hex06 },
-	Conditional = "Statement",
-	Repeat = "Statement",
-	Label = { fg = palette.hex08 },
-	Operator = { fg = palette.hex07 },
-	Keyword = "Statement",
-	Exception = "Statement",
+	Constant = "@constant",
 
-	PreProc = "Statement",
-	Include = "PreProc",
-	Define = "PreProc",
-	Macro = "PreProc",
-	PreCondit = "PreProc",
+	Function = "@function",
 
-	Type = { fg = palette.hex07 },
-	StorageClass = "Type",
-	Structure = "Type",
-	Typedef = "Type",
+	Keyword = "@keyword",
+	Statement = "@keyword",
+	Debug = "@keyword.debug",
+	PreProc = "@keyword.directive",
+	Include = "@keyword.directive",
+	Macro = "@keyword.directive",
+	Define = "@keyword.directive.define",
+	PreCondit = "@keyword.directive",
+	Conditional = "@keyword.conditional",
+	Repeat = "@keyword.repeat",
+	Exception = "@keyword.exception",
 
-	Special = { fg = palette.hex06 },
-	SpecialChar = "Special",
-	Tag = { fg = palette.hex08 },
-	Delimiter = "Special",
-	SpecialComment = "Special",
-	Debug = "Special",
+	Label = "@label",
 
-	Underlined = "Underline",
+	Underlined = "@markup.underline",
 
-	Ignore = { fg = palette.hex04 },
+	Number = "@number",
+	Float = "@number.float",
+
+	Operator = "@operator",
+
+	Special = "@punctuation.special",
+	Delimiter = "@punctuation.delimiter",
+
+	String = "@string",
+
+	Tag = "@tag",
+
+	Type = "@type",
+	StorageClass = "@type",
+	Structure = "@type",
+	Typedef = "@type.definition",
+
+	Identifier = "@variable",
+
+	Ignore = "None",
 
 	Error = "DiagnosticError",
-
-	Todo = { fg = "fg" },
 
 	Whitespace = { fg = palette.hex03 },
 }
