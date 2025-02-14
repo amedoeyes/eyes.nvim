@@ -23,6 +23,7 @@
 ---| "lazy.nvim"
 ---| "leap.nvim"
 ---| "mason.nvim"
+---| "mini.clue"
 ---| "mini.icons"
 ---| "mini.indentscope"
 ---| "mini.nvim"
