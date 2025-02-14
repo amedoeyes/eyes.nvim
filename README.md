@@ -22,6 +22,7 @@
 - [lualine](https://github.com/nvim-lualine/lualine.nvim)
 - [mason.nvim](https://github.com/williamboman/mason.nvim)
 - [mini.clue](https://github.com/echasnovski/mini.clue)
+- [mini.files](https://github.com/echasnovski/mini.files)
 - [mini.icons](https://github.com/echasnovski/mini.icons)
 - [mini.indentscope](https://github.com/echasnovski/mini.indentscope)
 - [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)

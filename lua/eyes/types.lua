@@ -24,6 +24,7 @@
 ---| "leap.nvim"
 ---| "mason.nvim"
 ---| "mini.clue"
+---| "mini.files"
 ---| "mini.icons"
 ---| "mini.indentscope"
 ---| "mini.nvim"
