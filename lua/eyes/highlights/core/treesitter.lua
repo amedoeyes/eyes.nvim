@@ -20,7 +20,7 @@ return {
 	["@constant.builtin"] = "@constant",
 	["@constant.macro"] = "@constant",
 
-	["@constructor"] = { fg = palette.hex09 },
+	["@constructor"] = "@type",
 	["@constructor.lua"] = "@punctuation",
 
 	["@function"] = { fg = palette.hex09 },
