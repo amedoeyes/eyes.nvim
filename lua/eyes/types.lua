@@ -14,6 +14,7 @@
 ---@field hex10 string|nil
 
 ---@alias eyes.Highlights.Core "diagnostics"|"diff"|"editor"|"spell"|"syntax"|"terminal"|"treesitter"
+
 ---@alias eyes.Highlights.Plugin
 ---| "blink.cmp"
 ---| "codeium.nvim"
