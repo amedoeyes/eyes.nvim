@@ -1,5 +1,5 @@
 <h1 align="center">
-  <p>&lt;O&gt;</p>
+  <code>&lt;0&gt;</code>
 </h1>
 
 <p align="center">Monochrome colorscheme for Neovim</p>
@@ -42,20 +42,14 @@
 
 ## Installation
 
-Installing using [lazy](https://github.com/folke/lazy.nvim)
-
 ```lua
-{
-  "amedoeyes/eyes.nvim",
-  -- only requird if using nvim-web-devicons for icons
-  -- dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
-  lazy = false,
-  priority = 1000,
-  opts = {},
-}
+vim.pack.add({
+  "https://github.com/amedoeyes/eyes.nvim",
+})
 ```
 
-Applying the colorscheme to [lualine](https://github.com/nvim-lualine/lualine.nvim)
+<details>
+<summary>lualine</summary>
 
 ```lua
 require("lualine").setup({
@@ -65,7 +59,10 @@ require("lualine").setup({
 })
 ```
 
-Applying the colorscheme to [bufferline](https://github.com/akinsho/bufferline.nvim)
+</details>
+
+<details>
+<summary>bufferline</summary>
 
 ```lua
 require("bufferline").setup({
@@ -73,21 +70,22 @@ require("bufferline").setup({
 })
 ```
 
+</details>
+
 ## Configurations
 
-Defaults:
+### Defaults
 
 ```lua
 {
   transparent = false,
+  -- boolean to load or disable all modules/plugins
+  -- table of modules/plugins to load
+  -- function that takes all modules/plugins and returns a table of modules/plugins to load
   highlights = {
-    -- table of modules to load or "all" to load them all
-    -- modules: { "diagnostics", "diff", "editor", "spell", "syntax", "terminal", "treesitter" }
-    core = "all",
-    -- table of plugins to load, "auto" to only load plugins installed with lazy or mini.deps or "all" to load them all
-    plugins = (package.loaded.lazy or package.loaded["mini.deps"]) and "auto" or "all",
+    core = true,
+    plugins = true,
   },
-  -- extends/overwrites highlights and current palette
   extend = {
     highlights = {},
     palette = {},
@@ -95,20 +93,87 @@ Defaults:
 }
 ```
 
-Example:
+<details>
+<summary>Core modules</summary>
+
+```lua
+---@alias eyes.Highlights.Core "diagnostics"|"diff"|"editor"|"spell"|"syntax"|"terminal"|"treesitter"
+```
+
+</details>
+
+<details>
+<summary>Plugins</summary>
+
+```lua
+---@alias eyes.Highlights.Plugin
+---| "blink.cmp"
+---| "codeium.nvim"
+---| "flash.nvim"
+---| "fzf-lua"
+---| "indent-blankline.nvim"
+---| "lazy.nvim"
+---| "leap.nvim"
+---| "mason.nvim"
+---| "mini.clue"
+---| "mini.files"
+---| "mini.icons"
+---| "mini.indentscope"
+---| "mini.nvim"
+---| "neo-tree.nvim"
+---| "noice.nvim"
+---| "nvim-cmp"
+---| "nvim-dap-ui"
+---| "nvim-notify"
+---| "nvim-web-devicons"
+---| "oil.nvim"
+---| "render-markdown.nvim"
+---| "snacks.nvim"
+---| "telescope.nvim"
+---| "undotree"
+---| "vim-illuminate"
+```
+
+</details>
+
+### Examples
+
+**Loading specific modules and plugins:**
 
 ```lua
 {
-  transparent = true,
   highlights = {
     core = { "editor", "syntax" },
     plugins = { "blink.cmp", "render-markdown.nvim", "oil.nvim" }
   },
+}
+```
+
+**Auto loading plugins:**
+
+```lua
+{
+  highlights = {
+    plugins = function(plugins)
+      return vim
+        .iter(vim.pack.get())
+        :map(function(p) return p.spec.name end)
+        :filter(function(p) return vim.tbl_contains(plugins, p) end)
+        :totable()
+    end,
+  },
+}
+```
+
+**Extending:**
+
+```lua
+{
   extend = {
     highlights = {
       Normal = { fg = "#808080" },
       CursorLine = { bg = "#202020" },
-      Type = { italic = true },
+      ["@type"] = { italic = true },
     },
     palette = {
       hex00 = "#101010",
