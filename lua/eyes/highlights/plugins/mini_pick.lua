@@ -1,0 +1,18 @@
+return {
+	MiniPickBorder = "Border",
+	MiniPickBorderBusy = "MiniPickBorderBusy",
+	MiniPickBorderText = "Mute",
+	MiniPickCursor = { blend = 100 },
+	MiniPickIconDirectory = "Icon",
+	MiniPickIconFile = "Icon",
+	MiniPickHeader = "Title",
+	MiniPickMatchCurrent = "PmenuMatchSel",
+	MiniPickMatchMarked = "Visual",
+	MiniPickMatchRanges = "MiniPickMatchRanges",
+	MiniPickNormal = "Normal",
+	MiniPickPreviewLine = "CursorLine",
+	MiniPickPreviewRegion = "MiniPickPreviewLine",
+	MiniPickPrompt = { fg = "fg" },
+	MiniPickPromptCaret = { fg = "fg" },
+	MiniPickPromptPrefix = "Mute",
+}

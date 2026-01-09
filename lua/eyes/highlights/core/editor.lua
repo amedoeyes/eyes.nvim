@@ -12,8 +12,10 @@ return {
 
 	NormalFloat = "Normal",
 	FloatBorder = "Border",
-	FloatFooter = { fg = "fg" },
+	FloatShadow = { bg = "#404040", blend = 80 },
+	FloatShadowThrough = { bg = "#404040", blend = 100 },
 	FloatTitle = "Title",
+	FloatFooter = { fg = "fg" },
 
 	Cursor = "Reverse",
 	lCursor = "Cursor",
@@ -42,12 +44,16 @@ return {
 	LspSignatureActiveParameter = "Highlight",
 	MatchParen = "Highlight",
 	SnippetTabstop = "Highlight",
+	SnippetTabstopActive = "Highlight",
 
 	MsgArea = { fg = "fg" },
 	ModeMsg = { fg = "fg" },
 	MoreMsg = { fg = "fg" },
+	StderrMsg = { fg = "fg" },
+	StdoutMsg = { fg = "fg" },
 	ErrorMsg = "DiagnosticError",
 	WarningMsg = "DiagnosticWarn",
+	OkMsg = "DiagnosticOk",
 	MsgSeparator = "Border",
 
 	Search = { fg = "fg", bg = palette.hex03 },
@@ -65,6 +71,9 @@ return {
 	PmenuThumb = { bg = palette.hex03 },
 	PmenuMatch = { bold = true },
 	PmenuMatchSel = { bg = palette.hex01, bold = true },
+	PmenuBorder = "FloatBorder",
+	PmenuShadow = "FloatShadow",
+	PmenuShadowThrough = "FloatShadowThrough",
 	WildMenu = "ColorColumn",
 	ComplMatchIns = "Dim",
 
