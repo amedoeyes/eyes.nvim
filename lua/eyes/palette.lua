@@ -6,13 +6,13 @@ setmetatable(M, {
 	end,
 })
 
-local opts = require("eyes.config")
-
 ---@type eyes.Palette
 M.palette = {}
 
 ---@param palette eyes.Palette
 M.setup = function(palette)
+	local opts = require("eyes.config").options
+
 	if not vim.tbl_isempty(M.palette) then
 		for module_name, _ in pairs(package.loaded) do
 			if module_name:match("^eyes%.highlights") then

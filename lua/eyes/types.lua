@@ -1,20 +1,20 @@
 ---@meta
 
 ---@class eyes.Palette
----@field hex00 string?
----@field hex01 string?
----@field hex02 string?
----@field hex03 string?
----@field hex04 string?
----@field hex05 string?
----@field hex06 string?
----@field hex07 string?
----@field hex08 string?
----@field hex09 string?
----@field hex10 string?
+---@field hex00 string|nil
+---@field hex01 string|nil
+---@field hex02 string|nil
+---@field hex03 string|nil
+---@field hex04 string|nil
+---@field hex05 string|nil
+---@field hex06 string|nil
+---@field hex07 string|nil
+---@field hex08 string|nil
+---@field hex09 string|nil
+---@field hex10 string|nil
 
 ---@alias eyes.Highlights.Core "diagnostics"|"diff"|"editor"|"spell"|"syntax"|"terminal"|"treesitter"
----@alias eyes.Highlights.Plugins
+---@alias eyes.Highlights.Plugin
 ---| "blink.cmp"
 ---| "codeium.nvim"
 ---| "flash.nvim"
@@ -43,11 +43,13 @@
 
 ---@class eyes.Options
 ---@field transparent boolean
----@field highlights {
----  core: eyes.Highlights.Core[]|"all",
----  plugins: eyes.Highlights.Plugins[]|"all"|"auto",
----}
----@field extend {
---- highlights?: table<string, vim.api.keyset.highlight>,
---- palette?: eyes.Palette,
----}
+---@field highlights eyes.Options.Highlights
+---@field extend eyes.Options.Extend
+
+---@class eyes.Options.Highlights
+---@field core boolean|eyes.Highlights.Core[]|(fun(modules: eyes.Highlights.Core[]): eyes.Highlights.Core[]),
+---@field plugins boolean|eyes.Highlights.Plugin[]|(fun(plugins: eyes.Highlights.Plugin[]): eyes.Highlights.Plugin[])
+
+---@class eyes.Options.Extend
+---@field highlights table<string, vim.api.keyset.highlight>|nil
+---@field palette eyes.Palette|nil

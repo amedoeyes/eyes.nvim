@@ -15,7 +15,7 @@ if vim.o.background == "dark" then
 		hex09 = "#909090",
 		hex10 = "#A0A0A0",
 	}
-else
+elseif vim.o.background == "light" then
 	palette = {
 		hex00 = "#FFFFFF",
 		hex01 = "#EFEFEF",
@@ -31,8 +31,6 @@ else
 	}
 end
 
-if palette ~= nil then
-	require("eyes.palette").setup(palette)
-	require("eyes.highlights").setup()
-	vim.g.colors_name = "eyes"
-end
+require("eyes.palette").setup(palette)
+require("eyes.highlights").setup()
+vim.g.colors_name = "eyes"

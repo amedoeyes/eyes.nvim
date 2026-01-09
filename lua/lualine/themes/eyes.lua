@@ -1,4 +1,4 @@
-local opts = require("eyes.config")
+local opts = require("eyes.config").options
 local utility = require("eyes.utility")
 
 local statusline_hl = utility.get_hl("StatusLine")

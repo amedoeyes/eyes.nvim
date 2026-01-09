@@ -1,10 +1,20 @@
 local M = {}
 
-local opts = require("eyes.config")
 local utility = require("eyes.utility")
 
----@type table<eyes.Highlights.Plugins,string|string[]>
-local plugins_map = {
+---@type eyes.Highlights.Core[]
+local CORE_MODULES = {
+	"diagnostics",
+	"diff",
+	"editor",
+	"spell",
+	"syntax",
+	"terminal",
+	"treesitter",
+}
+
+---@type table<eyes.Highlights.Plugin,string|string[]>
+local PLUGINS_MAP = {
 	["blink.cmp"] = "blink_cmp",
 	["codeium.nvim"] = "codeium_nvim",
 	["flash.nvim"] = "flash_nvim",
@@ -33,59 +43,34 @@ local plugins_map = {
 }
 
 M.setup = function()
+	local opts = require("eyes.config").options
+
 	local core = {}
 	local plugins = {}
 
-	if type(opts.highlights.core) == "table" then
-		core = opts.highlights.core
-	elseif type(opts.highlights.core) == "string" and opts.highlights.core == "all" then
-		core = { "diagnostics", "diff", "editor", "spell", "syntax", "terminal", "treesitter" }
+	if type(opts.highlights.core) == "boolean" and opts.highlights.core then
+		core = CORE_MODULES
+	elseif type(opts.highlights.core) == "table" then
+		core = opts.highlights.core --[[@as (eyes.Highlights.Core[])]]
+	elseif type(opts.highlights.core) == "function" then
+		core = opts.highlights.core(CORE_MODULES)
 	end
 
-	-- credits to https://github.com/folke/tokyonight.nvim
-	if type(opts.highlights.plugins) == "table" then
-		for _, p in ipairs(opts.highlights.plugins) do
-			if plugins_map[p] == nil then
-				vim.notify("Unkown plugin: " .. p, vim.log.levels.ERROR)
-			end
-		end
-		plugins = vim
-			.iter(opts.highlights.plugins)
-			:map(function(p)
-				return plugins_map[p]
-			end)
-			:flatten()
-			:totable()
-	elseif type(opts.highlights.plugins) == "string" then
-		local load = opts.highlights.plugins
-		if load == "all" then
-			plugins = vim.iter(vim.tbl_values(plugins_map)):flatten():totable()
-		elseif load == "auto" then
-			if package.loaded.lazy then
-				plugins = vim
-					.iter(vim.tbl_keys(require("lazy.core.config").plugins))
-					:filter(function(p)
-						return plugins_map[p] ~= nil
-					end)
-					:map(function(p)
-						return plugins_map[p]
-					end)
-					:flatten()
-					:totable()
-			elseif package.loaded["mini.deps"] then
-				plugins = vim
-					.iter(require("mini.deps").get_session())
-					:filter(function(p)
-						return plugins_map[p.name] ~= nil
-					end)
-					:map(function(p)
-						return plugins_map[p.name]
-					end)
-					:flatten()
-					:totable()
-			end
-		end
+	if type(opts.highlights.plugins) == "boolean" and opts.highlights.plugins then
+		plugins = vim.tbl_keys(PLUGINS_MAP)
+	elseif type(opts.highlights.plugins) == "table" then
+		plugins = opts.highlights.plugins --[[@as (eyes.Highlights.Plugin[])]]
+	elseif type(opts.highlights.plugins) == "function" then
+		plugins = opts.highlights.plugins(vim.tbl_keys(PLUGINS_MAP))
 	end
+
+	plugins = vim
+		.iter(plugins)
+		:map(function(p)
+			return PLUGINS_MAP[p]
+		end)
+		:flatten()
+		:totable()
 
 	require("eyes.highlights.links").setup()
 
@@ -95,7 +80,7 @@ M.setup = function()
 			highlights()
 		else
 			for key, value in pairs(highlights) do
-				require("eyes.utility").hl(key, value)
+				utility.hl(key, value)
 			end
 		end
 	end
@@ -106,7 +91,7 @@ M.setup = function()
 			highlights()
 		else
 			for key, value in pairs(highlights) do
-				require("eyes.utility").hl(key, value)
+				utility.hl(key, value)
 			end
 		end
 	end
@@ -116,8 +101,8 @@ M.setup = function()
 	end
 
 	if opts.extend.highlights then
-		for name, highlight in pairs(opts.extend.highlights) do
-			utility.hl(name, utility.extend(name, highlight))
+		for key, value in pairs(opts.extend.highlights) do
+			utility.hl(key, utility.extend(key, value))
 		end
 	end
 end
