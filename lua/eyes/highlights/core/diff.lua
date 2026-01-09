@@ -4,7 +4,8 @@ return {
 	DiffAdd = { fg = palette.hex08 },
 	DiffChange = { fg = palette.hex06 },
 	DiffDelete = { fg = palette.hex04 },
-	DiffText = { fg = palette.hex08 },
+	DiffText = { fg = palette.hex06 },
+	DiffTextAdd = { fg = palette.hex08 },
 
 	Added = "DiffAdd",
 	Changed = "DiffChange",
