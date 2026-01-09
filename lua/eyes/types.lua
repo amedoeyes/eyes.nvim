@@ -29,6 +29,7 @@
 ---| "mini.icons"
 ---| "mini.indentscope"
 ---| "mini.nvim"
+---| "mini.pick"
 ---| "neo-tree.nvim"
 ---| "noice.nvim"
 ---| "nvim-cmp"

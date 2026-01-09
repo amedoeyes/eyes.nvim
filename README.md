@@ -21,10 +21,11 @@
 - [leap.nvim](https://github.com/ggandor/leap.nvim)
 - [lualine](https://github.com/nvim-lualine/lualine.nvim)
 - [mason.nvim](https://github.com/williamboman/mason.nvim)
-- [mini.clue](https://github.com/echasnovski/mini.clue)
-- [mini.files](https://github.com/echasnovski/mini.files)
-- [mini.icons](https://github.com/echasnovski/mini.icons)
-- [mini.indentscope](https://github.com/echasnovski/mini.indentscope)
+- [mini.clue](https://github.com/nvim-mini/mini.clue)
+- [mini.files](https://github.com/nvim-mini/mini.files)
+- [mini.icons](https://github.com/nvim-mini/mini.icons)
+- [mini.indentscope](https://github.com/nvim-mini/mini.indentscope)
+- [mini.pick](https://github.com/nvim-mini/mini.pick)
 - [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [noice.nvim](https://github.com/folke/noice.nvim)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
@@ -120,6 +121,7 @@ require("bufferline").setup({
 ---| "mini.icons"
 ---| "mini.indentscope"
 ---| "mini.nvim"
+---| "mini.pick"
 ---| "neo-tree.nvim"
 ---| "noice.nvim"
 ---| "nvim-cmp"
